@@ -5,6 +5,7 @@ from django.conf import settings
 from django.db import models
 from django.utils import timezone
 
+from django.contrib.auth.models import User
 
 class Profissional(models.Model):
     # id_prof = models.IntegerField(primary_key=True)
@@ -14,13 +15,17 @@ class Profissional(models.Model):
     senha = models.CharField(max_length=8)
     especialidade = models.CharField(max_length=100,null=True)
 
+    def __str__(self):
+        return str(self.id)
 
 class ImpressaoDigital(models.Model):
-    img_path = models.FilePathField(path=None)
+    img_path = models.ImageField()
     mao_esquerda = models.ForeignKey('MaoEsquerda', on_delete=models.CASCADE,related_name='im_digital')
     mao_direita = models.ForeignKey('MaoDireita', on_delete=models.CASCADE,related_name='im_digital')
     paciente = models.ForeignKey('Paciente', on_delete=models.CASCADE,related_name='im_digital')
 
+    def __str__(self):
+        return str(self.id)
 
 class Paciente(models.Model):
     # id_paciente = models.IntergerField(primary_key=True),
@@ -29,7 +34,8 @@ class Paciente(models.Model):
     imp_digital = models.ForeignKey('ImpressaoDigital',on_delete=models.CASCADE,related_name='imp_digital')
     resultado_perfil = models.ForeignKey('Analise',on_delete=models.CASCADE,related_name='imp_digital')
 
-
+    def __str__(self):
+        return str(self.id)
 class Consulta(models.Model):
     # id_consulta = models.IntergerField(primary_key=True, on_delete=models.CASCADE)
     id_profissional = models.ForeignKey('Profissional', on_delete=models.CASCADE,related_name='consulta')
@@ -37,7 +43,8 @@ class Consulta(models.Model):
     horario = models.TimeField(auto_now=False)
     id_paciente = models.ForeignKey('Paciente', on_delete=models.CASCADE,related_name='consulta')
 
-
+    def __str__(self):
+        return str(self.id)
 class Potencialidade(models.Model):
     TIPOS = (('F', 'Força'),
              ('V', "Velocidade"),
@@ -60,7 +67,8 @@ class Analise(models.Model):
     paciente = models.ForeignKey('Paciente', on_delete=models.CASCADE,related_name='paciente')
     Resultado = models.ForeignKey('Potencialidade', on_delete=models.CASCADE,related_name='analise')
 
-
+    def __str__(self):
+        return str(self.id)
 class Padrao(models.Model):
     Padroes = (('W', 'Verticilo'),
                ('L', "Presilha"),
@@ -74,7 +82,11 @@ class MaoEsquerda(models.Model):
     nome_dedo = models.CharField(max_length=100)
     padrao = models.ForeignKey('Padrao', on_delete=models.CASCADE,related_name='mao_esquerda')
 
-
+    def __str__(self):
+        return str(self.id)
 class MaoDireita(models.Model):
     nome_dedo = models.CharField(max_length=100)
     padrao = models.ForeignKey('Padrao', on_delete=models.CASCADE, related_name='mao_direita')
+
+    def __str__(self):
+        return str(self.id)

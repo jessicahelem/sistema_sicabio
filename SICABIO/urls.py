@@ -14,8 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+
+from SICABIO import settings
+from site_sicabio import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('login/', views.login),
+    path('login/submit', views.submit_login),
+    path('',views.index),
+    path("logout/",views.logout_user),
+    path(r'^',include('site_sicabio.url',namespace='usuarios')),
 ]
