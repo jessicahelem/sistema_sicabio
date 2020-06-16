@@ -1,0 +1,31 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+     {% include "header_menu.html" %}
+ <!-- Custom styles for this template -->
+
+
+</head>
+
+
+<body>
+<form  method="post">
+    {%csrf_token%}
+
+    {{form}}
+<!--     <label></label>-->
+<!--    {{forms.nome_paciente}}-->
+
+<!--    <label></label>-->
+<!--    {{forms.cpf_paciente}}-->
+<!--    <label></label>-->
+
+
+
+</form>
+
+</body>
+</html>

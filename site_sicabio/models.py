@@ -6,17 +6,21 @@ from django.db import models
 from django.utils import timezone
 
 from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 
 class Profissional(models.Model):
     # id_prof = models.IntegerField(primary_key=True)
     nome = models.CharField(max_length=200)
-    user_cpf = models.CharField(max_length=12)
+    CPF = models.CharField(max_length=12)
     email = models.CharField(max_length=100)
     senha = models.CharField(max_length=8)
     especialidade = models.CharField(max_length=100,null=True)
+    user=models.ForeignKey(User,on_delete=models.CASCADE,null=False,default=False)
 
     def __str__(self):
         return str(self.id)
+
+
 
 class ImpressaoDigital(models.Model):
     img_path = models.ImageField()
@@ -28,11 +32,12 @@ class ImpressaoDigital(models.Model):
         return str(self.id)
 
 class Paciente(models.Model):
-    # id_paciente = models.IntergerField(primary_key=True),
+# id_paciente = models.IntergerField(primary_key=True),
+    foto = models.ImageField(upload_to='pacientes',null=True)
     nome_paciente = models.CharField(max_length=100)
     cpf_paciente = models.CharField(max_length=12)
-    imp_digital = models.ForeignKey('ImpressaoDigital',on_delete=models.CASCADE,related_name='imp_digital')
-    resultado_perfil = models.ForeignKey('Analise',on_delete=models.CASCADE,related_name='imp_digital')
+#imp_digital = models.ForeignKey('ImpressaoDigital',on_delete=models.CASCADE,related_name='imp_digital',default=True,null=True)
+  #  resultado_perfil = models.ForeignKey('Analise',on_delete=models.CASCADE,related_name='imp_digital',default=True,null=True)
 
     def __str__(self):
         return str(self.id)

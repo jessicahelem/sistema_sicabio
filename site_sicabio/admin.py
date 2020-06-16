@@ -7,7 +7,7 @@ from .models import *
 admin.site.register(Profissional)
 
 class ProfAdmin(admin.ModelAdmin):
-    list_display = ['id','nome','especialidade']
+    list_display = ['id','nome','especialidade','user']
 
 admin.site.register(Paciente)
 class PacienteAdmin(admin.ModelAdmin):

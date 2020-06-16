@@ -1,0 +1,63 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        {% include "model_header.html" %}
+
+     {% include "header_menu.html" %}
+
+</head>
+<body>
+<style>
+    .polaroid{
+    width:250px;
+    box-shadow:0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.2);
+    }
+
+    .container{
+        padding: 15px;
+        border:5px;
+    }
+
+
+    .img{
+            background-color:white;
+    }
+    .img:hover {
+        opacity:0.3 ;
+
+
+
+    }
+</style>
+
+    <div class="container mt-4">
+
+        <div class="row">
+            {% for p in paciente %}
+            <div class="col-sm-3">
+                <div class="polaroid">
+                   <a class="img" href="#"> <img  src="{{p.foto.url}}" style="width:100%"> </a>
+                    <div  class="container_txt" style="text-align:center">
+                        <h6> {{ p.nome_paciente }}</h6>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+         {% endfor %}
+        </div>
+
+
+
+    </div>
+
+  {% include "model_footer.html" %}
+
+</body>
+</html>

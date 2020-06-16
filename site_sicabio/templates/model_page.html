@@ -1,0 +1,77 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html >
+<head>
+	<title>Tela Principal</title>
+
+    {% include "model_header.html" %}
+
+</head>
+<body>
+
+<style  type="text/css">
+    a:link{
+    text-decoration:none;}
+
+</style>
+ <div class="text-right mr-10">
+            <a href="/logout/">Sair</a>
+        </div>
+<section id="banner">
+
+				<h2><strong>Bem Vindo!</strong><br> SICABIO - SISTEMA DE IDENTIFICAÇÃO DAS CAPACIDADES BIOMOTORAS</h2>
+
+
+			</section>
+
+		<!-- One -->
+			<section id="one" class="wrapper special">
+				<div class="inner">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<div class="features">
+						<div align="center" class="feature">
+							<div  align="center" class="image">
+							<img src="{% static 'images/icons/user3.1.png' %}" alt="IMG">
+
+							<div class="text1">
+							<a class="cadastro_pac" href="menu_paciente"><h3>Cadastro de Pacientes</h3></a>
+							<p>Sed tempus feugiat adipiscing nisl cursus aliquam dolore.</p>
+							</div>
+							</div>
+							</div>
+						<div class="feature">
+							<div class="image2">
+							<img src="{% static 'images/icons/consulta.png' %}" alt="IMG">
+								</div>
+							<a class="consulta" href="#"> <h3>Marcar consultas</h3></a>
+
+							<p>Sed tempus feugiat adipiscing nisl cursus aliquam dolore.</p>
+						</div>
+						<div class="feature">
+							<div class="img_3">
+							<img src="{% static 'images/icons/finger1.png' %}" alt="IMG">
+							</div>
+								<a class="analise" href="#" ><h3>Análise Dermatoglífica</h3> </a>
+							<p>Sed tempus feugiat adipiscing nisl cursus aliquam dolore.</p>
+
+						</div>
+
+					</div>
+				</div>
+			</section>
+
+
+		<!-- Scripts -->
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<!--[if lte IE 8]><script src="{% static 'assets/js/ie/respond.min.js' %}"></script><![endif]-->
+			<script src="{% static 'assets/js/main.js' %}"></script>
+
+    {% include "model_footer.html" %}
+
+
+</body>
+</html>

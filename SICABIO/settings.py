@@ -129,3 +129,6 @@ STATIC_ROOT = [os.path.join(BASE_DIR,'static'),'SICABIO/static/']
 
 # Django - Templates
 TEMPLATE_DIRS = (os.path.join(BASE_DIR,  "templates"),)
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL= '/login'
