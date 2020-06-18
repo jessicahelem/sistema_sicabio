@@ -1,4 +1,5 @@
-{% load staticfiles %}
+{%  extends 'base_paciente.html'%}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,20 +13,23 @@
 
 
 <body>
-<form  method="post">
-    {%csrf_token%}
+<form  class="form-signin" method="post" enctype="multipart/form-data">{%csrf_token%}
 
-    {{form}}
-<!--     <label></label>-->
-<!--    {{forms.nome_paciente}}-->
+    <label>Foto</label>
+    {{form.foto}}
+    <label>Nome</label>
+    {{form.nome_paciente}}
 
-<!--    <label></label>-->
-<!--    {{forms.cpf_paciente}}-->
-<!--    <label></label>-->
+    <label>CPF</label>
+    {{form.cpf_paciente}}
 
-
+  <button id="btn_cad" class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar</button>
 
 </form>
 
 </body>
 </html>
+
+
+
+{% endblock %}

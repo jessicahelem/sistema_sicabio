@@ -21,13 +21,10 @@ def form_paciente(request):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            return redirect('/cadastrar_paciente')
-    return render(request, "cadastrar_paciente.html", context)
+            return redirect('/base_paciente')
+    return render(request, "base_paciente.html", context)
 
 
-def cadastrar_pac(request):
-    form = PacienteForm()
-    return render(request,"cadastrar_paciente.html",{'form':form})
 def list_all_pacientes(request):
     paciente= Paciente.objects.filter()
     return render(request,'lista_pacientes.html',{'paciente':paciente})
@@ -36,7 +33,7 @@ def list_all_pacientes(request):
 def index(request):
     return render(request, 'tela_principal.html')
 
-@login_required
+
 @csrf_protect
 def cadastro(request):
     form = UsuarioForm(request.POST or None)
@@ -66,3 +63,14 @@ def submit_login(request):
         else:
             messages.error(request,'Usuário e senha inválidos. Por favor, tente novamente.')
     return redirect('/login/')
+
+
+def list_user(request):
+    usuario = Profissional.objects.filter(user=request.user)
+    return render(request,'lista_pacientes.html',{'usuario':usuario})
+
+
+def pacientes_detalhes(request,id):
+    paciente=Paciente.objects.get(id=id)
+
+    return render(request,"detalhes_paciente.html",{'paciente':paciente})

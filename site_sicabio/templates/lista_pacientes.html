@@ -29,10 +29,57 @@
         opacity:0.3 ;
 
 
-
     }
-</style>
+#divBusca{
+  background-color:#E0EEEE;
+  border:solid 2px #5F9EA0;
+  border-radius:10px;
+  width:320px;
+  height:32px;
+  margin-left: 200px;
+  margin-top:10px;
 
+}
+
+#txtBusca{
+  background-color:transparent;
+  padding-left:5px;
+  font-size:18px;
+  border:none;
+  height:20px;
+  width:190px;
+  top:63px;
+  position:absolute;
+  margin-left:12px;
+
+}
+
+#btnBusca{
+  border:none;
+  height:30px;
+  border-radius:0 7px 7px 0;
+  width:88px;
+  font-weight:bold;
+  background:#00CDCF;
+  margin-left:214px;
+  position:absolute;
+  top:58px;
+
+
+}
+
+#divBusca img{
+  float:left;
+}
+
+</style>
+    <div id="divBusca">
+        <div class="img my-2">
+        <img  src="{% static 'images/search.png' %}" alt="Buscar..."/>
+        </div>
+            <input type="text" id="txtBusca"  placeholder="Buscar..."/>
+        <button id="btnBusca">Buscar</button>
+    </div>
     <div class="container mt-4">
 
         <div class="row">

@@ -1,107 +1,36 @@
-html,
-body {
- width: 100%;
- align:center;
- background-color: #9999A1;
 
-}
-
-body {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-    background: #1e5799;
-  -moz-linear-gradient(45deg, #1e5799 6%, #2989d8 33%, #207cca 57%, #7db9e8 87%); /* FF3.6-15 */
-background: -webkit-linear-gradient(45deg, #1e5799 6%,#2989d8 33%,#207cca 57%,#7db9e8 87%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(45deg, #1e5799 6%,#2989d8 33%,#207cca 57%,#7db9e8 87%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
-
-
-
-
-
-
-
-}
-
-.container{
-
-    border: 12px solid #B22222;
-    border-radius: 10px;
-    width:500px;
-    height:600px;
-    background-color: #fff;
-
-}
 .form-signin {
   width: 100%;
-  padding: 5px;
+  max-width: 500px;
   margin: auto;
-  align:center;
-}
-.form-signin input {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
+  padding-top: 250px;
 
+}
+#btn_cad{
+
+
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
 .form-signin .form-control {
   position: relative;
   box-sizing: border-box;
-  height:40px;
-  width:400px;
-  font-size: 18px;
-  left:30px;
-  top:50px;
-  bottom:30px;
+  height: auto;
+  padding: 20px;
+  font-size: 16px;
 }
-
-
 .form-signin .form-control:focus {
-  z-index: 3;
+  z-index: 2;
 }
-
-
-.btn_cad{
-
-
-  position:absolute;
-  top:465px;
-  left:630px;
-  width:150px;
-  height:190px;
-
-
-
+.form-signin input[type="email"] {
+  margin-bottom: 10px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-bottom: 10px;
 }
-
-.c_btn{
-    position:absolute;
-    left:-8px;
-    top:3px;
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
-.btn_canc{
-
-  position:absolute;
-  top:465px;
-  left:760px;
-  width:150px;
-  height:190px;
-
-}
-
-
-
-.cabecalho{
-    position: absolute;
-    align:center;
-    bottom:570px;
-    left: 685px;
-    color:#adadad;
-
-}
-

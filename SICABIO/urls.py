@@ -25,13 +25,15 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index),
     path('site_sicabio/all/',views.list_all_pacientes),
+    path('site_sicabio/user/',views.list_user),
+    path('site_sicabio/detalhes/<id>/',views.pacientes_detalhes),
     path('cadastro/', views.cadastro, name='cadastro'),
     path('login/', views.do_login),
     path("logout/",views.logout_user),
     #path(r'',include('site_sicabio.url',namespace='site_sicabio')),
     path('login/submit',views.submit_login),
     path('menu_paciente/',views.menu_paciente),
-    path('site_sicabio/cadastrar_paciente/',views.cadastrar_pac),
+    path('site_sicabio/cadastrar_paciente/',views.form_paciente),
 ]
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

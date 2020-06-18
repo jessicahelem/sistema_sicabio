@@ -64,11 +64,9 @@ class PacienteForm(forms.Form):
         model = Paciente
         fields = ['foto', 'nome_paciente', 'cpf_paciente']
 
-        nome = forms.CharField()
-
-        foto = forms.ImageField()
-        nome_paciente = forms.CharField(label='Nome Completo',widget=forms.Textarea)
-        cpf_paciente = forms.CharField(label='CPF',widget=forms.Textarea)
+        # foto = forms.ImageField()
+        # nome_paciente = forms.CharField(label='Nome Completo',widget=forms.Textarea)
+        # cpf_paciente = forms.CharField(label='CPF',widget=forms.Textarea)
 
         widgets = {'foto': forms.ImageField(),
                    'nome_paciente': forms.TextInput(attrs={'class': 'form-control', 'maxlength': 255, 'placeholder': 'Nome Completo'}),

@@ -15,7 +15,7 @@ class Profissional(models.Model):
     email = models.CharField(max_length=100)
     senha = models.CharField(max_length=8)
     especialidade = models.CharField(max_length=100,null=True)
-    user=models.ForeignKey(User,on_delete=models.CASCADE,null=False,default=False)
+    user=models.OneToOneField(User,on_delete=models.CASCADE,null=False,default=False)
 
     def __str__(self):
         return str(self.id)
@@ -34,8 +34,8 @@ class ImpressaoDigital(models.Model):
 class Paciente(models.Model):
 # id_paciente = models.IntergerField(primary_key=True),
     foto = models.ImageField(upload_to='pacientes',null=True)
-    nome_paciente = models.CharField(max_length=100)
-    cpf_paciente = models.CharField(max_length=12)
+    nome_paciente = models.CharField(max_length=100,null=False)
+    cpf_paciente = models.CharField(max_length=12,null=False)
 #imp_digital = models.ForeignKey('ImpressaoDigital',on_delete=models.CASCADE,related_name='imp_digital',default=True,null=True)
   #  resultado_perfil = models.ForeignKey('Analise',on_delete=models.CASCADE,related_name='imp_digital',default=True,null=True)
 
