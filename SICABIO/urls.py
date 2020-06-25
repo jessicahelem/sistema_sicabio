@@ -17,6 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin, staticfiles
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns, static
 from django.urls import path, include
+from django.views.generic import RedirectView
 
 from SICABIO import settings
 from site_sicabio import views
@@ -24,8 +25,8 @@ from site_sicabio import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index),
-    path('site_sicabio/all/',views.list_all_pacientes),
-    path('site_sicabio/user/',views.list_user),
+    path('site_sicabio/all_pacientes/',views.list_all_pacientes),
+    path('site_sicabio/pacientes/',views.list_user),
     path('site_sicabio/detalhes/<id>/',views.pacientes_detalhes),
     path('cadastro/', views.cadastro, name='cadastro'),
     path('login/', views.do_login),
@@ -34,6 +35,8 @@ urlpatterns = [
     path('login/submit',views.submit_login),
     path('menu_paciente/',views.menu_paciente),
     path('site_sicabio/cadastrar_paciente/',views.form_paciente),
+    path('site_sicabio/detalhes/<id>/inserir_digital/',views.inserir_digital),
+    path('site_sicabio/cadastrar_paciente/submit', views.set_paciente),
 ]
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

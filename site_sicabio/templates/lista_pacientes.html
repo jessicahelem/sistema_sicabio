@@ -48,7 +48,7 @@
   border:none;
   height:20px;
   width:190px;
-  top:63px;
+  top:77px;
   position:absolute;
   margin-left:12px;
 
@@ -61,9 +61,9 @@
   width:88px;
   font-weight:bold;
   background:#00CDCF;
-  margin-left:214px;
+  margin-left:212px;
   position:absolute;
-  top:58px;
+  top:72px;
 
 
 }
@@ -80,13 +80,13 @@
             <input type="text" id="txtBusca"  placeholder="Buscar..."/>
         <button id="btnBusca">Buscar</button>
     </div>
-    <div class="container mt-4">
+    <div class="container mp-4 mb-4">
 
         <div class="row">
-            {% for p in paciente %}
+             {% for p in paciente %}
             <div class="col-sm-3">
                 <div class="polaroid">
-                   <a class="img" href="#"> <img  src="{{p.foto.url}}" style="width:100%"> </a>
+                   <a class="img" href="../detalhes/{{.id}}"> <img  src="{{p.foto.url}}" style="width:100%;height:150px;"> </a>
                     <div  class="container_txt" style="text-align:center">
                         <h6> {{ p.nome_paciente }}</h6>
                     </div>

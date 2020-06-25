@@ -1,0 +1,88 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en" xmlns:font-weight="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+        <link rel="stylesheet" type="text/css"  href="{% static 'css/estilo.css' %}" />
+    <title>Inserir Digital</title>
+    {% include 'model_header.html' %}
+    {% include 'header_menu.html' %}
+</head>
+
+<body>
+<div class="w3-panel w3-border w3-round-large" id="componentes" style="width:1000px;left:200px;position:absolute;heigth:500px;padding-top:60px;">
+
+    <div class ="img_1">
+        <img  src="{% static 'images/mao_1.png' %}">
+
+    </div>
+
+
+
+     <div id="img_2">
+        <img  src="{% static 'images/img.png' %}" >
+
+     </div>
+     <a href="#" style="a .hover{  color:#008c8c;}">
+    <div  id="polegar">
+        <p  style="font-weight:bold">Polegar</p>
+    </div>
+        </a>
+    <a href="#">
+    <div  id="indicador">
+        <p  style="font-weight:bold">Indicador</p>
+    </div>
+        </a>
+    <a href="#">
+    <div  id="medio">
+        <p  style="font-weight:bold">Médio</p>
+    </div>
+        </a>
+    <a href="#">
+    <div  id="anular">
+        <p  style="font-weight:bold">Anular</p>
+    </div>
+    </a>
+    <a href="#">
+     <div  id="minimo">
+        <p  style="font-weight:bold">Mínimo</p>
+    </div>
+    </a>
+    <a href="#">
+     <div  id="polegar_2">
+        <p  style="font-weight:bold">Polegar</p>
+    </div>
+    </a>
+    <a href="#">
+    <div  id="indicador_2">
+        <p  style="font-weight:bold">Indicador</p>
+    </div>
+    </a>
+    <a href="#">
+    <div  id="medio_2">
+        <p  style="font-weight:bold">Médio</p>
+    </div>
+    </a>
+    <a href="#">
+    <div  id="anular_2">
+        <p  style="font-weight:bold">Anular</p>
+    </div>
+    </a>
+    <a href="#">
+     <div  id="minimo_2">
+        <p  style="font-weight:bold">Mínimo</p>
+    </div>
+    </a>
+
+     <div  id="mao_esquerda">
+        <p  style="font-weight:bold">Mão Esquerda</p>
+    </div>
+     <div  id="mao_direita">
+        <p  style="font-weight:bold">Mão Direita</p>
+    </div>
+    </div>
+{% include 'model_footer.html' %}
+</body>
+</html>

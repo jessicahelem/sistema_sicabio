@@ -2,9 +2,7 @@
 {% block content %}
 
     <!-- Bootstrap core CSS -->
-<link href="{'bootstrap/css/bootstrap.min.css'}" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
  <!-- Custom styles for this template -->
-    <link href="{ % static 'css/signin.css' %}" rel="stylesheet">
 
 <form  class="form-signin" method="post">{%csrf_token%}
     <div  class='cabecalho'>
@@ -16,17 +14,21 @@
     {{form.nome.errors}}
 
     <label></label>
+    {{form.username}}
+    {{form.username.errors}}
+    <label></label>
     {{form.CPF}}
     {{form.CPF.errors}}
-    <label></label>
-    {{form.especialidade}}
-    {{form.especialidade.errors}}
-    <label></label>
+     <label></label>
     {{form.email}}
     {{form.email.errors}}
     <label></label>
-    {{form.senha}}
-    {{form.senha.errors}}
+    {{form.especialidade}}
+    {{form.especialidade.errors}}
+
+    <label></label>
+    {{form.password}}
+    {{form.password.errors}}
     <div align="center" class="c_btn">
     <div class="btn_cad">
     <button class="btn btn-lg btn-primary" type="submit" >Cadastrar</button>

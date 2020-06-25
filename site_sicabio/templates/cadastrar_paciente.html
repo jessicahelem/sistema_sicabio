@@ -1,35 +1,31 @@
 {%  extends 'base_paciente.html'%}
+
+
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
 
+    <h3 class="text-center" style="color:#01c4c4"> Cadastrar Paciente</h3>
 
-     {% include "header_menu.html" %}
- <!-- Custom styles for this template -->
+    <div class="container">
+    <form enctype="multipart/form-data" action="submit" method="post">{% csrf_token %}
 
-
-</head>
-
-
-<body>
-<form  class="form-signin" method="post" enctype="multipart/form-data">{%csrf_token%}
-
-    <label>Foto</label>
-    {{form.foto}}
-    <label>Nome</label>
-    {{form.nome_paciente}}
-
-    <label>CPF</label>
-    {{form.cpf_paciente}}
-
-  <button id="btn_cad" class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar</button>
-
-</form>
-
-</body>
-</html>
-
-
-
+        <div class="form-group">
+            <label for="nome_paciente"></label>
+            <input class="form-control" name="nome_paciente" type="text" placeholder="Nome Completo">
+        </div>
+        <div class="form-group">
+            <label for="cpf_paciente"></label>
+            <input class="form-control" name="cpf_paciente" type="text" placeholder="CPF">
+        </div>
+        <div class="form-group">
+            <label for="idade"></label>
+            <input class="form-control" name="idade" type="number" placeholder="Idade">
+        </div>
+         <div class="form-group">
+            <input class="form-control-file border" name="file" type="file"  accept="image/*">
+        </div>
+        <button type="submit" class="btn btn-primary">
+            Cadastrar
+        </button>
+        </form>
+    </div>
 {% endblock %}

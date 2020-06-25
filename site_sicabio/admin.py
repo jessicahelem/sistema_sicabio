@@ -1,13 +1,15 @@
 from django.contrib import admin
 
 # Register your models here.
+from django.contrib.auth.models import Permission
+
 from .models import *
 
 
 admin.site.register(Profissional)
-
+admin.site.register(Permission)
 class ProfAdmin(admin.ModelAdmin):
-    list_display = ['id','nome','especialidade','user']
+    list_display = ['id','nome','especialidade']
 
 admin.site.register(Paciente)
 class PacienteAdmin(admin.ModelAdmin):

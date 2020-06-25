@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'site_sicabio',
     'widget_tweaks',
     'crispy_forms',
+    'django_fields',
 ]
 CRISPY_TEMPLATE_PACk = 'bootstrap4'
 MIDDLEWARE = [
@@ -49,7 +50,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
+   'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -103,8 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
-
+AUTH_USER_MODEL = 'site_sicabio.Profissional'
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
@@ -122,7 +122,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
+DEFAULT_IMAGE_PATH = 'static/images/avatar.png'
 MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
 STATIC_ROOT = [os.path.join(BASE_DIR,'static'),'SICABIO/static/']
