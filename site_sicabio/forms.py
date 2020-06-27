@@ -35,10 +35,7 @@ class UsuarioForm(forms.ModelForm):
                 'required': 'Este campo é obrigatório'
 
             },
-            'email': {
-                'required': 'Escreva um email válido'
 
-            },
             'password': {
                 'required': 'Este campo é obrigatório'
 
@@ -47,9 +44,15 @@ class UsuarioForm(forms.ModelForm):
                 'required': 'Este campo é obrigatório'
 
             },
-            'username':{
-                'required':'Este campo é obrigatório'
-            }
+            'username': {
+                'required': 'Este campo é obrigatório'
+            },
+
+            'email':{
+                'required': 'Este campo é obrigatório.'
+            },
+
+
 
         }
 

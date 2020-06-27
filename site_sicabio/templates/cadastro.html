@@ -1,17 +1,26 @@
 {%  extends 'base.html'%}
+{% load staticfiles %}
+
+     <link href="{% static 'css/cadastro_prof.css'%}" rel="stylesheet">
+      <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'bootstrap/css/bootstrap.min.css'%}" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
 {% block content %}
 
     <!-- Bootstrap core CSS -->
  <!-- Custom styles for this template -->
 
 <form  class="form-signin" method="post">{%csrf_token%}
-    <div  class='cabecalho'>
+     <div  class='cabecalho'style="color:#01c4c4">
     <h2 > Cadastro</h2>
     </div>
 
      <label></label>
     {{form.nome}}
-    {{form.nome.errors}}
+    {{form.nome.error}}
 
     <label></label>
     {{form.username}}
@@ -29,15 +38,11 @@
     <label></label>
     {{form.password}}
     {{form.password.errors}}
-    <div align="center" class="c_btn">
-    <div class="btn_cad">
-    <button class="btn btn-lg btn-primary" type="submit" >Cadastrar</button>
-    </div>
-
-     <div class="btn_canc">
-    <button  class="btn btn-lg btn-primary " >Cancelar</button>
+    <div  class="c_btn">
+    <button class="myButton" type="submit" >Cadastrar</button>
+        <a href="login.html/">
+    <button class="myButton1"  name="cancelar" >Cancelar</button></a>
      </div>
-    </div>
 
 </form>
 

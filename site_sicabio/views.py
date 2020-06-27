@@ -8,6 +8,8 @@ from rest_framework.compat import authenticate
 from .forms import *
 
 
+
+
 @login_required(login_url='/login/')
 def logout_user(request):
 
@@ -17,13 +19,14 @@ def logout_user(request):
 @csrf_protect
 @login_required(login_url='/login/')
 def form_paciente(request):
-    form = PacienteForm(request.POST or None)
-    context = {'form': form}
-    if request.method == 'POST':
-        if form.is_valid():
-            form.save()
-            return redirect('/cadastrar_paciente')
-    return render(request, "cadastrar_paciente.html", context)
+    paciente_id = request.GET.get('id')
+
+    if paciente_id:
+        paciente = Paciente.objects.get(id=paciente_id)
+        if paciente.profissional == request.user:
+            return render(request,'cadastrar_paciente.html',{'paciente':paciente})
+
+    return render(request,'cadastrar_paciente.html')
 
 @login_required(login_url='/login/')
 def list_all_pacientes(request):
@@ -67,14 +70,14 @@ def submit_login(request):
 
 @login_required(login_url='/login/')
 def list_user(request):
-    paciente = Paciente.objects.filter(profissional =request.profissional)
+    paciente = Paciente.objects.filter(profissional =request.user)
 
     return render(request,'lista_pacientes.html',{'paciente':paciente})
 
 @login_required(login_url='/login/')
 def pacientes_detalhes(request,id):
 
-    paciente=Paciente.objects.get(id=id)
+    paciente=Paciente.objects.get(id=id,profissional=request.user)
 
     return render(request,"detalhes_paciente.html",{'paciente':paciente})
 
@@ -90,8 +93,38 @@ def set_paciente(request):
     cpf_paciente = request.POST.get('cpf_paciente')
     idade = request.POST.get('idade')
     file = request.FILES.get('file')
-    prof=request.profissional
-    print('Profissional',prof)
-    paciente= Paciente.objects.create(foto=file,nome_paciente=nome_paciente,cpf_paciente=cpf_paciente,idade=idade,profissional=prof)
+    paciente_id = request.POST.get('paciente-id')
+    prof = request.user
 
-    return redirect('../all_pacientes/')
+    if paciente_id:
+        paciente = Paciente.objects.get(id=paciente_id)
+        if prof == paciente.profissional:
+            paciente.nome_paciente = nome_paciente
+            paciente.cpf_paciente = cpf_paciente
+            paciente.idade = idade
+            if file:
+                paciente.foto = file
+            paciente.save()
+    else:
+        paciente= Paciente.objects.create(foto=file,nome_paciente=nome_paciente,cpf_paciente=cpf_paciente,idade=idade,profissional=prof)
+
+    return redirect('../pacientes/')
+
+@login_required(login_url='/login/')
+def cadastrar_digital(request,id):
+  # #  mao_esq = ImpressaoDigital.mao_esquerda
+  #   img_path =request.FILES.get('file')
+  #   mao_esquerda = request.GET.get('mao_esquerda')
+  #   mao_direita = request.GET.get('mao_direita')
+  #   paciente = request.GET.get('paciente')
+  #   digital = ImpressaoDigital.objects.create(img_path=img_path,mao_esquerda=mao_esquerda,mao_direita=mao_direita,paciente=paciente)
+
+    paciente = Paciente.objects.get(id=id)
+    return render(request,'up_impressao.html',{'paciente':paciente})
+
+@login_required(login_url='/login/')
+def delete_paciente(request,id):
+    paciente=Paciente.objects.get(id=id)
+    if paciente.profissional == request.user:
+        paciente.delete()
+    return redirect('../../pacientes/')

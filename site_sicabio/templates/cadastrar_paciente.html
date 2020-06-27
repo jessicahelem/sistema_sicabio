@@ -1,31 +1,48 @@
 {%  extends 'base_paciente.html'%}
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
 
 {% block content %}
-
-    <h3 class="text-center" style="color:#01c4c4"> Cadastrar Paciente</h3>
+    {% if paciente %}
+            <h3 class="text-center" style="color:#01c4c4"> Alterar Cadastro</h3>
+    {% else %}
+        <h3 class="text-center" style="color:#01c4c4"> Cadastrar Paciente</h3>
+    {% endif %}
 
     <div class="container">
     <form enctype="multipart/form-data" action="submit" method="post">{% csrf_token %}
+            <input type="number" class="form-control" name="paciente-id" value="{{paciente.id}}"hidden>
 
         <div class="form-group">
             <label for="nome_paciente"></label>
-            <input class="form-control" name="nome_paciente" type="text" placeholder="Nome Completo">
+            <input class="form-control" name="nome_paciente" type="text" placeholder="Nome Completo" value="{{paciente.nome_paciente}}">
         </div>
         <div class="form-group">
             <label for="cpf_paciente"></label>
-            <input class="form-control" name="cpf_paciente" type="text" placeholder="CPF">
+            <input class="form-control" name="cpf_paciente" type="text" placeholder="CPF"value="{{paciente.cpf_paciente}}">
         </div>
         <div class="form-group">
             <label for="idade"></label>
-            <input class="form-control" name="idade" type="number" placeholder="Idade">
+            <input class="form-control" name="idade" type="number" placeholder="Idade"value="{{paciente.idade}}">
         </div>
-         <div class="form-group">
-            <input class="form-control-file border" name="file" type="file"  accept="image/*">
+
+        <a href="/media/{{paciente.foto}}" target="_blank" style="left:490px;position:absolute;">Foto Atual</a>
+        <div class="formWrapper1" style="top:430px;position:absolute;left:490px;">
+        <div class="upload1">
+            <div class="inputFileOverlay1">Selecione a imagem </div>
+            <input type="file" name="file" accept="image/*"/>
         </div>
-        <button type="submit" class="btn btn-primary">
+        <input class="enviar1" type="submit"accept="image/*" value="Upload">
+    </div>
+    <button class="myButton" type="submit" style="color:#fff;">
+        {% if paciente %}
+            Alterar
+        {% else %}
             Cadastrar
-        </button>
+        {% endif %}
+    </button>
+
         </form>
     </div>
 {% endblock %}

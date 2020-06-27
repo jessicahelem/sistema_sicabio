@@ -37,6 +37,9 @@ urlpatterns = [
     path('site_sicabio/cadastrar_paciente/',views.form_paciente),
     path('site_sicabio/detalhes/<id>/inserir_digital/',views.inserir_digital),
     path('site_sicabio/cadastrar_paciente/submit', views.set_paciente),
+    path('site_sicabio/detalhes/<id>/inserir_digital/upload',views.cadastrar_digital),
+    path('site_sicabio/delete/<id>/',views.delete_paciente),
 ]
+
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

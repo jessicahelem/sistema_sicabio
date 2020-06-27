@@ -50,6 +50,84 @@
   margin-right: 0;
   margin-left: -4px;
 }
+.myButton {
+	box-shadow: 0px 10px 14px -7px #276873;
+	background:linear-gradient(to bottom, #3fc5f5 5%, #408c99 100%);
+	background-color:#3fc5f5;
+	border-radius:8px;
+	display:inline-block;
+	color:#fff;
+	font-family:Arial;
+	font-size:16px;
+	font-weight:bold;
+	padding:10px 10px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #3d768a;
+	position:absolute;
+    top:500px;
+    left:600px;
+    width:120px;
+    height:50px;
+
+}
+.formWrapper1 {
+    border: 1px solid #CED4DA;
+    display: inline-block;
+    border-radius:5px;
+}
+div.upload1 {
+    width: 285px;
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+    background-color: #f2f7f9;
+    float: left;
+}
+
+div.upload1 input {
+    display: block !important;
+    width: 250px !important;
+    height: 30px !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+    cursor: text;
+}
+.upload user agent stylesheetdiv input[type="button"], .upload input[type="submit"], .upload input[type="reset"], .upload input[type="file"]::-webkit-file-upload-button, .upload button {
+    cursor: text !important;
+    /* Correção para Botáo Fantasma - forçar cursor:text */
+}
+
+.inputFileOverlay1 {
+    position: absolute;
+    width: 100%;
+    color: #00CDCF;
+    font-family: sans-serif;
+    font-weight: bold;
+    line-height: 30px;
+    text-align: center;
+}
+
+.formWrapper1 input.enviar1 {
+    float: left;
+    height: 30px;
+    background-color: #00CDCF;
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    border: 0;
+    padding: 0 17px;
+    cursor: pointer;
+}
+
+#container{
+    width: 500px;
+    height: 550px;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #408c99 5%, #3fc5f5 100%);
+	background-color:#408c99;
+}
 #cssmenu > ul > li > a {
   z-index: 2;
   padding: 10px 25px 10px 25px;

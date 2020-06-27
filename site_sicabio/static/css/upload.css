@@ -1,0 +1,48 @@
+.formWrapper {
+    border: 3px solid #00CDCF;
+    display: inline-block;
+}
+div.upload {
+    width: 200px;
+    height: 57px;
+    overflow: hidden;
+    position: relative;
+    background-color: #BFEFFF;
+    float: left;
+}
+
+div.upload input {
+    display: block !important;
+    width: 200px !important;
+    height: 57px !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+    cursor: text;
+}
+.upload user agent stylesheetdiv input[type="button"], .upload input[type="submit"], .upload input[type="reset"], .upload input[type="file"]::-webkit-file-upload-button, .upload button {
+    cursor: text !important;
+    /* Correção para Botáo Fantasma - forçar cursor:text */
+}
+
+.inputFileOverlay {
+    position: absolute;
+    width: 100%;
+    color: #00CDCF;
+    font-family: sans-serif;
+    font-weight: bold;
+    line-height: 57px;
+    text-align: center;
+}
+
+.formWrapper input.enviar {
+    float: left;
+    height: 57px;
+    background-color: #00CDCF;
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    border: 0;
+    padding: 0 17px;
+    cursor: pointer;
+}

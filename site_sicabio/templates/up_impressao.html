@@ -1,0 +1,52 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+
+
+
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'bootstrap/css/bootstrap.min.css'%}" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+     <link rel="stylesheet" href="{% static 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'%}" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <script type="text/javascript" src="{% static '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'%}"></script>
+
+    <script type="text/javascript" src="{% static 'js/bootstrap-filestyle.min.js'%}"> </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/upload.css' %}">
+
+
+
+    <title>Upload Impressão Digital</title>
+        {% include "header_menu.html" %}
+
+
+</head>
+<body>
+<div class="container mt-5">
+
+    <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+    <div class="formWrapper">
+        <div class="upload">
+            <div class="inputFileOverlay">Selecione o arquivo</div>
+            <input type="file" name="upload" accept="image/*"/>
+        </div>
+        <input class="enviar" type="submit"accept="image/*" value="Enviar →">
+    </div>
+</form>
+
+
+</div>
+        {% include "model_footer.html" %}
+
+</body>
+</html>
