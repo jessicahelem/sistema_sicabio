@@ -8,7 +8,10 @@ from django.forms import ModelForm
 class UsuarioForm(forms.ModelForm):
     Profissional._meta.get_field('password').blank = False
     Profissional._meta.get_field('CPF').blank = False
-    Profissional._meta.get_field('nome').blank = False
+    Profissional._meta.get_field('email').blank = False
+    Profissional._meta.get_field('username').blank = False
+
+
 
     class Meta:
         model = Profissional

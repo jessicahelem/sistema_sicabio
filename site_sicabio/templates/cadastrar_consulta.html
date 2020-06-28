@@ -1,0 +1,45 @@
+{%  extends 'base_consulta.html'%}
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+
+{% block content %}
+    {% if paciente %}
+            <h3 class="text-center" style="color:#01c4c4"> Alterar Cadastro</h3>
+    {% else %}
+        <h3 class="text-center" style="color:#01c4c4"> Marcar Consulta</h3>
+    {% endif %}
+
+    <div class="container">
+    <form enctype="multipart/form-data" action="submit" method="post">{% csrf_token %}
+            <input type="number" class="form-control" name="consulta-id" value="{{consulta.id}}"hidden>
+
+        <div class="form-group">
+            <select class="form-control" name="item_id" >
+                 <option >---------</option>
+                {% for c in consulta %}
+                <option value="{{c.id}}">{{c.paciente.cpf_paciente}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="data"></label>
+            <input class="form-control" name="data" type="date" placeholder="Data"value="{{consulta.data}}">
+        </div>
+        <div class="form-group">
+            <label for="horario"></label>
+            <input class="form-control" name="horario" type="time" placeholder="Horário"value="{{consulta.horario}}">
+        </div>
+
+
+    <button class="myButton" type="submit" style="color:#fff;">
+        {% if consulta %}
+            Alterar
+        {% else %}
+            Cadastrar
+        {% endif %}
+    </button>
+
+        </form>
+    </div>
+{% endblock %}

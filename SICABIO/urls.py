@@ -27,7 +27,9 @@ urlpatterns = [
     path('',views.index),
     path('site_sicabio/all_pacientes/',views.list_all_pacientes),
     path('site_sicabio/pacientes/',views.list_user),
+    path('site_sicabio/consultas/',views.list_consulta),
     path('site_sicabio/detalhes/<id>/',views.pacientes_detalhes),
+    path('site_sicabio/detalhes_consulta/<id>/',views.consulta_detalhes),
     path('cadastro/', views.cadastro, name='cadastro'),
     path('login/', views.do_login),
     path("logout/",views.logout_user),
@@ -37,8 +39,10 @@ urlpatterns = [
     path('site_sicabio/cadastrar_paciente/',views.form_paciente),
     path('site_sicabio/detalhes/<id>/inserir_digital/',views.inserir_digital),
     path('site_sicabio/cadastrar_paciente/submit', views.set_paciente),
+    path('site_sicabio/cadastrar_consulta/submit',views.set_consulta),
     path('site_sicabio/detalhes/<id>/inserir_digital/upload',views.cadastrar_digital),
     path('site_sicabio/delete/<id>/',views.delete_paciente),
+    path('site_sicabio/cadastrar_consulta/',views.form_consulta),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

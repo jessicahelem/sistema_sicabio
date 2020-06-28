@@ -81,10 +81,10 @@ class Paciente(models.Model):
 
 class Consulta(models.Model):
     # id_consulta = models.IntergerField(primary_key=True, on_delete=models.CASCADE)
-    id_profissional = models.ForeignKey('Profissional', on_delete=models.CASCADE, related_name='consulta')
     data = models.DateField(auto_now=False, auto_now_add=False)
     horario = models.TimeField(auto_now=False)
-    id_paciente = models.ForeignKey('Paciente', on_delete=models.CASCADE, related_name='consulta')
+    paciente = models.ForeignKey('Paciente', on_delete=models.CASCADE, related_name='consulta')
+    profissional= models.ForeignKey('Profissional', on_delete=models.CASCADE, related_name='consulta')
 
     def __str__(self):
         return str(self.id)

@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.contrib.auth import logout, login
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.decorators.csrf import csrf_protect
 from rest_framework.compat import authenticate
 
@@ -27,6 +27,17 @@ def form_paciente(request):
             return render(request,'cadastrar_paciente.html',{'paciente':paciente})
 
     return render(request,'cadastrar_paciente.html')
+
+@csrf_protect
+@login_required(login_url='/login/')
+def form_consulta(request):
+    consulta_id = request.GET.get('id')
+    if consulta_id:
+        consulta = Consulta.objects.get(id=consulta_id)
+        if consulta.profissional == request.user:
+            return render(request,'cadastrar_consulta.html',{'consulta':consulta})
+
+    return render(request,'cadastrar_consulta.html')
 
 @login_required(login_url='/login/')
 def list_all_pacientes(request):
@@ -75,12 +86,21 @@ def list_user(request):
     return render(request,'lista_pacientes.html',{'paciente':paciente})
 
 @login_required(login_url='/login/')
+def list_consulta(request):
+    consulta = Consulta.objects.filter(profissional = request.user)
+    return render(request,'lista_consultas.html',{'consulta':consulta})
+
+@login_required(login_url='/login/')
 def pacientes_detalhes(request,id):
 
     paciente=Paciente.objects.get(id=id,profissional=request.user)
 
     return render(request,"detalhes_paciente.html",{'paciente':paciente})
 
+@login_required(login_url='/login/')
+def consulta_detalhes(request,id):
+    consulta = Consulta.objects.get(id=id,profissional=request.user)
+    return render(request,'detalhes_consulta.html',{'consulta':consulta})
 @login_required(login_url='/login/')
 def inserir_digital(request,id):
     paciente = Paciente.objects.get(id=id)
@@ -128,3 +148,30 @@ def delete_paciente(request,id):
     if paciente.profissional == request.user:
         paciente.delete()
     return redirect('../../pacientes/')
+
+
+@login_required(login_url='/login/')
+def set_consulta(request):
+
+    paciente = Paciente.objects.all()
+    data = request.POST.get('data')
+    horario = request.POST.get('horario')
+    consulta_id = request.POST.get('consulta-id')
+
+    prof = request.user
+
+    if consulta_id:
+        consulta = Consulta.objects.get(id=consulta_id)
+        if prof == consulta.profissional:
+            consulta.paciente = paciente
+            consulta.data = data
+            consulta.horario = horario
+
+    else:
+
+        consulta= Consulta.objects.create(data=data,horario=horario,paciente=paciente,profissional=prof)
+       # else:
+   #     print('Paciente não existe, por favor realiza o cadastro do paciente.')
+   #     return redirect('../../site_sicabio/cadastrar_paciente')
+
+    return redirect('../cadastrar_consulta/')
