@@ -26,15 +26,26 @@
             <label for="idade"></label>
             <input class="form-control" name="idade" type="number" placeholder="Idade"value="{{paciente.idade}}">
         </div>
+        {% if paciente.foto %}
+            <a href="/media/{{paciente.foto}}" target="_blank" style="left:490px;position:absolute;">Foto Atual</a>
+                <div class="formWrapper1" style="top:430px;position:absolute;left:490px;">
+                <div class="upload1">
+                    <div class="inputFileOverlay1">Selecione a imagem </div>
+                        <input type="file" name="file" accept="image/*"/>
+                </div>
+                <input class="enviar1" type="submit"accept="image/*" value="Upload">
 
-        <a href="/media/{{paciente.foto}}" target="_blank" style="left:490px;position:absolute;">Foto Atual</a>
-        <div class="formWrapper1" style="top:430px;position:absolute;left:490px;">
-        <div class="upload1">
-            <div class="inputFileOverlay1">Selecione a imagem </div>
-            <input type="file" name="file" accept="image/*"/>
-        </div>
-        <input class="enviar1" type="submit"accept="image/*" value="Upload">
-    </div>
+                </div>
+         {% else %}
+            <div class="formWrapper1" style="top:430px;position:absolute;left:490px;">
+                <div class="upload1">
+                    <div class="inputFileOverlay1">Selecione a imagem </div>
+                        <input type="file" name="file" accept="image/*"/>
+                </div>
+                <input class="enviar1" type="submit"accept="image/*" value="Upload">
+
+                </div>
+        {% endif %}
     <button class="myButton" type="submit" style="color:#fff;">
         {% if paciente %}
             Alterar

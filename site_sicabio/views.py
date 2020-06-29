@@ -28,17 +28,6 @@ def form_paciente(request):
 
     return render(request,'cadastrar_paciente.html')
 
-@csrf_protect
-@login_required(login_url='/login/')
-def form_consulta(request):
-    consulta_id = request.GET.get('id')
-    if consulta_id:
-        consulta = Consulta.objects.get(id=consulta_id)
-        if consulta.profissional == request.user:
-            return render(request,'cadastrar_consulta.html',{'consulta':consulta})
-
-    return render(request,'cadastrar_consulta.html')
-
 @login_required(login_url='/login/')
 def list_all_pacientes(request):
     paciente= Paciente.objects.filter()
@@ -149,11 +138,16 @@ def delete_paciente(request,id):
         paciente.delete()
     return redirect('../../pacientes/')
 
+@login_required(login_url='/login/')
+def delete_consulta(request,id):
+    consulta=Consulta.objects.get(id=id)
+    if consulta.profissional == request.user:
+       consulta.delete()
+    return redirect('../../consultas/')
 
 @login_required(login_url='/login/')
-def set_consulta(request):
-
-    paciente = Paciente.objects.all()
+def set_consulta(request,id):
+    paciente = Paciente.objects.get(id=id)
     data = request.POST.get('data')
     horario = request.POST.get('horario')
     consulta_id = request.POST.get('consulta-id')
@@ -170,8 +164,20 @@ def set_consulta(request):
     else:
 
         consulta= Consulta.objects.create(data=data,horario=horario,paciente=paciente,profissional=prof)
-       # else:
-   #     print('Paciente não existe, por favor realiza o cadastro do paciente.')
-   #     return redirect('../../site_sicabio/cadastrar_paciente')
 
-    return redirect('../cadastrar_consulta/')
+    return redirect('../../../../site_sicabio/consultas/',{'paciente':paciente})
+
+@csrf_protect
+@login_required(login_url='/login/')
+def form_consulta(request,id):
+    paciente_id = Paciente.objects.get(id=id)
+    consulta_id = request.GET.get('id')
+    if consulta_id:
+         consulta = Consulta.objects.get(id=consulta_id)
+
+         if consulta.profissional == request.user:
+             return render(request,'cadastrar_consulta.html',{'consulta':consulta})
+
+    return render(request,'cadastrar_consulta.html',{'paciente_id':paciente_id})
+
+

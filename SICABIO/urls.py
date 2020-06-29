@@ -42,7 +42,14 @@ urlpatterns = [
     path('site_sicabio/cadastrar_consulta/submit',views.set_consulta),
     path('site_sicabio/detalhes/<id>/inserir_digital/upload',views.cadastrar_digital),
     path('site_sicabio/delete/<id>/',views.delete_paciente),
-    path('site_sicabio/cadastrar_consulta/',views.form_consulta),
+    path('site_sicabio/delete_consulta/<id>/',views.delete_consulta),
+    path('site_sicabio/detalhes/<id>/cadastrar_consulta/',views.form_consulta),
+    path('site_sicabio/detalhes/<id>/cadastrar_consulta/submit',views.set_consulta),
+    path('site_sicabio/detalhes_consulta/<id>/cadastrar_consulta/',views.form_consulta),
+    path('site_sicabio/detalhes_consulta/<id>/cadastrar_consulta/submit',views.set_consulta),
+    # path('site_sicabio/cadastrar_consulta/', views.form_consulta),
+    # path('site_sicabio/detalhes_consulta/<id>/alterar_consulta/', views.form_consulta),
+
 ]
 
 urlpatterns += staticfiles_urlpatterns()
