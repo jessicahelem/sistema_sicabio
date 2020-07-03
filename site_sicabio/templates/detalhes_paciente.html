@@ -16,8 +16,6 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.0.1">
 
-    <link href="{% static 'vendor/bootstrap/css/bootstrap.css'%}" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
 
@@ -31,7 +29,13 @@
 
 </head>
 
+<style>
 
+    .a{
+        color:00cdcf;
+    }
+
+</style>
 
 <body>
  <div class="modal fade" id="modal_confirm">
@@ -71,7 +75,7 @@
              <div class="container text-center">
                  <h5 style="font-weight:bold">Nome Completo:</h5> <p style="text-transform: uppercase;">{{paciente.nome_paciente}}</p>
                  <h5 style="font-weight:bold">CPF:</h5> <p>{{paciente.cpf_paciente}}</p>
-                 <h5 style="font-weight:bold">Idade:</h5> <p>{{paciente.idade}}</p>
+                 <h5 style="font-weight:bold">Data de Nascimento:</h5> <p>{{paciente.dt_nascimento}}</p>
 
 
          </div>
@@ -107,24 +111,42 @@
     </div>
  <div class="row">
      <div class="column">
-         <a href="../{{paciente.id}}/inserir_digital">
-                <div id="menu_cad_digi" class="card border border-info text-center"style="margin-top:-200px;">
-                    <div class="container text-center">
-                        <h5  style="font-weight:bold; bottom:20px;">Inserir Impressão Digital</h5>
+<!--       -->
+                 <div class="dropup">
+        <div id="menu_cad_digi" class="card border border-info text-center" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false " cl style="margin-top:-200px;">
+                   <div id="img_di"align="center" class="image" style="margin-top:4px;">
+                    <img  src="{% static 'images/icons/fing.png' %}" alt="Impressão Digital">
+                    </div>
+            <div class="container text-center">
+                        <a href="#" ><h5   style="font-weight:bold; bottom:20px;"> Impressão Digital</h5></a>
 
 
 
     </div>
             </div>
-         </a>
-     </div>
 
 
+
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="../{{paciente.id}}/inserir_digital" style="color:#00CDCF;font-weight:bold;">Inserir</a>
+    <a class="dropdown-item" href="../{{paciente.id}}/impressoes" style="color:#00CDCF;font-weight:bold;">Listar</a>
+  </div>
+
+
+ </div>
+<!--  </a>-->
+
+ </div>
 
   <div class="column">
+
       <a href="#">
       <div id="menu_excluir" class="card border border-info text-center"style="margin-top:-200px;" data-toggle="modal"data-target="#modal_confirm">
-                    <div class="container text-center">
+          <div id="img_lix"align="center" class="image" style="margin-top:4px;">
+                    <img  src="{% static 'images/icons/lixeira.png' %}" alt="Lixeira">
+                    </div>
+          <div class="container text-center">
                         <h5  style="font-weight:bold; bottom:20px;">Excluir Paciente</h5>
 
 

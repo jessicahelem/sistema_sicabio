@@ -55,11 +55,12 @@ class Profissional(PermissionsMixin,AbstractBaseUser):
 
 
 
-class ImpressaoDigital(models.Model):
+class Impressao(models.Model):
     img_path = models.ImageField(upload_to='impressoes', null=True)
-    mao_esquerda = models.ForeignKey('MaoEsquerda', on_delete=models.CASCADE, related_name='im_digital')
-    mao_direita = models.ForeignKey('MaoDireita', on_delete=models.CASCADE, related_name='im_digital')
+    mao = models.CharField(max_length=200,null=False)
     paciente = models.ForeignKey('Paciente', on_delete=models.CASCADE, related_name='im_digital')
+   # padrao = models.ForeignKey('Padrao',on_delete=models.CASCADE,null=True,default=True)
+    dedo = models.CharField(max_length=200, null=False)
 
     def __str__(self):
         return str(self.id)
@@ -70,7 +71,7 @@ class Paciente(models.Model):
     foto = models.ImageField(upload_to='pacientes', null=True, default='avatar.png',blank='avatar.png')
     nome_paciente = models.CharField(max_length=100, null=False)
     cpf_paciente = models.CharField(max_length=12, null=False,unique=True)
-    idade = models.IntegerField(null=False, default=False)
+    dt_nascimento = models.DateField(auto_now = False,null=False)
     profissional = models.ForeignKey('Profissional',on_delete=models.CASCADE,null=False,default=False)
     # imp_digital = models.ForeignKey('ImpressaoDigital',on_delete=models.CASCADE,related_name='imp_digital',default=True,null=True)
     # resultado_perfil = models.ForeignKey('Analise',on_delete=models.CASCADE,related_name='imp_digital',default=True,null=True)
@@ -81,7 +82,7 @@ class Paciente(models.Model):
 
 class Consulta(models.Model):
     # id_consulta = models.IntergerField(primary_key=True, on_delete=models.CASCADE)
-    data = models.DateField(auto_now=False, auto_now_add=False)
+    data = models.DateField(auto_now=False)
     horario = models.TimeField(auto_now=False)
     paciente = models.ForeignKey('Paciente', on_delete=models.CASCADE, related_name='consulta')
     profissional= models.ForeignKey('Profissional', on_delete=models.CASCADE, related_name='consulta')
@@ -124,23 +125,3 @@ class Padrao(models.Model):
                )
     padroes = models.CharField(max_length=1, choices=Padroes)
 
-class Dedos(models.Model):
-    Dedos = (('P','Polegar'),
-             ('I','Indicador'),
-             ('ME','Médio'),
-             ('A','Anular'),
-             ('MI','Mínimo'))
-    dedos = models.CharField(max_length=2,choices=Dedos)
-class MaoEsquerda(models.Model):
-    nome_dedo = models.ForeignKey('Dedos',on_delete=models.CASCADE,related_name='mao_esquerda',default=False,null=False)
-    padrao = models.ForeignKey('Padrao', on_delete=models.CASCADE, related_name='mao_esquerda',default=True,null=True)
-
-    def __str__(self):
-        return str(self.id)
-
-class MaoDireita(models.Model):
-    nome_dedo = models.ForeignKey('Dedos',on_delete=models.CASCADE,related_name='mao_direita',default=False,null=False)
-    padrao = models.ForeignKey('Padrao', on_delete=models.CASCADE, related_name='mao_direita',default=True,null=True)
-
-    def __str__(self):
-        return str(self.id)

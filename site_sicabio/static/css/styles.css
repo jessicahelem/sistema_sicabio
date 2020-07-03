@@ -30,7 +30,7 @@
   line-height: 2;
 }
 #cssmenu ul {
-  background: #ffffff;
+  background: #00CDCF;
 }
 #cssmenu > ul > li {
   float: left;
@@ -130,11 +130,11 @@ div.upload1 input {
 }
 #cssmenu > ul > li > a {
   z-index: 2;
-  padding: 10px 25px 10px 25px;
+  padding: 30px 30px 10px 25px;
   font-size: 15px;
   font-weight: 400;
   text-decoration: none;
-  color: #00CDCF;
+    color: #f2efef;
   -webkit-transition: all .2s ease;
   -moz-transition: all .2s ease;
   -ms-transition: all .2s ease;
@@ -145,7 +145,11 @@ div.upload1 input {
 #cssmenu > ul > li.active > a,
 #cssmenu > ul > li:hover > a,
 #cssmenu > ul > li > a:hover {
-  color: #ffffff;
+ color: #fff;
+}
+.li{
+ background-color: #e5e0e0;
+
 }
 #cssmenu > ul > li > a:after {
   position: absolute;
@@ -167,9 +171,10 @@ div.upload1 input {
   -moz-transform-origin: bottom;
   transform: perspective(5px) rotateX(2deg);
   transform-origin: bottom;
+
 }
 #cssmenu > ul > li.active > a:after,
 #cssmenu > ul > li:hover > a:after,
 #cssmenu > ul > li > a:hover:after {
- background: #00CDCF;
+
 }

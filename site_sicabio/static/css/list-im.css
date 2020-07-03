@@ -1,0 +1,68 @@
+
+#btn-info{
+    background: #01a8c1;
+    background: -moz-linear-gradient(-45deg, #01a8c1 0%, #2adbf7 50%, #00b5d1 51%, #0aafc9 71%, #0599b1 100%);
+    background: -webkit-linear-gradient(-45deg, #01a8c1 0%,#2adbf7 50%,#00b5d1 51%,#0aafc9 71%,#0599b1 100%);
+    background: linear-gradient(135deg, #01a8c1 0%,#2adbf7 50%,#00b5d1 51%,#0aafc9 71%,#0599b1 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01a8c1', endColorstr='#0599b1',GradientType=1 );
+    background-size: 400% 400%;
+    -webkit-animation: AnimationName 3s ease infinite;
+    -moz-animation: AnimationName 3s ease infinite;
+    animation: AnimationName 3s ease infinite;
+    -webkit-animation: AnimationName 3s ease infinite;
+    -moz-animation: AnimationName 3s ease infinite;
+    animation: AnimationName 3s ease infinite;
+    border: medium none;
+
+    color:#fff;
+    left: 1090px;
+    position:relative;
+     width: 70px;
+  height: 70px;
+  padding: 8px 10px ;
+  padding-top: 5px;
+  font-size: 20px;
+  line-height: 1.33;
+  border-radius: 35px;
+  text-align: center;
+  top: 430px;
+
+}
+
+@-webkit-keyframes AnimationName {
+    0%{
+        background-position:0% 31%
+    }
+    50%{
+        background-position:100% 70%
+    }
+    100%{
+        background-position:0% 31%
+    }
+}
+@-moz-keyframes AnimationName {
+    0%{
+        background-position:0% 31%
+    }
+    50%{
+        background-position:100% 70%
+    }
+    100%{
+        background-position:0% 31%
+    }
+}
+@keyframes AnimationName {
+    0%{
+        background-position:0% 31%
+    }
+    50%{
+        background-position:100% 70%
+    }
+    100%{
+        background-position:0% 31%
+    }
+}
+.material-icons{
+    font-size:40px;
+    margin-top:8px;
+}

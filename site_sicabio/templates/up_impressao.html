@@ -1,19 +1,9 @@
+{% extends 'base_impressao.html' %}
 {% load staticfiles %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v4.0.1">
 
 
-
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
-
-    <!-- Bootstrap core CSS -->
+<head>    <!-- Bootstrap core CSS -->
 <link href="{% static 'bootstrap/css/bootstrap.min.css'%}" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
      <link rel="stylesheet" href="{% static 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'%}" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
@@ -26,27 +16,61 @@
 
 
 
-    <title>Upload Impressão Digital</title>
         {% include "header_menu.html" %}
 
 
 </head>
-<body>
-<div class="container mt-5">
 
-    <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
-    <div class="formWrapper">
-        <div class="upload">
-            <div class="inputFileOverlay">Selecione o arquivo</div>
-            <input type="file" name="upload" accept="image/*"/>
+{% block content %}
+  {% if impressao %}
+            <h3 class="text-center" style="color:#01c4c4"> Alterar Impressão Digital</h3>
+    {% else %}
+        <h3 class="text-center" style="color:#01c4c4">Cadastrar Impressão Digital</h3>
+    {% endif %}
+
+ <div class="container">
+    <form enctype="multipart/form-data" action="submit" method="post">{% csrf_token %}
+            <input type="number" class="form-control" name="impressao-id" value="{{impressao.id}}"hidden>
+
+        <div class="form-group">
+            <label for="mao"></label>
+            <input class="form-control" name="mao" type="text" placeholder="Mão" value="{{impressao.mao}}" >
         </div>
-        <input class="enviar" type="submit"accept="image/*" value="Enviar →">
+        <div class="form-group">
+            <label for="dedo"></label>
+            <input class="form-control" name="dedo" type="text" placeholder="Dedo"value="{{impressao.dedo}}">
+        </div>
+
+        {% if impressao.img_path %}
+            <a href="/media/{{impressao.img_path}}" target="_blank" style="left:360px;position:absolute;">Foto Atual</a>
+                <div class="formWrapper1" style="top:430px;position:absolute;left:400px;">
+                <div class="upload1">
+                    <div class="inputFileOverlay1">Selecione a imagem </div>
+                        <input type="file" name="file" accept="image/*"/>
+                </div>
+                <input class="enviar1" type="submit"accept="image/*" value="Upload">
+
+                </div>
+         {% else %}
+            <label style="font-weight:bold; left:490px;position:absolute;">Impressão Digital</label>
+            <div class="formWrapper1" style="top:360px;position:absolute;left:490px;">
+                <div class="upload1">
+                    <div class="inputFileOverlay1">Selecione a imagem </div>
+                        <input type="file" name="file" accept="image/*"/>
+                </div>
+                <input class="enviar1" type="submit"accept="image/*" value="Upload">
+
+                </div>
+        {% endif %}
+    <button class="myButton" type="submit" style="color:#fff;">
+        {% if impressao %}
+            Alterar
+        {% else %}
+            Cadastrar
+        {% endif %}
+    </button>
+
+        </form>
     </div>
-</form>
 
-
-</div>
-        {% include "model_footer.html" %}
-
-</body>
-</html>
+{% endblock %}

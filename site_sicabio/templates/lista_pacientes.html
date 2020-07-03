@@ -3,8 +3,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link href="{% static 'bootstrap/css/bootstrap.min.css'%}" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
 
-        {% include "model_header.html" %}
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.css'%}" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
+
+     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link href="{% static 'bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
 
      {% include "header_menu.html" %}
 
@@ -78,13 +94,13 @@
 }
 
 </style>
-    <div id="divBusca">
-        <div class="img my-2">
-        <img  src="{% static 'images/search.png' %}" alt="Buscar..."/>
-        </div>
-            <input type="text" id="txtBusca"  placeholder="Buscar..."/>
-        <button id="btnBusca">Buscar</button>
-    </div>
+<!--    <div id="divBusca">-->
+<!--        <div class="img my-2">-->
+<!--        <img  src="{% static 'images/search.png' %}" alt="Buscar..."/>-->
+<!--        </div>-->
+<!--            <input type="text" id="txtBusca"  placeholder="Buscar..."/>-->
+<!--        <button id="btnBusca">Buscar</button>-->
+<!--    </div>-->
     <div class="container mt-4 mb-4">
 
         <div class="row">
@@ -93,7 +109,7 @@
                 <div class="polaroid">
                    <a class="img" href="../detalhes/{{p.id}}"> <img  src="{{p.foto.url}}" style="width:100%;height:150px;"> </a>
                     <div  class="container_txt" style="text-align:center">
-                        <h6> {{ p.nome_paciente }}</h6>
+                        <p style="font-weight:bold; text-transform:uppercase;"> {{ p.nome_paciente }}</p>
                     </div>
 
 

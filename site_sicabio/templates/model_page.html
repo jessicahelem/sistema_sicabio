@@ -12,18 +12,22 @@
 
 <style  type="text/css">
  a:link{
-    color:#01c4c4;
-  }
-  a:hover{
+    color:#00CDCF;
     text-decoration:none;
+  }
+ a :hover{
+
     color:#00CDCF;
 }
-   a{
-   color:#01c4c4;}
+   #sair{
+      color:#fff;
+
+   margin-left:1300px;
+   position:absolute;
+
+   }
 </style>
- <div class="text-right mr-10">
-            <a href="/logout/">Sair</a>
-        </div>
+            <a id="sair" href="/logout/">Sair</a>
 <section id="banner">
 
 				<h2><strong>Bem Vindo!</strong><br> SICABIO - SISTEMA DE IDENTIFICAÇÃO DAS CAPACIDADES BIOMOTORAS</h2>
@@ -52,13 +56,13 @@
 							<div class="image2">
 							<img src="{% static 'images/icons/consulta.png' %}" alt="IMG">
 								</div>
-							<a class="consulta" href="site_sicabio/consultas/"> <h5 style="margin-top:18px;">Marcar consultas</h5></a>
+							<a class="consulta" href="site_sicabio/consultas/"> <h5 style="margin-top:18px;">Consultas</h5></a>
 
 							<p>Sed tempus feugiat adipiscing nisl cursus aliquam dolore.</p>
 						</div>
 						<div class="feature">
 							<div class="img_3">
-							<img src="{% static 'images/icons/finger1.png' %}" alt="IMG">
+							<img src="{% static 'images/icons/finger1.png' %}" alt="Impressão Digital">
 							</div>
 								<a class="analise" href="#" ><h5 style="margin-top:10px;">Análise Dermatoglífica</h5> </a>
 							<p>Sed tempus feugiat adipiscing nisl cursus aliquam dolore.</p>

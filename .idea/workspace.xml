@@ -2,18 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bf7b394-e27d-4d4a-b648-a99b915c223b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/site_sicabio/static/css/detalhes_c.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/site_sicabio/static/css/detalhes_p.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/site_sicabio/static/css/list-im.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/site_sicabio/templates/base_impressao.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/site_sicabio/templates/detalhes_impressoes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/site_sicabio/templates/lista_impressoes.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SICABIO/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/SICABIO/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site_sicabio/templates/cadastrar_consulta.html" beforeDir="false" afterPath="$PROJECT_DIR$/site_sicabio/templates/cadastrar_consulta.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_sicabio/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/site_sicabio/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_sicabio/migrations/0002_auto_20200621_1508.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_sicabio/migrations/0003_profissional_is_staff.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_sicabio/migrations/0004_profissional_paciente.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_sicabio/migrations/0005_remove_profissional_paciente.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_sicabio/migrations/0006_paciente_profissional.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_sicabio/migrations/0007_auto_20200625_1738.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_sicabio/migrations/0008_auto_20200625_2257.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_sicabio/migrations/0009_auto_20200625_2305.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_sicabio/migrations/0010_auto_20200625_2322.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_sicabio/migrations/0011_auto_20200627_1335.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_sicabio/migrations/0012_auto_20200627_1942.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_sicabio/migrations/0013_auto_20200627_2005.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_sicabio/migrations/0014_auto_20200627_2005.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_sicabio/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/site_sicabio/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_sicabio/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/site_sicabio/static/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site_sicabio/templates/cadastrar_paciente.html" beforeDir="false" afterPath="$PROJECT_DIR$/site_sicabio/templates/cadastrar_paciente.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site_sicabio/templates/detalhes_consulta.html" beforeDir="false" afterPath="$PROJECT_DIR$/site_sicabio/templates/detalhes_consulta.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site_sicabio/templates/detalhes_paciente.html" beforeDir="false" afterPath="$PROJECT_DIR$/site_sicabio/templates/detalhes_paciente.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_sicabio/templates/header_menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/site_sicabio/templates/header_menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_sicabio/templates/inserir_digital.html" beforeDir="false" afterPath="$PROJECT_DIR$/site_sicabio/templates/inserir_digital.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site_sicabio/templates/lista_consultas.html" beforeDir="false" afterPath="$PROJECT_DIR$/site_sicabio/templates/lista_consultas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_sicabio/templates/lista_pacientes.html" beforeDir="false" afterPath="$PROJECT_DIR$/site_sicabio/templates/lista_pacientes.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site_sicabio/templates/menu_consulta.html" beforeDir="false" afterPath="$PROJECT_DIR$/site_sicabio/templates/menu_consulta.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site_sicabio/templates/model_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/site_sicabio/templates/model_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_sicabio/templates/up_impressao.html" beforeDir="false" afterPath="$PROJECT_DIR$/site_sicabio/templates/up_impressao.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site_sicabio/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/site_sicabio/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,24 +44,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/site_sicabio/templates/lista_consultas.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="76" column="13" lean-forward="true" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/site_sicabio/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="86" column="61" selection-start-line="86" selection-start-column="53" selection-end-line="86" selection-end-column="61" />
+            <state relative-caret-position="212">
+              <caret line="103" column="35" selection-start-line="103" selection-start-column="35" selection-end-line="103" selection-end-column="35" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -50,22 +57,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/site_sicabio/static/css/detalhes_c.css">
+        <entry file="file://$PROJECT_DIR$/site_sicabio/templates/detalhes_impressoes.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/site_sicabio/templates/detalhes_consulta.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="94" column="43" selection-start-line="94" selection-start-column="43" selection-end-line="94" selection-end-column="43" />
+            <state relative-caret-position="27">
+              <caret line="80" column="27" selection-start-line="80" selection-end-line="81" />
               <folding>
                 <element signature="n#style#0;n#h2#0;n#head#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#1931#1938#1" expanded="true" />
                 <element signature="n#style#0;n#b#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -87,10 +84,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SICABIO/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="30" column="37" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="37" />
+            <state relative-caret-position="189">
+              <caret line="32" column="67" selection-start-line="32" selection-start-column="67" selection-end-line="32" selection-end-column="67" />
               <folding>
                 <element signature="e#631#663#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/site_sicabio/templates/lista_impressoes.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="41" column="94" selection-start-line="41" selection-start-column="94" selection-end-line="41" selection-end-column="94" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -108,36 +120,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>image</find>
-      <find>a</find>
-      <find>style</find>
+      <find>form_p</find>
+      <find>Impressao</find>
+      <find>horario</find>
+      <find>dedos</find>
+      <find>file</find>
+      <find>IM</find>
+      <find>if file</find>
+      <find>dedo</find>
+      <find>idad</find>
+      <find>idade</find>
+      <find>up</find>
+      <find>hover</find>
+      <find>text_busca</find>
+      <find>txtBusca</find>
+      <find>.a</find>
       <find>form</find>
-      <find>componentes</find>
-      <find>default</find>
-      <find>do_login</find>
-      <find>admin</find>
-      <find>user</find>
-      <find>cadastro</find>
-      <find>login</find>
-      <find>color</find>
-      <find>middleware</find>
-      <find>wsgi</find>
-      <find>auth_user_model</find>
-      <find>cabecalho</find>
-      <find>background</find>
-      <find>#f0f9ff</find>
-      <find>media</find>
-      <find>impres</find>
-      <find>consulta</find>
-      <find>tela_principal</find>
-      <find>submit</find>
-      <find>filter</find>
-      <find>list_user</find>
-      <find>form_consulta</find>
-      <find>modal_confirm</find>
-      <find>modal</find>
-      <find>paciente</find>
-      <find>delete</find>
+      <find>mao</find>
+      <find>me</find>
+      <find>set</find>
+      <find>MAO</find>
+      <find>list</find>
+      <find>ImpressaoDigital</find>
+      <find>impressaodigital</find>
+      <find>container_txt</find>
+      <find>impressao</find>
+      <find>alter</find>
+      <find>redirect</find>
+      <find>detalhes_im</find>
+      <find>lista</find>
+      <find>detalhes</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -146,10 +158,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/site_sicabio/static/js/main.js" />
-        <option value="$PROJECT_DIR$/site_sicabio/form.py" />
-        <option value="$PROJECT_DIR$/site_sicabio/url.py" />
-        <option value="$PROJECT_DIR$/site_sicabio/migrations/0005_profissional_user.py" />
         <option value="$PROJECT_DIR$/site_sicabio/migrations/0006_auto_20200610_1131.py" />
         <option value="$PROJECT_DIR$/site_sicabio/static/assets/css/main.css" />
         <option value="$PROJECT_DIR$/site_sicabio/templates/index.html" />
@@ -164,7 +172,6 @@
         <option value="$PROJECT_DIR$/site_sicabio/static/css/signin.css" />
         <option value="$PROJECT_DIR$/site_sicabio/templates/model_footer.html" />
         <option value="$PROJECT_DIR$/site_sicabio/static/css/estilo.css" />
-        <option value="$PROJECT_DIR$/site_sicabio/admin.py" />
         <option value="$PROJECT_DIR$/site_sicabio/mixins.py" />
         <option value="$PROJECT_DIR$/site_sicabio/templates/login_form.html" />
         <option value="$PROJECT_DIR$/site_sicabio/templates/login.html" />
@@ -173,36 +180,40 @@
         <option value="$PROJECT_DIR$/SICABIO/settings.py" />
         <option value="$PROJECT_DIR$/site_sicabio/static/css/main.css" />
         <option value="$PROJECT_DIR$/site_sicabio/static/css/cadastro_prof.css" />
-        <option value="$PROJECT_DIR$/site_sicabio/templates/inserir_digital.html" />
-        <option value="$PROJECT_DIR$/site_sicabio/templates/lista_pacientes.html" />
         <option value="$PROJECT_DIR$/site_sicabio/templates/model_header.html" />
-        <option value="$PROJECT_DIR$/site_sicabio/templates/up_impressao.html" />
         <option value="$PROJECT_DIR$/site_sicabio/static/css/up_cad.css" />
         <option value="$PROJECT_DIR$/site_sicabio/static/css/upload.css" />
-        <option value="$PROJECT_DIR$/site_sicabio/static/css/styles.css" />
         <option value="$PROJECT_DIR$/site_sicabio/templates/base_paciente.html" />
         <option value="$PROJECT_DIR$/site_sicabio/forms.py" />
         <option value="$PROJECT_DIR$/site_sicabio/templates/cadastro.html" />
-        <option value="$PROJECT_DIR$/site_sicabio/templates/header_menu.html" />
         <option value="$PROJECT_DIR$/site_sicabio/templates/form_consulta.html" />
-        <option value="$PROJECT_DIR$/site_sicabio/models.py" />
         <option value="$PROJECT_DIR$/site_sicabio/static/css/detalhes_p.css" />
-        <option value="$PROJECT_DIR$/site_sicabio/templates/cadastrar_paciente.html" />
-        <option value="$PROJECT_DIR$/site_sicabio/templates/detalhes_paciente.html" />
-        <option value="$PROJECT_DIR$/site_sicabio/templates/model_page.html" />
-        <option value="$PROJECT_DIR$/site_sicabio/templates/menu_consulta.html" />
         <option value="$PROJECT_DIR$/site_sicabio/static/css/detalhes_c.css" />
         <option value="$PROJECT_DIR$/site_sicabio/templates/cadastrar_consulta.html" />
-        <option value="$PROJECT_DIR$/site_sicabio/templates/lista_consultas.html" />
-        <option value="$PROJECT_DIR$/site_sicabio/views.py" />
-        <option value="$PROJECT_DIR$/SICABIO/urls.py" />
         <option value="$PROJECT_DIR$/site_sicabio/templates/detalhes_consulta.html" />
+        <option value="$PROJECT_DIR$/site_sicabio/static/css/list-im.css" />
+        <option value="$PROJECT_DIR$/site_sicabio/static/css/styles.css" />
+        <option value="$PROJECT_DIR$/site_sicabio/templates/lista_pacientes.html" />
+        <option value="$PROJECT_DIR$/site_sicabio/templates/inserir_digital.html" />
+        <option value="$PROJECT_DIR$/site_sicabio/templates/detalhes_paciente.html" />
+        <option value="$PROJECT_DIR$/site_sicabio/templates/menu_consulta.html" />
+        <option value="$PROJECT_DIR$/site_sicabio/templates/cadastrar_paciente.html" />
+        <option value="$PROJECT_DIR$/site_sicabio/templates/model_page.html" />
+        <option value="$PROJECT_DIR$/site_sicabio/templates/lista_consultas.html" />
+        <option value="$PROJECT_DIR$/site_sicabio/templates/header_menu.html" />
+        <option value="$PROJECT_DIR$/site_sicabio/models.py" />
+        <option value="$PROJECT_DIR$/site_sicabio/admin.py" />
+        <option value="$PROJECT_DIR$/site_sicabio/templates/base_impressao.html" />
+        <option value="$PROJECT_DIR$/site_sicabio/templates/up_impressao.html" />
+        <option value="$PROJECT_DIR$/SICABIO/urls.py" />
+        <option value="$PROJECT_DIR$/site_sicabio/templates/detalhes_impressoes.html" />
+        <option value="$PROJECT_DIR$/site_sicabio/templates/lista_impressoes.html" />
+        <option value="$PROJECT_DIR$/site_sicabio/views.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="-107" />
-    <option name="y" value="265" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-2" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
@@ -239,6 +250,12 @@
               <item name="sistema_sicabio" type="b2602c69:ProjectViewProjectNode" />
               <item name="sistema_sicabio" type="462c0819:PsiDirectoryNode" />
               <item name="site_sicabio" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sistema_sicabio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sistema_sicabio" type="462c0819:PsiDirectoryNode" />
+              <item name="site_sicabio" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -253,6 +270,7 @@
               <item name="sistema_sicabio" type="462c0819:PsiDirectoryNode" />
               <item name="site_sicabio" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -260,7 +278,7 @@
               <item name="sistema_sicabio" type="462c0819:PsiDirectoryNode" />
               <item name="site_sicabio" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sistema_sicabio" type="b2602c69:ProjectViewProjectNode" />
@@ -281,19 +299,19 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\jessi\Desktop\sistema_sicabio\site_sicabio\static" />
-      <recent name="C:\Users\jessi\Desktop\sistema_sicabio\site_sicabio" />
-      <recent name="C:\Users\jessi\Desktop\sistema_sicabio\templates" />
-      <recent name="C:\Users\jessi\Desktop\sistema_sicabio\SICABIO\static" />
-      <recent name="C:\Users\jessi\Desktop\sistema_sicabio\site_sicabio\templates" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\jessi\Desktop\sistema_sicabio\site_sicabio\static\images" />
       <recent name="C:\Users\jessi\Desktop\sistema_sicabio\media" />
       <recent name="C:\Users\jessi\Desktop\sistema_sicabio\media\pacientes" />
       <recent name="C:\Users\jessi\Desktop\sistema_sicabio\site_sicabio\static" />
       <recent name="C:\Users\jessi\Desktop\sistema_sicabio\site_sicabio\media\pacientes" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jessi\Desktop\sistema_sicabio\site_sicabio\static" />
+      <recent name="C:\Users\jessi\Desktop\sistema_sicabio\site_sicabio" />
+      <recent name="C:\Users\jessi\Desktop\sistema_sicabio\templates" />
+      <recent name="C:\Users\jessi\Desktop\sistema_sicabio\SICABIO\static" />
+      <recent name="C:\Users\jessi\Desktop\sistema_sicabio\site_sicabio\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -307,6 +325,34 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="sistema_sicabio" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.manage" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -322,253 +368,34 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-2" y="0" width="1382" height="744" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23214285" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23809524" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32569557" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.68576103" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49925596" weight="0.32569557" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50074404" side_tool="true" weight="0.7986907" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49925596" visible="true" weight="0.19148937" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49925596" visible="true" weight="0.2618658" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.33224222" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.07440476" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32569557" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49925596" weight="0.32569557" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50074404" side_tool="true" weight="0.7986907" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49925596" weight="0.95090014" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.33224222" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db.sqlite3">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site_sicabio/migrations/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site_sicabio/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site_sicabio/templates/login_form.html" />
-    <entry file="file://$PROJECT_DIR$/site_sicabio/templates/menu_paciente.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="18" selection-start-line="4" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/django/db/models/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1323">
-          <caret line="78" column="6" selection-start-line="78" selection-start-column="6" selection-end-line="78" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site_sicabio/serializers.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/django/core/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SICABIO/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
-          <folding>
-            <element signature="e#223#232#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/common.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="121" column="18" selection-start-line="121" selection-start-column="18" selection-end-line="121" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site_sicabio/mixins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site_sicabio/static/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="200" selection-start-line="200" selection-end-line="200" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SICABIO/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="123" column="5" selection-start-line="123" selection-end-line="123" selection-end-column="5" />
-          <folding>
-            <element signature="e#308#317#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site_sicabio/templates/inserir_digital.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="82" column="33" lean-forward="true" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site_sicabio/static/bootstrap-filestyle-2.1.0/src/bootstrap-filestyle.js" />
-    <entry file="file://$PROJECT_DIR$/site_sicabio/static/bootstrap-filestyle-2.1.0/test/js/bootstrap.min.js" />
-    <entry file="file://$PROJECT_DIR$/site_sicabio/static/bootstrap-filestyle-2.1.0/test/css/bootstrap.min.css" />
-    <entry file="file://$PROJECT_DIR$/site_sicabio/static/css/up_cad.css" />
-    <entry file="file://$PROJECT_DIR$/site_sicabio/templates/up_impressao.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="24" column="25" selection-start-line="24" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site_sicabio/static/css/upload.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site_sicabio/static/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="82" column="29" selection-start-line="82" selection-start-column="29" selection-end-line="82" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/media/avatara.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/media/avatar.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site_sicabio/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="783">
-          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site_sicabio/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
-          <folding>
-            <element signature="e#25#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site_sicabio/templates/cadastro.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site_sicabio/templates/model_header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site_sicabio/templates/header_menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="23" column="4" lean-forward="true" selection-end-line="30" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site_sicabio/templates/base_paciente.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site_sicabio/migrations/0012_auto_20200627_1639.py" />
     <entry file="file://$PROJECT_DIR$/site_sicabio/migrations/0013_auto_20200627_1640.py" />
-    <entry file="file://$PROJECT_DIR$/site_sicabio/migrations/0011_auto_20200627_1335.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site_sicabio/migrations/0012_auto_20200627_1942.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site_sicabio/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="70" column="5" lean-forward="true" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/migrations/0011_auto_20200627_1335.py" />
+    <entry file="file://$PROJECT_DIR$/site_sicabio/migrations/0012_auto_20200627_1942.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/560871926/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
@@ -576,59 +403,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/site_sicabio/templates/lista_pacientes.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="85" column="15" lean-forward="true" selection-end-line="114" selection-end-column="7" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/site_sicabio/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="21" column="40" selection-start-line="21" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site_sicabio/templates/cadastrar_paciente.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
-          <folding>
-            <element signature="n#style#0;n#h3#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site_sicabio/templates/tela_principal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site_sicabio/templates/model_page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="54" column="76" selection-start-line="54" selection-start-column="76" selection-end-line="54" selection-end-column="76" />
-          <folding>
-            <element signature="n#style#0;n#h5#0;n#a#0;n#div#1;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site_sicabio/templates/menu_consulta.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="25" column="12" lean-forward="true" selection-start-line="25" selection-end-line="26" />
         </state>
       </provider>
     </entry>
@@ -653,10 +431,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/static/css/detalhes_c.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1242">
+          <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/site_sicabio/templates/cadastrar_consulta.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="12" column="8" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+        <state relative-caret-position="270">
+          <caret line="10" column="15" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="10" selection-end-column="15" />
           <folding>
             <element signature="n#style#0;n#h3#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
@@ -666,10 +451,168 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/static/images/icons/finger.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/static/images/icons/finger1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/static/images/icons/edi.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/static/images/icons/consulta.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/static/images/icons/cons.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/mixins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+          <folding>
+            <element signature="e#25#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/migrations/0003_auto_20200701_0205.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <folding>
+            <element signature="e#49#81#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/django/db/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="88" selection-start-line="88" selection-end-line="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/django/db/backends/sqlite3/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="302" column="23" selection-start-line="302" selection-start-column="15" selection-end-line="302" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SICABIO/settings.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="e#22#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/migrations/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/templates/base_paciente.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="30" column="27" selection-start-line="30" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/templates/tela_principal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/static/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="136" column="18" selection-start-line="136" selection-start-column="18" selection-end-line="136" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/static/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="484" column="2" selection-start-line="484" selection-end-line="484" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/static/css/list-im.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="67" column="1" lean-forward="true" selection-start-line="67" selection-start-column="1" selection-end-line="67" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/templates/model_header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="21" selection-start-line="5" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/templates/menu_paciente.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="18" selection-start-line="4" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/templates/menu_consulta.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/templates/model_page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="58" column="110" selection-start-line="58" selection-start-column="110" selection-end-line="58" selection-end-column="110" />
+          <folding>
+            <element signature="n#style#0;n#h5#0;n#a#0;n#div#1;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/templates/cadastrar_paciente.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="35" column="31" lean-forward="true" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+          <folding>
+            <element signature="n#style#0;n#h3#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/site_sicabio/templates/detalhes_paciente.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="88" column="10" lean-forward="true" selection-start-line="88" selection-start-column="10" selection-end-line="88" selection-end-column="10" />
+        <state relative-caret-position="428">
+          <caret line="131" column="69" selection-start-line="131" selection-start-column="35" selection-end-line="131" selection-end-column="69" />
           <folding>
             <element signature="n#style#0;n#h2#0;n#head#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#b#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -678,57 +621,122 @@
             <element signature="n#style#0;n#h5#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h5#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h5#0;n#div#0;n#div#0;n#a#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/site_sicabio/static/css/detalhes_c.css">
+    <entry file="file://$PROJECT_DIR$/site_sicabio/serializers.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/migrations/0004_auto_20200701_1834.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
+        <state relative-caret-position="27">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/site_sicabio/views.py">
+    <entry file="file://$PROJECT_DIR$/site_sicabio/migrations/0005_remove_impressaodigital_padrao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="86" column="61" selection-start-line="86" selection-start-column="53" selection-end-line="86" selection-end-column="61" />
+        <state relative-caret-position="264">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/templates/inserir_digital.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="47" column="36" lean-forward="true" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SICABIO/urls.py">
+    <entry file="file://$PROJECT_DIR$/site_sicabio/templates/lista_pacientes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="111" column="37" selection-start-line="111" selection-start-column="37" selection-end-line="111" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/templates/header_menu.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
-          <caret line="30" column="37" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="37" />
+          <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
           <folding>
-            <element signature="e#631#663#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/templates/base_impressao.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/templates/up_impressao.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+          <caret line="34" column="32" lean-forward="true" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+          <caret line="38" column="32" lean-forward="true" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
+          <caret line="41" column="14" lean-forward="true" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+          <caret line="63" column="19" lean-forward="true" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="19" />
+          <folding>
+            <element signature="n#style#0;n#h3#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/site_sicabio/templates/lista_consultas.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="76" column="13" lean-forward="true" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
+        <state relative-caret-position="1996">
+          <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
           <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/site_sicabio/templates/detalhes_consulta.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="94" column="43" selection-start-line="94" selection-start-column="43" selection-end-line="94" selection-end-column="43" />
+        <state relative-caret-position="267">
+          <caret line="89" column="15" selection-end-line="130" selection-end-column="7" />
           <folding>
             <element signature="n#style#0;n#h2#0;n#head#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#1931#1938#1" expanded="true" />
             <element signature="n#style#0;n#b#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -742,6 +750,62 @@
             <element signature="n#style#0;n#h5#0;n#div#0;n#div#0;n#a#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#a#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h5#0;n#div#0;n#div#0;n#a#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SICABIO/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="32" column="67" selection-start-line="32" selection-start-column="67" selection-end-line="32" selection-end-column="67" />
+          <folding>
+            <element signature="e#631#663#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/templates/detalhes_impressoes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="80" column="27" selection-start-line="80" selection-end-line="81" />
+          <folding>
+            <element signature="n#style#0;n#h2#0;n#head#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#b#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#0;n#div#0;n#div#0;n#a#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#a#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#0;n#div#0;n#div#0;n#a#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#a#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#0;n#div#0;n#div#0;n#a#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/templates/lista_impressoes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="41" column="94" selection-start-line="41" selection-start-column="94" selection-end-line="41" selection-end-column="94" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_sicabio/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="103" column="35" selection-start-line="103" selection-start-column="35" selection-end-line="103" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>

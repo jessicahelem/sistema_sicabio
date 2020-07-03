@@ -15,17 +15,12 @@ admin.site.register(Paciente)
 class PacienteAdmin(admin.ModelAdmin):
     list_display = ['id','nome']
 
-admin.site.register(ImpressaoDigital)
+admin.site.register(Impressao)
 class ImpAdmin(admin.ModelAdmin):
     list_display = ['id']
 
-admin.site.register(MaoEsquerda)
-class MeAdmin(admin.ModelAdmin):
-    list_display = ['nome_dedo','padrao']
 
-admin.site.register(MaoDireita)
-class MdAdmin(admin.ModelAdmin):
-    list_display = ['nome_dedo','padrao']
+
 
 admin.site.register(Padrao)
 class PadraoAdmin(admin.ModelAdmin):
