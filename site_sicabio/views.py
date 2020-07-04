@@ -102,7 +102,7 @@ def pacientes_detalhes(request, id):
 @login_required(login_url='/login/')
 def impressao_detalhes(request,id):
     paciente = Paciente.objects.get(id=id)
-    impressao= Impressao.objects.get(id=id,paciente=paciente)
+    impressao= Impressao.objects.get(paciente= paciente)
     return render(request,'detalhes_impressoes.html',{'impressao':impressao})
 @login_required(login_url='/login/')
 def consulta_detalhes(request, id):
@@ -211,7 +211,7 @@ def set_impressao(request, id):
 
         impressao = Impressao.objects.create(img_path=file, paciente=paciente, dedo=dedo, mao=mao)
 
-    return redirect('../impressoes/', {'paciente': paciente})
+    return redirect('../../impressoes/', {'paciente': paciente})
 
 
 @csrf_protect

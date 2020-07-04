@@ -24,9 +24,9 @@
     <!-- Bootstrap core CSS -->
 
     <title >Detalhes</title>
-    <link href="{% static 'css/detalhes_c.css'%}" rel="stylesheet">
+    <link href="{% static 'css/detalhes_im.css'%}" rel="stylesheet">
 
-    {% include "menu_consulta.html" %}
+    {% include "header_menu.html" %}
     <h2 class="text-center" style="margin-top:20px; color:#00CDCF;">Detalhes</h2>
 
 </head>
@@ -49,7 +49,7 @@
 
       <!-- Modal footer -->
       <div class="modal-footer">
-          <a href="/site_sicabio/delete_consulta/{{consulta.id}}/">
+          <a href="/site_sicabio/delete_consulta/{{impressao.id}}/">
           <button type="button" class="btn btn-danger" >
               Excluir
           </button>
@@ -64,25 +64,22 @@
      <div class="card border border-info"style="margin-top:50px;">
 
 
-             <img  src="{% static 'images/consulta.png'%}" style="width:100%; heigth:50%;">
+             <img  src="{{impressao.img_path.url}}" style="width:  ">
 
              <div class="container text-center">
-                 <h5 style="font-weight:bold">Nome do Paciente:</h5> <p style="text-transform: uppercase;">{{consulta.paciente}}</p>
-                 <h5 style="font-weight:bold">CPF:</h5> <p>{{consulta.paciente.cpf_paciente}}</p>
-                 <h5 style="font-weight:bold">Data da Consulta:</h5> <p>{{consulta.data}}</p>
-                 <h5 style="font-weight:bold">Horário da Consulta:</h5> <p>{{consulta.horario}}</p>
+                 <h5 style="font-weight:bold">Mão:</h5> <p style="text-transform: uppercase;">{{impressao.mao}}</p>
+                 <h5 style="font-weight:bold">Dedo:</h5> <p>{{impressao.dedo}}</p>
 
 
          </div>
     </div>
-
         <div class="row">
         <div class="column">
-              <a href='../{{impressao.paciente.id}}/up_impressao/?id={{impressao.id}}'>
+              <a href='../../inserir_digital/up_impressao/?id={{i.id}}'>
 
-                <div id="menu_aconsulta" class="card border border-info"style="margin-top:-580px;">
+                <div id="menu_aconsulta" class="card border border-info"style="margin-top:-400px;">
                     <div class="container text-center">
-                        <h5  style="font-weight:bold; bottom:20px;">Alterar Consulta</h5>
+                        <h5  style="font-weight:bold; bottom:20px;">Alterar Digital</h5>
 
 
 
@@ -91,28 +88,14 @@
 
      </a>
         </div>
-         <div class="column">
-            <a href="../../detalhes/{{impressao.paciente.id}}">
-                <div id="menu_vpaci" class="card border border-info"style="margin-top:-580px;">
-                    <div class="container text-center">
-                        <h5  style="font-weight:bold; bottom:20px;">Visualizar Paciente</h5>
-
-
-
-    </div>
-            </div>
-
-     </a>
-        </div>
-    </div>
 
 
 
   <div class="column">
       <a href="#">
-      <div id="menu_excluir" class="card border border-info text-center"style="margin-top:-380px;" data-toggle="modal"data-target="#modal_confirm1">
+      <div id="menu_excluir" class="card border border-info text-center"style="margin-top:-400px; left:100px;" data-toggle="modal"data-target="#modal_confirm1">
                     <div class="container text-center">
-                        <h5  style="font-weight:bold; bottom:20px;">Excluir Consulta</h5>
+                        <h5  style="font-weight:bold; bottom:20px;">Excluir Digital</h5>
 
 
 
