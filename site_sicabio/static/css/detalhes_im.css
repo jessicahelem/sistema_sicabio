@@ -13,7 +13,7 @@
 }
 
 
-#menu_aconsulta{
+#menu_altdigital{
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   width:150px;
@@ -24,29 +24,17 @@
 
 
 }
-#menu_vpaci{
+#menu_excluird{
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   width:150px;
   height:150px;
   border-radius: 8px;
   border-color: #2FD9EC;
-  margin-left: 1000px;
 
 }
 
 
-#menu_excluir{
-
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  width:150px;
-  height:150px;
-  border-radius: 8px;
-  border-color: #2FD9EC;
-  margin-left: 889px;
-
-}
 
 
 img {

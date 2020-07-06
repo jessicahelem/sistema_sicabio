@@ -30,7 +30,7 @@ urlpatterns = [
     path('site_sicabio/consultas/',views.list_consulta),
     path('site_sicabio/detalhes/<id>/impressoes/',views.list_impressao),
     path('site_sicabio/detalhes/<id>/',views.pacientes_detalhes),
-    path('site_sicabio/detalhes/<id>/impressoes/detalhes_impressao/',views.impressao_detalhes),
+    path('site_sicabio/detalhes/<id>/impressoes/detalhes_impressao/<id_impressao>',views.impressao_detalhes),
     path('site_sicabio/detalhes_consulta/<id>/',views.consulta_detalhes),
     path('cadastro/', views.cadastro, name='cadastro'),
     path('login/', views.do_login),
@@ -44,6 +44,8 @@ urlpatterns = [
     path('site_sicabio/detalhes/<id>/inserir_digital/up_impressao/',views.form_impressao),
     path('site_sicabio/delete/<id>/',views.delete_paciente),
     path('site_sicabio/delete_consulta/<id>/',views.delete_consulta),
+    path('site_sicabio/detalhes/<id>/impressoes/delete_impressao/<id_impressao>/', views.delete_impressao),
+
     path('site_sicabio/detalhes/<id>/cadastrar_consulta/',views.form_consulta),
     path('site_sicabio/detalhes/<id>/cadastrar_consulta/submit',views.set_consulta),
     path('site_sicabio/detalhes/<id>/inserir_digital/up_impressao/submit',views.set_impressao),

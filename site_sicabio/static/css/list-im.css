@@ -15,8 +15,8 @@
     border: medium none;
 
     color:#fff;
-    left: 1090px;
-    position:relative;
+    margin-left: 1150px;
+    position:fixed;
      width: 70px;
   height: 70px;
   padding: 8px 10px ;
@@ -25,7 +25,7 @@
   line-height: 1.33;
   border-radius: 35px;
   text-align: center;
-  top: 430px;
+  margin-top: 450px;
 
 }
 

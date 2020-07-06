@@ -126,7 +126,7 @@ DEFAULT_IMAGE_PATH = 'static/images/avatar.png'
 MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
 STATIC_ROOT = [os.path.join(BASE_DIR,'static'),'SICABIO/static/']
-
+DATE_INPUT_FORMATS = ['%d-%m-%Y']
 # Django - Templates
 TEMPLATE_DIRS = (os.path.join(BASE_DIR,  "templates"),)
 

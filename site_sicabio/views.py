@@ -87,10 +87,11 @@ def list_consulta(request):
 
 
 @login_required(login_url='/login/')
-def list_impressao(request,id):
-    paciente= Paciente.objects.get(id=id)
+def list_impressao(request, id):
+    paciente = Paciente.objects.get(id=id)
     impressao = Impressao.objects.filter(paciente=paciente)
-    return render(request, 'lista_impressoes.html', {'impressao': impressao})
+
+    return render(request, 'lista_impressoes.html', {'impressao': impressao, "paciente": paciente})
 
 
 @login_required(login_url='/login/')
@@ -99,14 +100,17 @@ def pacientes_detalhes(request, id):
 
     return render(request, "detalhes_paciente.html", {'paciente': paciente})
 
+
 @login_required(login_url='/login/')
-def impressao_detalhes(request,id):
-    paciente = Paciente.objects.get(id=id)
-    impressao= Impressao.objects.get(paciente= paciente)
-    return render(request,'detalhes_impressoes.html',{'impressao':impressao})
+def impressao_detalhes(request, id, id_impressao):
+    # paciente = Paciente.objects.filter(id=id)
+    # impressao= Impressao.objects.get(paciente= paciente)
+    impressao = Impressao.objects.get(id=id_impressao)
+    return render(request, 'detalhes_impressoes.html', {'impressao': impressao})
+
+
 @login_required(login_url='/login/')
 def consulta_detalhes(request, id):
-
     consulta = Consulta.objects.get(id=id, profissional=request.user)
     return render(request, 'detalhes_consulta.html', {'consulta': consulta})
 
@@ -159,12 +163,18 @@ def delete_consulta(request, id):
 
 
 @login_required(login_url='/login/')
+def delete_impressao(request, id, id_impressao):
+    impressao = Impressao.objects.get(id=id_impressao)
+    impressao.delete()
+    return redirect('../../../impressoes/', {'impressao': impressao})
+
+
+@login_required(login_url='/login/')
 def set_consulta(request, id):
     paciente = Paciente.objects.get(id=id)
     data = request.POST.get('data')
     horario = request.POST.get('horario')
     consulta_id = request.POST.get('consulta-id')
-
     prof = request.user
 
     if consulta_id:
@@ -175,16 +185,19 @@ def set_consulta(request, id):
             consulta.horario = horario
         consulta.save()
 
+    if Consulta.data == data and Consulta.horario == horario:
+        messages.error(request, 'Existe uma consulta marcada nesse horário e data. Por favor, tente novamente.')
     else:
         consulta = Consulta.objects.create(data=data, horario=horario, paciente=paciente, profissional=prof)
 
     return redirect('../../../../site_sicabio/consultas/', {'paciente': paciente})
 
-@login_required(login_url='/login/')
-def cadastrar_digital(request,id):
 
+@login_required(login_url='/login/')
+def cadastrar_digital(request, id):
     paciente = Paciente.objects.get(id=id)
-    return render(request,'inserir_digital.html',{'paciente':paciente})
+    return render(request, 'inserir_digital.html', {'paciente': paciente})
+
 
 @login_required(login_url='/login/')
 def set_impressao(request, id):
@@ -193,7 +206,6 @@ def set_impressao(request, id):
     dedo = request.POST.get('dedo')
     impressao_id = request.POST.get('impressao-id')
     file = request.FILES.get('file')
-
 
     prof = request.user
 

@@ -44,12 +44,12 @@
 
       <!-- Modal body -->
       <div class="modal-body text-rigth">
-          Deseja excluir consulta do paciente <b style="text-transform:capitalize;">{{consulta.paciente}}?</b>
+          Deseja excluir a impressão digital do paciente <b style="text-transform:capitalize;">{{impressao.paciente}}?</b>
       </div>
 
       <!-- Modal footer -->
       <div class="modal-footer">
-          <a href="/site_sicabio/delete_consulta/{{impressao.id}}/">
+          <a href="../delete_impressao/{{impressao.id}}/">
           <button type="button" class="btn btn-danger" >
               Excluir
           </button>
@@ -68,16 +68,16 @@
 
              <div class="container text-center">
                  <h5 style="font-weight:bold">Mão:</h5> <p style="text-transform: uppercase;">{{impressao.mao}}</p>
-                 <h5 style="font-weight:bold">Dedo:</h5> <p>{{impressao.dedo}}</p>
+                 <h5 style="font-weight:bold">Dedo:</h5> <p style="text-transform: uppercase;">{{impressao.dedo}}</p>
 
 
          </div>
     </div>
         <div class="row">
         <div class="column">
-              <a href='../../inserir_digital/up_impressao/?id={{i.id}}'>
+              <a href='../../inserir_digital/up_impressao/?id={{impressao.id}}'>
 
-                <div id="menu_aconsulta" class="card border border-info"style="margin-top:-400px;">
+                <div id="menu_altdigital" class="card border border-info"style="margin-top:-300px;">
                     <div class="container text-center">
                         <h5  style="font-weight:bold; bottom:20px;">Alterar Digital</h5>
 
@@ -93,7 +93,7 @@
 
   <div class="column">
       <a href="#">
-      <div id="menu_excluir" class="card border border-info text-center"style="margin-top:-400px; left:100px;" data-toggle="modal"data-target="#modal_confirm1">
+      <div id="menu_excluird" class="card border border-info text-center"style="margin-top:-300px; left:-30px;" data-toggle="modal"data-target="#modal_confirm1">
                     <div class="container text-center">
                         <h5  style="font-weight:bold; bottom:20px;">Excluir Digital</h5>
 

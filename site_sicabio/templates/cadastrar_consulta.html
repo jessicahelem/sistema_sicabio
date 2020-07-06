@@ -18,14 +18,18 @@
 
         <div class="form-group mt-5" >
             <label for="data" style="margin-left:-242px;position:relative;top:5px;font-weight: bold;">Data da Consulta</label>
-            <input class="form-control" name="data" type="date" placeholder="Data"value="{{consulta.data}}">
+            <input class="form-control" name="data" type="date" date   placeholder="Data"value="0000/00/00">
         </div>
         <div class="form-group">
             <label for="horario" style="margin-left:-218px;position:relative;top:5px;font-weight: bold;">Horário da Consulta</label>
             <input class="form-control" name="horario" type="time" placeholder="Horário"value="{{consulta.horario}}">
         </div>
 
-
+    {% for message in messages %}
+        <div class="alert alert-warning">
+             <strong>Error! </strong>{{ message}}
+        </div>
+        {% endfor %}
     <button class="myButton" type="submit" style="color:#fff;">
         {% if consulta %}
             Alterar
