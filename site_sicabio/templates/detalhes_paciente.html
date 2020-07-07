@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.0.1">
-
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
 
@@ -67,10 +67,10 @@
   </div>
 </div>
 
-    <div class="card border border-info"style="margin-top:50px;">
+    <div id="card_p" class="card border border-info"style="margin-top:50px;">
 
 
-             <img  src="{{paciente.foto.url}}"  style="width:100%; heigth:50%;">
+             <img  src="{{paciente.foto.url}}"  style="width:100%; heigth:100%;">
 
              <div class="container text-center">
                  <h5 style="font-weight:bold">Nome Completo:</h5> <p style="text-transform: uppercase;">{{paciente.nome_paciente}}</p>
@@ -82,22 +82,29 @@
     </div>
 
         <div class="row">
-        <div class="column">
+        <div class="col-sm-4">
             <a href='../{{paciente.id}}/cadastrar_consulta'>
                 <div id="menu_mconsulta" class="card border border-info"style="margin-top:-400px;">
+                     <div id="img_mc"align="center" class="image" style="margin-top:4px;">
+                    <img  src="{% static 'images/add_c.png' %}" alt="marcar consulta">
+                    </div>
                     <div class="container text-center">
                         <h5  style="font-weight:bold; bottom:20px;">Marcar Consulta</h5>
 
 
 
     </div>
+                     </a>
             </div>
 
-     </a>
+
         </div>
-         <div class="column">
+         <div class="col-sm-4">
             <a href="/site_sicabio/cadastrar_paciente/?id={{paciente.id}}">
                 <div id="menu_alterar" class="card border border-info"style="margin-top:-400px;">
+                      <div id="img_alt"align="center" class="image" style="margin-top:4px;">
+                    <img  src="{% static 'images/alt_dado.png' %}" alt="Impressão Digital">
+                    </div>
                     <div class="container text-center">
                         <h5  style="font-weight:bold; bottom:20px;">Alterar Dados</h5>
 
@@ -110,12 +117,11 @@
         </div>
     </div>
  <div class="row">
-     <div class="column">
-<!--       -->
+     <div class="col-sm-4">
                  <div class="dropup">
         <div id="menu_cad_digi" class="card border border-info text-center" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false " cl style="margin-top:-200px;">
                    <div id="img_di"align="center" class="image" style="margin-top:4px;">
-                    <img  src="{% static 'images/icons/fing.png' %}" alt="Impressão Digital">
+                    <img  src="{% static 'images/fing.png' %}" alt="Impressão Digital">
                     </div>
             <div class="container text-center">
                         <a href="#" ><h5   style="font-weight:bold; bottom:20px;"> Impressão Digital</h5></a>
@@ -139,12 +145,12 @@
 
  </div>
 
-  <div class="column">
+  <div class="col-sm-4">
 
       <a href="#">
       <div id="menu_excluir" class="card border border-info text-center"style="margin-top:-200px;" data-toggle="modal"data-target="#modal_confirm">
           <div id="img_lix"align="center" class="image" style="margin-top:4px;">
-                    <img  src="{% static 'images/icons/lixeira.png' %}" alt="Lixeira">
+                    <img  src="{% static 'images/ex_p.png' %}" alt="Lixeira">
                     </div>
           <div class="container text-center">
                         <h5  style="font-weight:bold; bottom:20px;">Excluir Paciente</h5>

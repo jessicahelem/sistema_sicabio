@@ -24,10 +24,10 @@
             <label for="horario" style="margin-left:-218px;position:relative;top:5px;font-weight: bold;">Horário da Consulta</label>
             <input class="form-control" name="horario" type="time" placeholder="Horário"value="{{consulta.horario}}">
         </div>
-
-    {% for message in messages %}
+        <div class="container mt-2">
+            {% for message in messages %}
         <div class="alert alert-warning">
-             <strong>Error! </strong>{{ message}}
+             <strong>Error! </strong>{{message}}
         </div>
         {% endfor %}
     <button class="myButton" type="submit" style="color:#fff;">
@@ -37,6 +37,8 @@
             Cadastrar
         {% endif %}
     </button>
+        </div>
+
 
         </form>
     </div>

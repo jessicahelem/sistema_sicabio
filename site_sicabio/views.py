@@ -176,21 +176,21 @@ def set_consulta(request, id):
     horario = request.POST.get('horario')
     consulta_id = request.POST.get('consulta-id')
     prof = request.user
-
     if consulta_id:
-        consulta = Consulta.objects.get(id=consulta_id)
-        if prof == consulta.profissional:
-            consulta.paciente = paciente
-            consulta.data = data
-            consulta.horario = horario
-        consulta.save()
+            consulta = Consulta.objects.get(id=consulta_id)
 
-    if Consulta.data == data and Consulta.horario == horario:
-        messages.error(request, 'Existe uma consulta marcada nesse horário e data. Por favor, tente novamente.')
+            if prof == consulta.profissional:
+                consulta.paciente = paciente
+                consulta.data = data
+                consulta.horario = horario
+            consulta.save()
+
+
     else:
         consulta = Consulta.objects.create(data=data, horario=horario, paciente=paciente, profissional=prof)
 
     return redirect('../../../../site_sicabio/consultas/', {'paciente': paciente})
+
 
 
 @login_required(login_url='/login/')
