@@ -1,5 +1,4 @@
 from enum import Enum
-import consultas as consultas
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
@@ -68,7 +67,7 @@ class Impressao(models.Model):
 
 class Paciente(models.Model):
     # id_paciente = models.IntergerField(primary_key=True),
-    foto = models.ImageField(upload_to='pacientes', null=True, default='avatar.png',blank='avatar.png')
+    foto = models.ImageField(upload_to='pacientes', null=True, default='media/avatar.png',blank='media/avatar.png')
     nome_paciente = models.CharField(max_length=100, null=False)
     cpf_paciente = models.CharField(max_length=12, null=False,unique=True)
     dt_nascimento = models.DateField(auto_now = False,null=False)

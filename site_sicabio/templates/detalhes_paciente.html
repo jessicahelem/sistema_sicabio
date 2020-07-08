@@ -37,7 +37,7 @@
 
 </style>
 
-<body>
+<div>
  <div class="modal fade" id="modal_confirm">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -70,7 +70,7 @@
     <div id="card_p" class="card border border-info"style="margin-top:50px;">
 
 
-             <img  src="{{paciente.foto.url}}"  style="width:100%; heigth:100%;">
+             <img  src="{{paciente.foto.url}}"  style="width:100%; height:300px;">
 
              <div class="container text-center">
                  <h5 style="font-weight:bold">Nome Completo:</h5> <p style="text-transform: uppercase;">{{paciente.nome_paciente}}</p>
@@ -80,7 +80,7 @@
 
          </div>
     </div>
-
+<div class="container-md">
         <div class="row">
         <div class="col-sm-4">
             <a href='../{{paciente.id}}/cadastrar_consulta'>
@@ -89,7 +89,7 @@
                     <img  src="{% static 'images/add_c.png' %}" alt="marcar consulta">
                     </div>
                     <div class="container text-center">
-                        <h5  style="font-weight:bold; bottom:20px;">Marcar Consulta</h5>
+                        <h5  style="font-size:1.5vw;font-weight:bold;">Marcar Consulta</h5>
 
 
 
@@ -106,14 +106,15 @@
                     <img  src="{% static 'images/alt_dado.png' %}" alt="Impressão Digital">
                     </div>
                     <div class="container text-center">
-                        <h5  style="font-weight:bold; bottom:20px;">Alterar Dados</h5>
+                        <h5  style="font-size:1.5vw;font-weight:bold;">Alterar Dados</h5>
 
 
 
     </div>
+                    </a>
             </div>
 
-     </a>
+
         </div>
     </div>
  <div class="row">
@@ -124,7 +125,7 @@
                     <img  src="{% static 'images/fing.png' %}" alt="Impressão Digital">
                     </div>
             <div class="container text-center">
-                        <a href="#" ><h5   style="font-weight:bold; bottom:20px;"> Impressão Digital</h5></a>
+                        <a href="#" ><h5   style="font-size:1.5vw;font-weight:bold; "> Impressão Digital</h5></a>
 
 
 
@@ -141,7 +142,6 @@
 
 
  </div>
-<!--  </a>-->
 
  </div>
 
@@ -158,11 +158,13 @@
 
 
     </div>
+      </a>
+
             </div>
-          </a>
+
   </div>
      </div>
-
+</div>
 
     {% include "model_footer.html" %}
 

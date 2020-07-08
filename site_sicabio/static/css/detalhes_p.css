@@ -9,7 +9,7 @@ margin-left:100px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   width: 30%;
-  height:50%;
+  height:auto;
   border-radius: 10px;
   border-color: #2FD9EC;
 }
@@ -22,22 +22,38 @@ margin-left:100px;
 #menu_mconsulta{
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  width:150px;
-  height:150px;
+  width:50%;
+  height:auto;
   border-radius: 8px;
   border-color: #2FD9EC;
-  left: 1000px;
+  left: 900px;
+   top:10px;
 
 
 }
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.col {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
 #menu_alterar{
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  width:150px;
-  height:150px;
+  width:50%;
+  height:130px;
   border-radius: 8px;
   border-color: #2FD9EC;
   margin-left: 300px;
+   top:10px;
 
 }
 
@@ -45,23 +61,24 @@ margin-left:100px;
 
  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  width:150px;
-  height:150px;
+  width:50%;
+  height:50%;
   border-radius: 8px;
   border-color: #2FD9EC;
- left: 1000px;
-
+ left: 900px;
+bottom:10px;
 }
 
 #menu_excluir{
 
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  width:150px;
-  height:150px;
+  width:50%;
+  height:auto;
   border-radius: 8px;
   border-color: #2FD9EC;
   margin-left: 300px;
+bottom:10px;
 
 }
 
@@ -78,4 +95,5 @@ img {
 
 .container {
   padding: 2px 16px;
+  width:100%;
 }

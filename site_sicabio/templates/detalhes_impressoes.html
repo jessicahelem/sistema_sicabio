@@ -61,28 +61,30 @@
   </div>
 </div>
 
-     <div class="card border border-info"style="margin-top:50px;">
+     <div id="card_imp"class="card border border-info"style="margin-top:50px;">
 
 
-             <img  src="{{impressao.img_path.url}}" style="width:  ">
+             <img  src="{{impressao.img_path.url}}" >
 
              <div class="container text-center">
                  <h5 style="font-weight:bold">Mão:</h5> <p style="text-transform: uppercase;">{{impressao.mao}}</p>
                  <h5 style="font-weight:bold">Dedo:</h5> <p style="text-transform: uppercase;">{{impressao.dedo}}</p>
 
-
          </div>
     </div>
+
+      <div class="container-sm">
+
         <div class="row">
-        <div class="column">
+        <div class="col-sm-4">
               <a href='../../inserir_digital/up_impressao/?id={{impressao.id}}'>
 
-                <div id="menu_altdigital" class="card border border-info"style="margin-top:-400px;">
+                <div id="menu_altdigital" class="card border border-info">
                       <div id="img_at"align="center" class="image" style="margin-top:4px;">
                     <img  src="{% static 'images/at_d.png' %}" alt="atualizar">
                     </div>
                     <div class="container text-center">
-                        <h5  style="font-weight:bold; bottom:20px;">Alterar Digital</h5>
+                        <h5  style="font-size:1.5vw;font-weight:bold; bottom:20px;">Alterar Digital</h5>
 
 
 
@@ -95,15 +97,15 @@
 
 
 
-  <div class="column">
+  <div class="col-sm-4">
       <a href="#">
-      <div id="menu_excluird" class="card border border-info text-center"style="margin-top:-400px; left:-30px;" data-toggle="modal"data-target="#modal_confirm1">
+      <div id="menu_excluird" class="card border border-info text-center" data-toggle="modal"data-target="#modal_confirm1">
 
                       <div id="img_rm"align="center" class="image" style="margin-top:4px;">
                     <img  src="{% static 'images/rm.png' %}" alt="remover">
                     </div>
           <div class="container text-center">
-                        <h5  style="font-weight:bold; bottom:20px;">Excluir Digital</h5>
+                        <h5  style="font-size:1.5vw;font-weight:bold; bottom:20px;">Excluir Digital</h5>
 
 
 
@@ -111,9 +113,13 @@
                      </a>
             </div>
 
-  </div>
      </div>
+</div>
 
+
+
+</div>
+ </body>
 
     {% include "model_footer.html" %}
 

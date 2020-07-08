@@ -1,132 +1,123 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+#cssmenu,
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul li a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#cssmenu:after,
+#cssmenu > ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+#cssmenu {
+  width: auto;
+  border-bottom: 2px solid #00CDCF;
+  font-family: Raleway, sans-serif;
+  line-height: 2;
+}
+#cssmenu ul {
+  background: #00CDCF;
+}
+#cssmenu > ul > li {
+  float: left;
+}
+#cssmenu.align-center > ul {
+  font-size: 0;
+  text-align: center;
+}
+#cssmenu.align-center > ul > li {
+  display: inline-block;
+  float: none;
+}
+#cssmenu.align-right > ul > li {
+  float: right;
+}
+#cssmenu.align-right > ul > li > a {
+  margin-right: 0;
+  margin-left: -4px;
+}
 html,
 body {
- width: 100%;
- align:center;
-
+  height: 100%;
 }
 
 body {
-  display: -ms-flexbox;
-  display: flex;
+
   -ms-flex-align: center;
   align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#87ebfd+9,53dcf1+47,05c0e1+90 */
-/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f0f9ff+11,cbebff+42,a1dbff+100 */
-    background: #2ebfde;
-
-
-
-
 }
 
-.container{
-
-    border: 12px solid #B22222;
-    border-radius: 10px;
-    width:500px;
-    height:600px;
-    background-color: #fff;
-
-}
 .form-signin {
   width: 100%;
-  padding: 5px;
+  max-width: 430px;
+  padding: 15px;
   margin: auto;
-  align:center;
-}
-.form-signin input {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+
 }
 
 .form-signin .form-control {
   position: relative;
-  box-sizing: border-box;
-  height:40px;
-  width:400px;
-  font-size: 18px;
-  left:30px;
-  top:50px;
-  bottom:30px;
-}
-
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+  border-radius:10px;
 
 .form-signin .form-control:focus {
-  z-index: 3;
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+   border-radius:10px;
+  border-color:#E9ECEF
+}
+.form-signin input[type="text"] {
+  margin-bottom: 6px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+   border-radius:10px;
+  border-color:#E9ECEF
+}
+.btn{
+
+    background-color:#01c4c4;
+    border:solid #01c4c4;
+    position:relative;
 }
 
-
-
-.c_btn{
-    position:absolute;
-    bottom:550px;
-    left:-82px;
-    width:100%;
-}
-
-.myButton {
-	box-shadow: 0px 10px 14px -7px #276873;
-	background:linear-gradient(to bottom, #3fc5f5 5%, #408c99 100%);
-	background-color:#3fc5f5;
-	border-radius:8px;
-	display:inline-block;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:16px;
-	font-weight:bold;
-	padding:10px 10px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #3d768a;
-	position:absolute;
-    top:465px;
-    left:630px;
-    width:120px;
-    height:50px;
+.btn:hover{
+     background-color:#11bfbf;
+     color:white;
+     border:solid #11bfbf;
 
 }
-.myButton:hover {
-	background:linear-gradient(to bottom, #408c99 5%, #3fc5f5 100%);
-	background-color:#408c99;
-}
-
-.myButton1 {
-	box-shadow: 0px 10px 14px -7px #276873;
-	background:linear-gradient(to bottom, #3fc5f5 5%, #408c99 100%);
-	background-color:#3fc5f5;
-	border-radius:8px;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:16px;
-	font-weight:bold;
-	padding:10px 10px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #3d768a;
-	position:absolute;
-    top:465px;
-    left:780px;
-    width:120px;
-    height:50px;
-
+.custom-file:{
+    background:#01c4c4;
 
 }
-.myButton1:hover {
-	background:linear-gradient(to bottom, #408c99 5%, #3fc5f5 100%);
-	background-color:#408c99;
-}
 
+  a:link{
+    color:#00cdcf;
+    text-decoration:none;
 
-
-
-.cabecalho{
-    position: absolute;
-    align:center;
-    bottom:510px;
-    left: 615px;
-    color:#adadad;
-
-}
+  }
+  a{
+   color:#01c4c4;}
+  a:hover{
+    text-decoration:none;
+    color:#008c8c;

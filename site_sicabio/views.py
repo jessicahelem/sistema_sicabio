@@ -22,9 +22,9 @@ def form_paciente(request):
     if paciente_id:
         paciente = Paciente.objects.get(id=paciente_id)
         if paciente.profissional == request.user:
-            return render(request, 'cadastrar_paciente.html', {'paciente': paciente})
+            return render(request, 'base_paciente.html', {'paciente': paciente})
 
-    return render(request, 'cadastrar_paciente.html')
+    return render(request, 'base_paciente.html')
 
 
 @login_required(login_url='/login/')
@@ -176,22 +176,22 @@ def set_consulta(request, id):
     horario = request.POST.get('horario')
     consulta_id = request.POST.get('consulta-id')
     prof = request.user
+
     if consulta_id:
-            consulta = Consulta.objects.get(id=consulta_id)
-
-            if prof == consulta.profissional:
-                consulta.paciente = paciente
-                consulta.data = data
-                consulta.horario = horario
+        consulta = Consulta.objects.get(id=consulta_id)
+        if prof == consulta.profissional:
+            consulta.paciente = paciente
+            consulta.data = data
+            consulta.horario = horario
             consulta.save()
-
-
+    if Consulta.objects.filter(profissional=prof, horario=horario, data=data):
+        messages.warning(request, 'Existe uma consulta marcada nesse horário e data. Por favor, tente novamente.')
+        return redirect('../../../pacientes/',{'paciente':paciente})
     else:
-        consulta = Consulta.objects.create(data=data, horario=horario, paciente=paciente, profissional=prof)
+
+        Consulta.objects.create(data=data, horario=horario, paciente=paciente, profissional=prof)
 
     return redirect('../../../../site_sicabio/consultas/', {'paciente': paciente})
-
-
 
 @login_required(login_url='/login/')
 def cadastrar_digital(request, id):
@@ -235,9 +235,9 @@ def form_consulta(request, id):
         consulta = Consulta.objects.get(id=consulta_id)
 
         if consulta.profissional == request.user:
-            return render(request, 'cadastrar_consulta.html', {'consulta': consulta})
+            return render(request, 'base_consulta.html', {'consulta': consulta})
 
-    return render(request, 'cadastrar_consulta.html', {'paciente_id': paciente_id})
+    return render(request, 'base_consulta.html', {'paciente_id': paciente_id})
 
 
 @csrf_protect

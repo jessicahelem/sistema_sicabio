@@ -41,9 +41,9 @@
 
 			<div class="wrap-login100">
 				<div class="title_si">
-				<h2 > SICABIO </h2>
+				<h2 style="font-size:3vw;"> SICABIO </h2>
 					<div class="sub_titulo">
-						<p align="center">Sistema de Identificação de Capacidades Biomotoras</p>
+						<p align="center"style="font-size:2vw;">Sistema de Identificação de Capacidades Biomotoras</p>
 
 					</div>
 					</div>
@@ -81,9 +81,9 @@
 					<div>
                     <div class="container-login100-form-btn">
 
-						{% for message in messages %}
+						{% for i in messages %}
 						<div class="alert alert-danger">
-							 <strong>Error! </strong>{{ message}}
+							 <strong>Error! </strong>{{i}}
 						</div>
 						{% endfor %}
 						<button type="submit" class="login100-form-btn">

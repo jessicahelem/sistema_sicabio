@@ -31,7 +31,7 @@
 
 </head>
 
-<body>
+<div>
  <div class="modal fade" id="modal_confirm1">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -75,9 +75,9 @@
 
          </div>
     </div>
-
+<div class="container-md">
         <div class="row">
-        <div class="column">
+        <div class="col-sm-4">
               <a href='../{{consulta.paciente.id}}/cadastrar_consulta/?id={{consulta.id}}'>
 
                 <div id="menu_aconsulta" class="card border border-info"style="margin-top:-580px;">
@@ -86,7 +86,7 @@
                     </div>
 
                     <div class="container text-center">
-                        <h5  style="font-weight:bold; bottom:20px;">Alterar Consulta</h5>
+                        <h5  style="font-size:1.5vw;font-weight:bold; bottom:20px;">Alterar Consulta</h5>
 
 
 
@@ -96,14 +96,14 @@
 
 
         </div>
-         <div class="column">
+         <div class="col-sm-4">
             <a href="../../detalhes/{{consulta.paciente.id}}">
                 <div id="menu_vpaci" class="card border border-info"style="margin-top:-580px;">
                      <div id="img_vis"align="center" class="image" style="margin-top:4px;">
                     <img  src="{% static 'images/visu.png' %}" alt="visualizar">
                     </div>
                     <div class="container text-center">
-                        <h5  style="font-weight:bold; bottom:20px;">Visualizar Paciente</h5>
+                        <h5  style="font-size:1.5vw;font-weight:bold; bottom:20px;">Visualizar Paciente</h5>
 
 
 
@@ -116,24 +116,25 @@
     </div>
 
 
-
-  <div class="column">
+    <row>
+  <div class="col-sm-4">
       <a href="#">
-      <div id="menu_excluir" class="card border border-info text-center"style="margin-top:-380px;" data-toggle="modal"data-target="#modal_confirm1">
+      <div id="menu_excluir" class="card border border-info text-center"style="margin-top:-420px;right:-10px;" data-toggle="modal"data-target="#modal_confirm1">
                   <div id="img_lix"align="center" class="image" style="margin-top:4px;">
                     <img  src="{% static 'images/ex_c.png' %}" alt="lixeira">
                     </div>
 
                     <div class="container text-center">
-                        <h5  style="font-weight:bold; bottom:20px;">Excluir Consulta</h5>
+                        <h5  style="font-size:1.5vw;font-weight:bold; bottom:20px;">Excluir Consulta</h5>
 
 
 
     </div>
           </a>
             </div>
-
+</div>
   </div>
+        </row>
      </div>
 
 

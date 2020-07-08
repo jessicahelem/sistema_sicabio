@@ -2,43 +2,80 @@
 <!doctype html>
 <html lang="en">
   <head>
-     <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.0.1">
 
+      {% if consulta %}
+      <title>Alterar Consulta</title>
+      {% else %}
+      <title>Marcar Consulta</title>
+        {% endif %}
+          {% include "menu_consulta.html" %}
 
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
 
     <!-- Bootstrap core CSS -->
-<link href="{% static 'bootstrap/css/bootstrap.min.css'%}" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
 
-     {% if consulta %}
-            <title>Alterar Consulta</title>
-    {% else %}
+      <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
 
-        <title>Cadastrar Consultas</title>
-    {% endif %}
-      {% include 'menu_consulta.html' %}
-
-
-
-
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
     <!-- Custom styles for this template -->
-    <link href="{% static 'css/signin.css' %}" rel="stylesheet">
+    <link href="{% static 'css/cad_consulta.css'%}" rel="stylesheet">
   </head>
   <body class="text-center">
-  <div id="container" class="container  p-5 my-3 border ">
+  <div class="container p-3 my-3 border" style="width:40%;height:540px;">
+  {% if consulta%}
+  <h1 class="h3 mt-5 font-weight-normal" style="color:#01c4c4">Alterar Consulta</h1>
+        {% else %}
+      <h1 class="h3 mt-5 font-weight-normal" style="color:#01c4c4">Marcar Consulta</h1>
+    {% endif %}
+    <form class="form-signin"enctype="multipart/form-data" action="submit" method="post">{% csrf_token %}
+                <input type="number" class="form-control" name="consulta-id" value="{{consulta.id}}"hidden>
 
-    {% block content %}
-    {% endblock %}
+
+  <label for="data" class="sr-only">Data</label>
+  <input type="date" id="data" name="data" class="form-control" >
+  <label for="horario" class="sr-only">horario</label>
+  <input type="time" id="horario" name="horario" class="form-control"  >
+   <div>
+        {% for message in messages %}
+        <div class="alert alert-warning">
+             <strong>Error! </strong>{{message}}
+        </div>
+             {% endfor %}
+
+        {% if consulta %}
+        <button class=" btn btn-lg btn-info btn-block"  type="submit">Alterar Consulta</button>
+    {% else %}
+        <button class=" btn btn-lg btn-info btn-block" type="submit">Marcar Consulta</button>
+    {% endif %}
+    </div>
+    </form>
 
 
-  </div>
-    {% include "model_footer.html" %}
+</div>
+  </body>
 
-</body>
+
+
+
 </html>
