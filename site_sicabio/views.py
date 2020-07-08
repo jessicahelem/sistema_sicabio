@@ -121,6 +121,7 @@ def inserir_digital(request, id):
     return render(request, 'inserir_digital.html', {'paciente': paciente})
 
 
+
 @login_required(login_url='/login/')
 def set_paciente(request):
     nome_paciente = request.POST.get('nome_paciente')

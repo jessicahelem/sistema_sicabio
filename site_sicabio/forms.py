@@ -30,34 +30,7 @@ class UsuarioForm(forms.ModelForm):
                 attrs={'class': 'form-control', 'maxlength': 255, 'placeholder': 'Especialidade'}),
             }
 
-        error_messages = {
-            'nome': {
-                'required': 'Este campo é obrigatório'
-            },
-            'CPF': {
-                'required': 'Este campo é obrigatório'
 
-            },
-
-            'password': {
-                'required': 'Este campo é obrigatório'
-
-            },
-            'especialidade': {
-                'required': 'Este campo é obrigatório'
-
-            },
-            'username': {
-                'required': 'Este campo é obrigatório'
-            },
-
-            'email':{
-                'required': 'Este campo é obrigatório.'
-            },
-
-
-
-        }
 
     def save(self, commit=True):
           user = super(UsuarioForm, self).save(commit=False)
@@ -66,21 +39,20 @@ class UsuarioForm(forms.ModelForm):
               user.save()
           return user
 
+    def clean_email(self):
+        email=self.cleaned_data['email']
+        if Profissional.objects.filter(email=email).exists():
+            raise forms.ValidationError('Já existe um usuário com esse email.')
+        return email
 
-class PacienteForm(forms.Form):
+    def clean_cpf(self):
+        cpf = self.cleaned_data['CPF']
+        if Profissional.objects.filter(CPF=cpf).exists():
+            raise forms.ValidationError('CPF já existe.')
+        return cpf
 
-    class Meta:
-        model = Paciente
-        fields = ['nome_paciente', 'cpf_paciente','idade','foto']
-
-        # foto = forms.ImageField()
-        # nome_paciente = forms.CharField(label='Nome Completo',widget=forms.Textarea)
-        # cpf_paciente = forms.CharField(label='CPF',widget=forms.Textarea)
-
-        widgets = {'nome_paciente': forms.TextInput(attrs={'class': 'form-control', 'maxlength': 255, 'placeholder': 'Nome'}),
-                   'cpf_paciente': forms.TextInput(
-                    attrs={'class': 'form-control', 'maxlength': 255, 'placeholder': 'CPF'}),
-                   'idade':forms.TextInput(attrs={'class':'form-control','placeholder':'Idade'}),
-                   'foto': forms.ImageField(),
-
-                   }
+    def clean_user(self):
+        username = self.cleaned_data['username']
+        if Profissional.objects.filter(username=username).exists():
+            raise forms.ValidationError('Username já existe.')
+        return username
