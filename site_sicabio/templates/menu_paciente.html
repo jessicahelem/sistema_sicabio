@@ -1,12 +1,61 @@
 {% load staticfiles %}
-<!doctype html>
-<html lang=''>
-<head>
- {% include "header_menu.html" %}
-</head>
-<body>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+   <script src="{% static 'http://code.jquery.com/jquery-latest.min.js' %}" type="text/javascript"></script>
+   <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
 
+<style>
+    a:link{
+    color:#00cdcf;
+    text-decoration:none;
 
-</body>
-<html>
+  }
+  a{
+   color:#01c4c4;}
+  a:hover{
+    text-decoration:none;
+    color:#008c8c;
+
+}
+ a{
+   color:#01c4c4;}
+
+   #logout{
+   color:#01c4c4;
+   }
+
+ .button{
+ top: -5px;
+ position: relative;
+ height:30px;
+ width:100px;
+ border-radius:5px;
+ background-color:#00CDCF;
+  color: white;
+  border: 2px solid #04e2e2;
+  margin-left:700px;
+   }
+
+   .button {
+  transition-duration: 0.5s;
+}
+.button:hover {
+  background-color: #00c4c4;
+  color: white;
+}
+
+</style>
+
+<div id='cssmenu'>
+<ul>
+    <li><a href='/'>Tela Principal</a></li>
+   <li><a href='/site_sicabio/cadastrar_paciente/'>Adicionar</a></li>
+   <li><a href='/site_sicabio/pacientes/'>Listar</a></li>
+   <li><a href='/site_sicabio/consultas/'>Consultas</a></li>
+  <li> <a id="logout" href="/logout/" style="width:30px;"> <button id="btn_sair" class="button" >Sair</button></a></li>
+</ul>
+</div>
+
+

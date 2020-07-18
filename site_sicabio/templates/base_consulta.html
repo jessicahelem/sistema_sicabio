@@ -22,57 +22,45 @@
 <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
 
-      <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
     <!-- Custom styles for this template -->
-    <link href="{% static 'css/cad_consulta.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/cad_p.css' %}">
   </head>
-  <body class="text-center">
-  <div class="container p-3 my-3 border" style="width:40%;height:540px;">
-  {% if consulta%}
-  <h1 class="h3 mt-5 font-weight-normal" style="color:#01c4c4">Alterar Consulta</h1>
+
+
+<div class="form-style-5" style="margin-top:20px;">
+<form style="margin-top:10px; " enctype="multipart/form-data" action="submit" method="post">{% csrf_token %}
+<fieldset>
+{% if consulta %}
+<h1 class="h3  font-weight-normal text-center" style="color:#01c4c4; margin-bottom:30px;">Alterar Consulta</h1>
         {% else %}
-      <h1 class="h3 mt-5 font-weight-normal" style="color:#01c4c4">Marcar Consulta</h1>
+      <h1 class="h3  font-weight-normal text-center" style="color:#01c4c4; margin-bottom:30px;">Cadastrar Consulta</h1>
     {% endif %}
-    <form class="form-signin"enctype="multipart/form-data" action="submit" method="post">{% csrf_token %}
-                <input type="number" class="form-control" name="consulta-id" value="{{consulta.id}}"hidden>
+    <input type="number" class="form-control" name="consulta-id" value="{{consulta.id}}"hidden>
+
+    <input type="date" id="data" name="data" value="data" style="margin-top:50px;">
+    <input type="time" id="horario" name="horario" value="horario" >
 
 
-  <label for="data" class="sr-only">Data</label>
-  <input type="date" id="data" name="data" class="form-control" >
-  <label for="horario" class="sr-only">horario</label>
-  <input type="time" id="horario" name="horario" class="form-control"  >
-   <div>
-        {% for message in messages %}
-        <div class="alert alert-warning">
-             <strong>Error!</strong> {{message}}
-        </div>
+</fieldset>
+<div>
+       {% for message in messages %}
+  <div class="alert alert-warning">
+      <strong>Error!</strong> {{message}}
+</div>
              {% endfor %}
 
         {% if consulta %}
-        <button class=" btn btn-lg btn-info btn-block"  type="submit">Alterar Consulta</button>
-    {% else %}
-        <button class=" btn btn-lg btn-info btn-block" type="submit">Marcar Consulta</button>
+<button class=" btn btn-lg btn-info btn-block"  type="submit" style="margin-top:130px;position:relative;">Alterar Consulta</button>
+  {% else %}
+    <button class=" btn btn-lg btn-info btn-block" type="submit" style="margin-top:130px;position:relative;">Marcar Consulta</button>
     {% endif %}
     </div>
-    </form>
-
-
+</form>
 </div>
+
+
+
   </body>
 
 

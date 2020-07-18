@@ -11,16 +11,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script type="text/javascript" src="{% static 'js/search.js' %}"></script>
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.0.1">
-
     <link href="{% static 'vendor/bootstrap/css/bootstrap.css'%}" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+ <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
 
      {% include "menu_consulta.html" %}
 
@@ -46,58 +45,33 @@
 
 
     }
-#divBusca{
-  background-color:#E0EEEE;
-  border:solid 2px #5F9EA0;
-  border-radius:10px;
-  width:320px;
-  height:32px;
-  margin-left: 125px;
-  margin-top:10px;
 
+.active-cyan-4 input[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid #4dd0e1;
+  box-shadow: 0 1px 0 0 #4dd0e1;
 }
-
-#txtBusca{
-  background-color:transparent;
-  padding-left:5px;
-  font-size:18px;
-  border:none;
-  height:20px;
-  width:190px;
-  top:77px;
-  position:absolute;
-  margin-left:12px;
-
+.active-cyan input[type=text] {
+  border-bottom: 1px solid #4dd0e1;
+  box-shadow: 0 1px 0 0 #4dd0e1;
 }
-.a:txtBusca{
-    background-color:#E0EEEE;
-
-
+.active-cyan .fa, .active-cyan-4 .fa {
+  color: #fff;
 }
-
-#btnBusca{
-  border:none;
-  height:30px;
-  border-radius:0 7px 7px 0;
-  width:88px;
-  font-weight:bold;
-  background:#00CDCF;
-  margin-left:212px;
-  position:absolute;
-  top:72px;
-
-
-}
-
-#divBusca img{
-  float:left;
-}
-
 </style>
 
-    <div class="container mt-4 mb-4">
+   <div class="container mt-4 mb-4">
+        <div class="search-div" style="position:relative;margin-left:200px;align: center;">
 
-        <div class="row">
+        <form  class="form-inline active-cyan-4"  method="GET" id="search-form">
+            <input class="form-control form-control-sm mr-3 w-75" type="text" id = 'buscar'name="buscar" placeholder="Pesquisar">
+
+ <span class="input-group-addon">
+      <button class="fa fa-search" style="background: #4dd0e1;border:solid #4dd0e1;right:20px;position:relative;width:47px;height:32px;border-radius:5px;"></button>
+    </span>
+        </form>
+        </div>
+
+        <div class="row" style="margin-top:50px;">
              {% for c in consulta %}
             <div class="col-sm-3">
                 <div class="polaroid">
@@ -121,5 +95,8 @@
 
   {% include "model_footer.html" %}
 
+
+</script>
 </body>
+
 </html>

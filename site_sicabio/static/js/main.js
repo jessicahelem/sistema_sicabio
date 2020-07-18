@@ -52,6 +52,11 @@
         $(thisAlert).removeClass('alert-validate');
     }
     
-    
+    $(searchBtn).on('click', function() {
+    var searchBtn= $('#search-btn');
+    var searchForm= $('#search-form');
+        searchForm.submit();
+    });
 
 })(jQuery);
+

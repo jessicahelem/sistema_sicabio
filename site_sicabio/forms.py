@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from django import forms
+from django.contrib import messages
+from django.shortcuts import redirect
+
 from .models import *
 from django.forms import ModelForm
 
@@ -40,9 +43,10 @@ class UsuarioForm(forms.ModelForm):
           return user
 
     def clean_email(self):
-        email=self.cleaned_data['email']
+        email = self.cleaned_data['email']
         if Profissional.objects.filter(email=email).exists():
-            raise forms.ValidationError('Já existe um usuário com esse email.')
+            raise forms.ValidationError('CPF já existe.')
+
         return email
 
     def clean_cpf(self):

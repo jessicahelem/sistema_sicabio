@@ -15,18 +15,29 @@
     <meta name="generator" content="Jekyll v4.0.1">
 
     <link href="{% static 'vendor/bootstrap/css/bootstrap.css'%}" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
-
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link href="{% static 'bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
 
-     {% include "header_menu.html" %}
+     {% include "menu_paciente.html" %}
 
 </head>
 <body>
 <style>
+.active-cyan-4 input[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid #4dd0e1;
+  box-shadow: 0 1px 0 0 #4dd0e1;
+}
+.active-cyan input[type=text] {
+  border-bottom: 1px solid #4dd0e1;
+  box-shadow: 0 1px 0 0 #4dd0e1;
+}
+.active-cyan .fa, .active-cyan-4 .fa {
+  color: #fff;
+}
     .polaroid{
     width:250px;
     box-shadow:0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.2);
@@ -102,12 +113,28 @@
 <!--        <button id="btnBusca">Buscar</button>-->
 <!--    </div>-->
     <div class="container mt-4 mb-4">
+        <div class="search-div" style="position:relative;margin-left:200px;align: center;">
 
-        <div class="row">
+        <form  class="form-inline active-cyan-4"  method="GET" id="search-form">
+            <input class="form-control form-control-sm mr-3 w-75" type="text" id = 'buscar'name="buscar" placeholder="Pesquisar">
+
+ <span class="input-group-addon">
+      <button class="fa fa-search" style="background: #4dd0e1;border:solid #4dd0e1;right:20px;position:relative;width:47px;height:32px;border-radius:5px;"></button>
+    </span>
+        </form>
+        </div>
+
+
+        <div class="row" style="margin-top:50px;">
              {% for p in paciente %}
             <div class="col-sm-3">
                 <div class="polaroid">
+                    {% if p.foto %}
                    <a class="img" href="../detalhes/{{p.id}}"> <img  src="{{p.foto.url}}" style="width:100%;height:150px;"> </a>
+                   {% else %}
+                   <a class="img" href="../detalhes/{{p.id}}"> <img  src="{% static 'images/avatar.png' %}" style="width:100%;height:150px;"> </a>
+                    {% endif %}
+
                     <div  class="container_txt" style="text-align:center">
                         <p style="font-weight:bold; text-transform:uppercase;"> {{ p.nome_paciente }}</p>
                     </div>

@@ -24,7 +24,7 @@
     <title >Detalhes</title>
         <link href="{% static 'css/detalhes_p.css'%}" rel="stylesheet">
 
-    {% include "header_menu.html" %}
+    {% include "menu_paciente.html" %}
     <h2 class="text-center" style="margin-top:20px; color:#00CDCF;">Detalhes</h2>
 
 </head>
@@ -69,9 +69,11 @@
 
     <div id="card_p" class="card border border-info"style="margin-top:50px;">
 
-
+            {% if paciente.foto %}
              <img  src="{{paciente.foto.url}}"  style="width:100%; height:300px;">
-
+            {% else %}
+             <img  src="{% static 'images/avatar.png' %}"  style="width:100%; height:300px;">
+                {% endif %}
              <div class="container text-center">
                  <h5 style="font-weight:bold">Nome Completo:</h5> <p style="text-transform: uppercase;">{{paciente.nome_paciente}}</p>
                  <h5 style="font-weight:bold">CPF:</h5> <p>{{paciente.cpf_paciente}}</p>

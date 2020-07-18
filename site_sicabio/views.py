@@ -75,7 +75,14 @@ def submit_login(request):
 
 @login_required(login_url='/login/')
 def list_user(request):
+
     paciente = Paciente.objects.filter(profissional=request.user)
+
+    busca = request.GET.get('buscar')
+
+    if busca:
+        paciente = Paciente.objects.filter(nome_paciente__icontains=busca,profissional=request.user)
+
 
     return render(request, 'lista_pacientes.html', {'paciente': paciente})
 
@@ -83,6 +90,14 @@ def list_user(request):
 @login_required(login_url='/login/')
 def list_consulta(request):
     consulta = Consulta.objects.filter(profissional=request.user)
+
+    busca= request.GET.get('buscar')
+
+    if busca:
+        consulta = Consulta.objects.filter(paciente__nome_paciente__icontains=busca,profissional=request.user)
+
+
+
     return render(request, 'lista_consultas.html', {'consulta': consulta})
 
 
@@ -91,7 +106,9 @@ def list_impressao(request, id):
     paciente = Paciente.objects.get(id=id)
     impressao = Impressao.objects.filter(paciente=paciente)
 
+
     return render(request, 'lista_impressoes.html', {'impressao': impressao, "paciente": paciente})
+
 
 
 @login_required(login_url='/login/')
@@ -103,8 +120,7 @@ def pacientes_detalhes(request, id):
 
 @login_required(login_url='/login/')
 def impressao_detalhes(request, id, id_impressao):
-    # paciente = Paciente.objects.filter(id=id)
-    # impressao= Impressao.objects.get(paciente= paciente)
+
     impressao = Impressao.objects.get(id=id_impressao)
     return render(request, 'detalhes_impressoes.html', {'impressao': impressao})
 
@@ -187,7 +203,7 @@ def set_consulta(request, id):
             consulta.save()
     if Consulta.objects.filter(profissional=prof, horario=horario, data=data):
         messages.warning(request, 'Existe uma consulta marcada nesse horário e data. Por favor, tente novamente.')
-        return redirect('../../../pacientes/',{'paciente':paciente})
+        return redirect('../cadastrar_consulta/',{'paciente':paciente})
     else:
 
         Consulta.objects.create(data=data, horario=horario, paciente=paciente, profissional=prof)
