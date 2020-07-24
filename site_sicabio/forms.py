@@ -26,14 +26,15 @@ class UsuarioForm(forms.ModelForm):
             "username":forms.TextInput(attrs={'class': 'form-control', 'maxlength': 255, 'placeholder':'Username'}),
             'nome': forms.TextInput(attrs={'class': 'form-control', 'maxlength': 255, 'placeholder': 'Nome Completo'}),
             'CPF': forms.TextInput(
-                attrs={'class': 'form-control', 'maxlength': 12, 'placeholder': 'CPF'}),
-            'email': forms.TextInput(attrs={'class': 'form-control', 'maxlength': 255, 'placeholder': 'Email'}),
-            'password': forms.TextInput(attrs={'class': 'form-control', 'maxlength': 8, 'placeholder': 'Senha'}),
+                attrs={'class': 'form-control', 'maxlength': 14,'placeholder': 'CPF'}),
             'especialidade': forms.TextInput(
                 attrs={'class': 'form-control', 'maxlength': 255, 'placeholder': 'Especialidade'}),
-            }
+
+            'email': forms.EmailInput(attrs={'class': 'form-control', 'maxlength': 255, 'placeholder': 'Email'}),
+            'password': forms.PasswordInput(attrs={'class': 'form-control', 'maxlength': 8, 'placeholder': 'Senha'}),
 
 
+}
 
     def save(self, commit=True):
           user = super(UsuarioForm, self).save(commit=False)
@@ -48,7 +49,11 @@ class UsuarioForm(forms.ModelForm):
             raise forms.ValidationError('CPF já existe.')
 
         return email
-
+    def clean_data(self):
+        data = self.cleaned_data['data']
+        if not Consulta.objects.filter(data=data):
+            raise forms.ValidationError('Insira uma data válida')
+        return data
     def clean_cpf(self):
         cpf = self.cleaned_data['CPF']
         if Profissional.objects.filter(CPF=cpf).exists():

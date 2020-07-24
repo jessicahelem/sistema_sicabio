@@ -52,11 +52,23 @@ class Profissional(PermissionsMixin,AbstractBaseUser):
         return True
 
 
-
+@property
+def get_photo_url(self):
+    if Impressao.img and hasattr(Impressao.img, 'url'):
+        return self.img.url
+    else:
+        return "/static/images/avatar.png"
 
 class Impressao(models.Model):
-    img_path = models.ImageField(upload_to='impressoes', null=True)
-    mao = models.CharField(max_length=200,null=False)
+    MAO_CHOICES = (
+        ("ME", "Mão Esquerda"),
+        ("MD", "Mão Direita"),
+
+    )
+
+    img = models.ImageField(upload_to='impressoes', null=True, blank=True, default='media/avatar.png')
+
+    mao = models.CharField(max_length=2,null=False,choices=MAO_CHOICES)
     paciente = models.ForeignKey('Paciente', on_delete=models.CASCADE, related_name='im_digital')
    # padrao = models.ForeignKey('Padrao',on_delete=models.CASCADE,null=True,default=True)
     dedo = models.CharField(max_length=200, null=False)
@@ -69,20 +81,17 @@ class Paciente(models.Model):
     # id_paciente = models.IntergerField(primary_key=True),
     foto = models.ImageField(upload_to='pacientes', null=True, default='media/avatar.png',blank=True)
     nome_paciente = models.CharField(max_length=100, null=False)
-    cpf_paciente = models.CharField(max_length=12, null=False,unique=True)
-    dt_nascimento = models.DateField(auto_now = False,null=False)
-    profissional = models.ForeignKey('Profissional',on_delete=models.CASCADE,null=False,default=False)
-    # imp_digital = models.ForeignKey('ImpressaoDigital',on_delete=models.CASCADE,related_name='imp_digital',default=True,null=True)
-    # resultado_perfil = models.ForeignKey('Analise',on_delete=models.CASCADE,related_name='imp_digital',default=True,null=True)
+    cpf_paciente = models.CharField(max_length=12, null=False)
+    dt_nascimento = models.CharField(max_length=15)
+    profissional = models.ForeignKey('Profissional',on_delete=models.CASCADE,null=False)
 
     def __str__(self):
         return str(self.nome_paciente)
 
 
 class Consulta(models.Model):
-    # id_consulta = models.IntergerField(primary_key=True, on_delete=models.CASCADE)
-    data = models.DateField(auto_now=False)
-    horario = models.TimeField(auto_now=False)
+    data = models.CharField(max_length=15)
+    horario = models.CharField(max_length=5)
     paciente = models.ForeignKey('Paciente', on_delete=models.CASCADE, related_name='consulta')
     profissional= models.ForeignKey('Profissional', on_delete=models.CASCADE, related_name='consulta')
 

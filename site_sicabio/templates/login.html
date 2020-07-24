@@ -40,13 +40,6 @@
 
 
 			<div class="wrap-login100">
-				<div class="title_si">
-				<h2 style="font-size:3vw;"> SICABIO </h2>
-					<div class="sub_titulo">
-						<p align="center"style="font-size:2vw;">Sistema de Identificação de Capacidades Biomotoras</p>
-
-					</div>
-					</div>
 
 
 				<div class="login100-pic js-tilt" data-tilt>
@@ -56,7 +49,7 @@
 
 				<form  action="submit", method="post" class="login100-form validate-form">{% csrf_token %}
 					<span class="login100-form-title">
-						Login
+						Sign In
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Insira o CPF" >
@@ -87,16 +80,16 @@
 						</div>
 
 					<div class="text-center p-t-12">
-						<span class="txt1">
+						<span style="font-weight:bold;"class="txt1">
 							Esqueceu a
 						</span>
-						<a class="txt2" href="#">
+						<a style="font-weight:bold; "class="txt2" href="#">
 							Senha?
 						</a>
 					</div>
 
-					<div class="text-center p-t-136">
-						<a style="text-weigth:bold;" class="txt2" href="/cadastro/">
+					<div class="text-center pt-5">
+						<a style="font-weight:bold;" class="txt2" href="/cadastro/">
 							Crie uma Conta
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>

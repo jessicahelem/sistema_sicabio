@@ -6,8 +6,8 @@ html {
 body {
 
 
-  background: -webkit-linear-gradient( top, rgba(0,183,234,1) 0%,rgba(0,158,195,1) 60%);
-  background: linear-gradient(top, rgba(0,183,234,1) 0%, rgba(0,158,195,1) 60%);
+  background: -webkit-linear-gradient( top, rgba(252,255,244,1) 70%,rgba(0,168,195,1) 0%);
+  background: linear-gradient(top, rgba(2,190,220,1) 70%, rgba(0,168,195,1) 0%);
   color: rgba(0, 0, 0, 0.0);
   font-family: "Roboto", sans-serif;
   font-size: 14px;
@@ -24,6 +24,7 @@ body {
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100%;
+  margin-top:10px;
 }
 
 .form {
@@ -31,7 +32,7 @@ body {
   position: absolute;
   background: #FFFFFF;
   width: 600px;
-  border-radius: 4px;
+  border-radius: 10px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   margin: 100px auto 10px;
@@ -39,9 +40,10 @@ body {
   border: solid;
   border-color:#007589;
   margin-left:400px;
-  top:-80px;
+  margin-top:10px;
 }
 .form-toggle {
+
   z-index: 10;
   position: absolute;
   top: 60px;
@@ -67,7 +69,7 @@ body {
   left: 50%;
   width: 30px;
   height: 4px;
-  background: #4285F4;
+  background: #00A8C3;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
@@ -116,10 +118,10 @@ body {
   display: block;
   width: 100%;
   border: solid ;
-  border-radius: 4px;
+  border-radius: 5px;
   box-sizing: border-box;
   padding: 12px 20px;
-  color:  #014754;
+  color:  #007589;
   font-family: inherit;
   font-size: inherit;
   font-weight: 500;
@@ -128,14 +130,19 @@ body {
   transition: 0.3s ease;
   margin-top: 10px;
 }
-.form-group input:focus {
-  color: #0092af;
+input[type="text"]:focus{
+outline: none;
+box-shadow: 0px 0px 5px #61C5FA;
+border: solid #008eaa;
+}
+.form-group input:hover {
+ border:solid #008eaa;
 }
 .two .form-group input {
-  color: #FFFFFF;
+  color:#008eaa;
 }
 .two .form-group input:focus {
-  color: #FFFFFF;
+  color:#008eaa;
 }
 .form-group button {
   outline: none;
@@ -226,20 +233,33 @@ body {
   left: 3%;
 }
 .form-panel.two:hover {
+  color:#008eaa;
   left: 93%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 10);
 }
 .form-panel.two:hover:before, .form-panel.two:hover:after {
-  opacity: 0;
+    color:#008eaa;
+
 }
 .form-panel.two.active {
   left: 10%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   cursor: default;
+    color:#008eaa;
+
 }
 .form-panel.two.active:before, .form-panel.two.active:after {
   opacity: 0;
+    color:#008eaa;
+
 }
+.txt1 {
+  font-family: Poppins-Regular;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #999999;
+}
+
 .form-header {
   margin: 20 0 40px;
   align:center;
@@ -251,7 +271,7 @@ body {
   font-size: 24px;
   font-weight: 700;
   text-transform: uppercase;
-  margin-left:160px;
+
   align:center
 
 }
@@ -288,8 +308,10 @@ body {
   vertical-align: middle;
   font-size: 12px;
 }
-
+.input:hover{
+    color:#008eaa;
+}
 .cp-fab {
   background: #FFFFFF !important;
-  color: #4285F4 !important;
+  color:#008eaa; !important;
 }

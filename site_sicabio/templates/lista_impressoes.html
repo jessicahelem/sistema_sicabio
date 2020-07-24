@@ -31,17 +31,17 @@
 <body>
 
     <div class="container mt-4 mb-4">
-        <a href='../inserir_digital/'>
+        <a href='../up_impressao/'>
 <button type="button" id="btn-info" class="btn btn-info btn-radius"  ><i class="material-icons ">add</i></button>
  </a>
         <div class="row">
              {% for i in impressao %}
             <div class="col-sm-3">
                 <div class="polaroid" style="border:5px solid #00cdcf;border-radius:5px;margin-top:20px;">
+                   <a class="img" href="../impressoes/detalhes_impressao/{{i.id}}"> <img  src="{{i.img.url}}" style="width:100%;height:150px;"> </a>
 
-                   <a class="img" href="../impressoes/detalhes_impressao/{{i.id}}"> <img  src="{{i.img_path.url}}" style="width:100%;height:150px;"> </a>
                     <div  class="container_txt" style="text-align:center;">
-                        <p style="font-weight:bold;text-transform:uppercase; "> Mão: {{ i.mao }}<br> Dedo: {{i.dedo}}</p>
+                        <p style="font-weight:bold;text-transform:uppercase; "> {{ i.mao }}<br> Dedo: {{i.dedo}}</p>
                     </div>
 
 

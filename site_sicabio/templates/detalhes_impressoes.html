@@ -26,7 +26,7 @@
     <title >Detalhes</title>
     <link href="{% static 'css/detalhes_im.css'%}" rel="stylesheet">
 
-    {% include "header_menu.html" %}
+    {% include "menu_paciente.html" %}
     <h2 class="text-center" style="margin-top:20px; color:#00CDCF;">Detalhes</h2>
 
 </head>
@@ -64,7 +64,7 @@
      <div id="card_imp"class="card border border-info"style="margin-top:50px;">
 
 
-             <img  src="{{impressao.img_path.url}}" >
+             <img  src="{{impressao.img.url}}" >
 
              <div class="container text-center">
                  <h5 style="font-weight:bold">Mão:</h5> <p style="text-transform: uppercase;">{{impressao.mao}}</p>
@@ -77,7 +77,7 @@
 
         <div class="row">
         <div class="col-sm-4">
-              <a href='../../inserir_digital/up_impressao/?id={{impressao.id}}'>
+              <a href='../../up_impressao/?id={{impressao.id}}'>
 
                 <div id="menu_altdigital" class="card border border-info">
                       <div id="img_at"align="center" class="image" style="margin-top:4px;">

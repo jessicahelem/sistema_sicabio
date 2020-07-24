@@ -1,36 +1,32 @@
-
-
-
-
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
 @font-face {
   font-family: Poppins-Regular;
-  src: url('../fonts/poppins/Poppins-Regular.ttf'); 
+  src: url('../fonts/poppins/Poppins-Regular.ttf');
 }
 
 @font-face {
   font-family: Poppins-Bold;
-  src: url('../fonts/poppins/Poppins-Bold.ttf'); 
+  src: url('../fonts/poppins/Poppins-Bold.ttf');
 }
 
 @font-face {
   font-family: Poppins-Medium;
-  src: url('../fonts/poppins/Poppins-Medium.ttf'); 
+  src: url('../fonts/poppins/Poppins-Medium.ttf');
 }
 
 @font-face {
   font-family: Montserrat-Bold;
-  src: url('../fonts/montserrat/Montserrat-Bold.ttf'); 
+  src: url('../fonts/montserrat/Montserrat-Bold.ttf');
 }
 
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
 
 * {
-	margin: 0px; 
-	padding: 0px; 
+	margin: 0px;
+	padding: 0px;
 	box-sizing: border-box;
 }
 
@@ -44,7 +40,7 @@ a {
 	font-family: Poppins-Regular;
 	font-size: 14px;
 	line-height: 1.7;
-	color: #666666;
+	color: #2EBFDE;
 	margin: 0px;
 	transition: all 0.4s;
 	-webkit-transition: all 0.4s;
@@ -58,7 +54,7 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-  color: #57b846;
+  color: #2EBFDE;
 }
 
 /*---------------------------------------------*/
@@ -70,7 +66,7 @@ p {
 	font-family: Poppins-Regular;
 	font-size: 14px;
 	line-height: 1.7;
-	color: #666666;
+	color:#007589;
 	margin: 0px;
 }
 
@@ -85,15 +81,22 @@ input {
 	outline: none;
 	border: none;
 }
+input[type="text"]:focus{
+outline: none;
+box-shadow: 0px 0px 5px #61C5FA;
+}
+input[type="password"]:focus{
+outline: none;
+box-shadow: 0px 0px 5px #61C5FA;
+}
 
 textarea {
   outline: none;
   border: none;
 }
 
-textarea:focus, input:focus {
-  border-color: transparent !important;
-}
+
+
 
 input:focus::-webkit-input-placeholder { color:transparent; }
 input:focus:-moz-placeholder { color:transparent; }
@@ -137,14 +140,14 @@ iframe {
   font-family: Poppins-Regular;
   font-size: 13px;
   line-height: 1.5;
-  color: #999999;
+  color:#2196F3;
 }
 
 .txt2 {
   font-family: Poppins-Regular;
   font-size: 16px;
   line-height: 1.0;
-  color: #666666;
+  color: #2196F3;
 
 
 
@@ -167,7 +170,7 @@ div.title_si h2 {
     top: -156px;
     left: 300px;
     margin-right: 0px;
-   # text-align-last: center;
+   text-align-last: center;
     color: #2579C3;
      }
 
@@ -180,7 +183,6 @@ div.sub_titulo p{
     margin-right: 0px;
     font-size: 26px;
     color: #2267AD;
-    width = 50%
 
 
 
@@ -197,7 +199,14 @@ div.sub_titulo p{
   justify-content: center;
   align-items: center;
   padding: 15px;
- background: #2EBFDE; /* Old browsers */
+ /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fcfff4+0,e9e9ce+100;Wax+3D+%232 */
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#87e0fd+0,53cbf1+40,05abe0+100;Blue+3D+%23+16 */
+background: #87e0fd; /* Old browsers */
+background: -moz-linear-gradient(top,  #87e0fd 0%, #53cbf1 40%, #05abe0 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #87e0fd 0%,#53cbf1 40%,#05abe0 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #87e0fd 0%,#53cbf1 40%,#05abe0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#05abe0',GradientType=0 ); /* IE6-9 */
+
 
 
 
@@ -209,10 +218,12 @@ div.sub_titulo p{
 */}
 
 .wrap-login100 {
-  width: 960px;
+  width: 900px;
+  height:600px;
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
+  border: solid #008eaa;
 
   display: -webkit-box;
   display: -webkit-flex;
@@ -221,8 +232,9 @@ div.sub_titulo p{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 177px 130px 33px 95px;
+  padding: 150px 120px 300px 95px;
 }
+
 
 /*------------------------------------------------------------------
 [  ]*/
@@ -243,7 +255,7 @@ div.sub_titulo p{
 
 .login100-form-title {
   font-family: Arial-Bold;
-  font-size: 26px;
+  font-size: 30px;
   color: #2267AD;
   line-height: 1.2;
   text-align: center;
@@ -266,7 +278,7 @@ div.sub_titulo p{
   font-family: Poppins-Medium;
   font-size: 15px;
   line-height: 1.5;
-  color: #666666;
+  color: #3ABACE;
 
   display: block;
   width: 100%;
@@ -288,13 +300,15 @@ div.sub_titulo p{
   z-index: -1;
   width: 100%;
   height: 100%;
-  box-shadow: 0px 0px 0px 0px;
-  color: rgba(87,184,70, 0.8);
+  color: #3ABACE;
+}
+.focus-input100 : hover{
+    color: #3ABACE;
 }
 
 .input100:focus + .focus-input100 {
-  -webkit-animation: anim-shadow 0.5s ease-in-out forwards;
-  animation: anim-shadow 0.5s ease-in-out forwards;
+  -webkit-animation: anim-shadow 0.9s ease-in-out forwards;
+  animation: anim-shadow 0.9s ease-in-out forwards;
 }
 
 @-webkit-keyframes anim-shadow {
@@ -328,7 +342,7 @@ div.sub_titulo p{
   height: 100%;
   padding-left: 35px;
   pointer-events: none;
-  color: #666666;
+  color:#3ABACE;
 
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
@@ -337,7 +351,7 @@ div.sub_titulo p{
 }
 
 .input100:focus + .focus-input100 + .symbol-input100 {
-  color: #57b846;
+  color: #3ABACE;
   padding-left: 28px;
 }
 
@@ -365,7 +379,7 @@ div.sub_titulo p{
   width: 100%;
   height: 50px;
   border-radius: 25px;
-  background: #57b846;
+  background: #3ABACE;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -382,7 +396,7 @@ div.sub_titulo p{
 }
 
 .login100-form-btn:hover {
-  background:#3be21d;
+  background:#008EAA;
 }
 
 
@@ -439,7 +453,6 @@ div.sub_titulo p{
   position: absolute;
   max-width: 70%;
   background-color: white;
-  border: 1px solid #c80000;
   border-radius: 13px;
   padding: 4px 25px 4px 10px;
   top: 50%;
@@ -452,7 +465,6 @@ div.sub_titulo p{
   pointer-events: none;
 
   font-family: Poppins-Medium;
-  color: #c80000;
   font-size: 13px;
   line-height: 1.4;
   text-align: left;
@@ -471,7 +483,6 @@ div.sub_titulo p{
   font-family: FontAwesome;
   display: block;
   position: absolute;
-  color: #c80000;
   font-size: 15px;
   top: 50%;
   -webkit-transform: translateY(-50%);

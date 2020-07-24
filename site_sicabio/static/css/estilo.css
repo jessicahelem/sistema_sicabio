@@ -1,128 +1,117 @@
 body{
     background-color:#fff;
+    width:100%;
+    height:100%;
 }
 
 
-.img_1{
+#img_1{
         width:100%;
-        heigth: auto;
-        position:absolute;
-        top:50%;
-        left:50%;
-        margin-top: -200px;
-        margin-left: -10px;
+        position:relative;
+        bottom:30px;
+        left:100px;
+
+
 
     }
 
 #img_2{
 
     width:100%;
-    heigth: auto;
-    position:absolute;
-    top:50%;
-    left:50%;
-    margin-top: -200px;
-    margin-left: -400px;
+    position:relative;
+    bottom:400px;
+    left:625px;
+
 
 }
 
 #polegar{
-    heigth:100%;
-    width:100%;
+
     position:relative;
-    top:90px;
+    bottom:650px;
 	left:110px;
 
 }
 
 #indicador{
-    width:100%;
-    heigth:100%;
+
     position:relative;
-    top:-75px;
-	left:120px;
+    bottom:790px;
+	left:155px;
 
 }
 
 #medio{
-    width:100%;
-    heigth:100%;
+
     position:relative;
-    top:-130px;
-	left:230px;
+    bottom:830px;
+	left:253px;
 
 }
 #anular{
-    heigth:100%;
-    width:100%;
+
     position:relative;
-    top:-153px;
-	left:308px;
+    bottom:830px;
+	left:325px;
 
 }
 #minimo{
-    heigth:100%;
-    width:100%;
+
     position:relative;
-    top:-140px;
-	left:360px;
+    bottom:800px;
+	left:370px;
 
 }
 
 #polegar_2{
-    heigth:100%;
-    width:100%;
+
     position:relative;
-    top:-110px;
-	left:750px;
+    bottom:760px;
+	left:900px;
 
 }
 
 #indicador_2{
-    width:100%;
-    heigth:100%;
+
     position:relative;
-    top:-273px;
-	left:675px;
+    bottom:905px;
+	left:830px;
 
 }
 
 #medio_2{
-    width:100%;
-    heigth:100%;
-    position:relative;
-    top:-330px;
-	left:618px;
 
-}
-#anular_2{
-    heigth:100%;
-    width:100%;
     position:relative;
-    top:-350px;
-	left:540px;
+    bottom:946px;
+	left:780px;
+}
+
+#anular_2{
+
+    position:relative;
+    bottom:950px;
+	left:702px;
 
 }
 #minimo_2{
-    heigth:100%;
-    width:100%;
+
     position:relative;
-    top:-340px;
-	left:480px;
+    bottom:916px;
+	left:650px;
 
 }
 
 #mao_esquerda{
 
     position:absolute;
-    top:380px;
-    left: 230px;
+    top:360px;
+    left: 238px;
 
 }
 #mao_direita{
 
     position:absolute;
-    top:380px;
-    left:600px;
+    top:360px;
+    left:747px;
 }
 

@@ -7,11 +7,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+
 </head>
 {% block content %}
 
 
-<form  method="post">{%csrf_token%}
+<form  method="post" >{%csrf_token%}
  <div class="form-group">
 
      <label></label>
@@ -21,16 +24,19 @@
     <label></label>
     {{form.username}}
     {{form.username.errors}}
-    <label></label>
-    {{form.CPF}}
-    {{form.CPF.errors}}
+
      <label></label>
+     {{form.CPF}}
+    {{form.CPF.errors}}
+
+     <label></label>
+    {{form.especialidade}}
+     <label></label>
+
     {{form.email}}
     {{form.email.errors}}
-    <label></label>
-    {{form.especialidade}}
-    {{form.especialidade.errors}}
-    <label></label>
+
+     <label></label>
     {{form.password}}
     {{form.password.errors}}
 

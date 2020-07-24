@@ -1,9 +1,10 @@
+from datetime import date
 from django.contrib import messages
 from django.contrib.auth import logout, login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.decorators.csrf import csrf_protect
-from rest_framework.compat import authenticate
+from rest_framework.authentication import authenticate
 
 from .forms import *
 
@@ -75,14 +76,12 @@ def submit_login(request):
 
 @login_required(login_url='/login/')
 def list_user(request):
-
     paciente = Paciente.objects.filter(profissional=request.user)
 
     busca = request.GET.get('buscar')
 
     if busca:
-        paciente = Paciente.objects.filter(nome_paciente__icontains=busca,profissional=request.user)
-
+        paciente = Paciente.objects.filter(nome_paciente__icontains=busca, profissional=request.user)
 
     return render(request, 'lista_pacientes.html', {'paciente': paciente})
 
@@ -91,12 +90,10 @@ def list_user(request):
 def list_consulta(request):
     consulta = Consulta.objects.filter(profissional=request.user)
 
-    busca= request.GET.get('buscar')
+    busca = request.GET.get('buscar')
 
     if busca:
-        consulta = Consulta.objects.filter(paciente__nome_paciente__icontains=busca,profissional=request.user)
-
-
+        consulta = Consulta.objects.filter(paciente__nome_paciente__icontains=busca, profissional=request.user)
 
     return render(request, 'lista_consultas.html', {'consulta': consulta})
 
@@ -106,9 +103,7 @@ def list_impressao(request, id):
     paciente = Paciente.objects.get(id=id)
     impressao = Impressao.objects.filter(paciente=paciente)
 
-
     return render(request, 'lista_impressoes.html', {'impressao': impressao, "paciente": paciente})
-
 
 
 @login_required(login_url='/login/')
@@ -120,7 +115,6 @@ def pacientes_detalhes(request, id):
 
 @login_required(login_url='/login/')
 def impressao_detalhes(request, id, id_impressao):
-
     impressao = Impressao.objects.get(id=id_impressao)
     return render(request, 'detalhes_impressoes.html', {'impressao': impressao})
 
@@ -135,7 +129,6 @@ def consulta_detalhes(request, id):
 def inserir_digital(request, id):
     paciente = Paciente.objects.get(id=id)
     return render(request, 'inserir_digital.html', {'paciente': paciente})
-
 
 
 @login_required(login_url='/login/')
@@ -156,11 +149,17 @@ def set_paciente(request):
             if file:
                 paciente.foto = file
             paciente.save()
-    else:
-        paciente = Paciente.objects.create(foto=file, nome_paciente=nome_paciente, cpf_paciente=cpf_paciente,
-                                           profissional=prof, dt_nascimento=dt_nascimento)
+    elif Paciente.objects.filter(profissional=prof, cpf_paciente=cpf_paciente):
+        messages.error(request, 'Paciente ja existe!')
+        return redirect('../cadastrar_paciente/')
 
-    return redirect('../pacientes/')
+    else:
+
+            paciente = Paciente.objects.create(foto=file, nome_paciente=nome_paciente, cpf_paciente=cpf_paciente,
+                                           profissional=prof, dt_nascimento=dt_nascimento)
+    messages.success(request, 'Paciente cadastrado com sucesso!')
+
+    return redirect('../cadastrar_paciente/')
 
 
 @login_required(login_url='/login/')
@@ -201,14 +200,22 @@ def set_consulta(request, id):
             consulta.data = data
             consulta.horario = horario
             consulta.save()
-    if Consulta.objects.filter(profissional=prof, horario=horario, data=data):
+
+        if Consulta.objects.filter(profissional=prof, horario=horario, data=data):
+            messages.warning(request, 'Existe uma consulta marcada nesse horário e data. Por favor, tente novamente.')
+            return redirect('../cadastrar_consulta/', {'paciente': paciente})
+    elif Consulta.objects.filter(profissional=prof, horario=horario, data=data) :
         messages.warning(request, 'Existe uma consulta marcada nesse horário e data. Por favor, tente novamente.')
-        return redirect('../cadastrar_consulta/',{'paciente':paciente})
+        return redirect('../cadastrar_consulta/', {'paciente': paciente})
+
     else:
 
-        Consulta.objects.create(data=data, horario=horario, paciente=paciente, profissional=prof)
+        Consulta.objects.create(data=data, paciente=paciente, profissional=prof, horario=horario)
 
-    return redirect('../../../../site_sicabio/consultas/', {'paciente': paciente})
+    messages.success(request, 'Consulta Marcada!')
+
+    return redirect('../cadastrar_consulta/', {'paciente': paciente})
+
 
 @login_required(login_url='/login/')
 def cadastrar_digital(request, id):
@@ -224,23 +231,23 @@ def set_impressao(request, id):
     impressao_id = request.POST.get('impressao-id')
     file = request.FILES.get('file')
 
-    prof = request.user
-
     if impressao_id:
         impressao = Impressao.objects.get(id=impressao_id)
         impressao.paciente = paciente
         impressao.mao = mao
         impressao.dedo = dedo
-        impressao.img_path = file
 
         if file:
-            impressao.img_path = file
+            impressao.img = file
         impressao.save()
+
     else:
 
-        impressao = Impressao.objects.create(img_path=file, paciente=paciente, dedo=dedo, mao=mao)
+        impressao = Impressao.objects.create(mao=mao, dedo=dedo, paciente=paciente, img=file)
 
-    return redirect('../../impressoes/', {'paciente': paciente})
+    messages.success(request, 'Salvo com sucesso!')
+
+    return redirect('../up_impressao/', {'paciente': paciente})
 
 
 @csrf_protect
@@ -265,6 +272,6 @@ def form_impressao(request, id):
     if impressao_id:
         impressao = Impressao.objects.get(id=impressao_id)
 
-        return render(request, 'up_impressao.html', {'impressao': impressao})
+        return render(request, 'base_impressao.html', {'impressao': impressao})
 
-    return render(request, 'up_impressao.html', {'paciente_id': paciente_id})
+    return render(request, 'base_impressao.html', {'paciente_id': paciente_id})

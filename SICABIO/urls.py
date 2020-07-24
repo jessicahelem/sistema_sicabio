@@ -41,14 +41,13 @@ urlpatterns = [
     path('site_sicabio/detalhes/<id>/inserir_digital/',views.cadastrar_digital),
     path('site_sicabio/cadastrar_paciente/submit', views.set_paciente),
     path('site_sicabio/cadastrar_consulta/submit',views.set_consulta),
-    path('site_sicabio/detalhes/<id>/inserir_digital/up_impressao/',views.form_impressao),
+    path('site_sicabio/detalhes/<id>/up_impressao/',views.form_impressao),
     path('site_sicabio/delete/<id>/',views.delete_paciente),
     path('site_sicabio/delete_consulta/<id>/',views.delete_consulta),
     path('site_sicabio/detalhes/<id>/impressoes/delete_impressao/<id_impressao>/', views.delete_impressao),
-
     path('site_sicabio/detalhes/<id>/cadastrar_consulta/',views.form_consulta),
     path('site_sicabio/detalhes/<id>/cadastrar_consulta/submit',views.set_consulta),
-    path('site_sicabio/detalhes/<id>/inserir_digital/up_impressao/submit',views.set_impressao),
+    path('site_sicabio/detalhes/<id>/up_impressao/submit',views.set_impressao),
     path('site_sicabio/detalhes_consulta/<id>/cadastrar_consulta/',views.form_consulta),
     path('site_sicabio/detalhes_consulta/<id>/cadastrar_consulta/submit',views.set_consulta),
 
