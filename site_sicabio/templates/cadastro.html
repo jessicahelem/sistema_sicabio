@@ -40,9 +40,9 @@
     {{form.password}}
     {{form.password.errors}}
 
-    <div>
+    <div class="text-center">
     {% for message in messages %}
-    {% if messages.error %}
+    {% if message.level ==  DEFAULT_MESSAGE_LEVELS.ERROR %}
     <div class="alert alert-error">
      {{message}}
     </div>

@@ -73,7 +73,7 @@ $(".custom-file-input").on("change", function() {
 </fieldset>
     <div>
       {% for message in messages %}
-    {% if messages == error %}
+    {% if message.level ==  DEFAULT_MESSAGE_LEVELS.ERROR %}
     <div class="alert alert-error">
      {{message}}
     </div>
