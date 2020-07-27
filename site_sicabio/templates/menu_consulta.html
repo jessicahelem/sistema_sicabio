@@ -25,9 +25,9 @@
    }
 
  .button{
- bottom: 45px;
+ top: 3px;
  position: relative;
- left:1200px;
+ left:850px;
  height:30px;
  width:100px;
  border-radius:5px;
@@ -45,16 +45,55 @@
 }
 
 
+#navbar {
+  background-color: #00CDCF;
+  top: 0;
+  width: 100%;
+  display: block;
+  transition: top 0.3s;
+  overflow:auto;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  color: #fff;
+}
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
 
 </style>
- <div id='cssmenu'>
-<ul>
 
-    <li><a href='/'>Tela Principal</a></li>
-   <li><a href='/site_sicabio/consultas/'>Consultas</a></li>
-   <li><a href='/site_sicabio/pacientes/'>Pacientes</a></li>
 
-</ul>
+
+<div id="navbar">
+ <a href='/'>Tela Principal</a>
+  <a href='/site_sicabio/consultas/'>Consultas</a>
+ <a href='/site_sicabio/pacientes/'>Pacientes</a>
+<a href='/logout/' style="width:10px;"> <button class="button" id="btn_sair">Sair</button></a>
 
 </div>
-       <a href='/logout/' style="width:10px;"> <button class="button" id="btn_sair">Sair</button></a>
+
+<!-- <div id='cssmenu'>-->
+<!--<ul>-->
+
+<!--    <li><a href='/'>Tela Principal</a></li>-->
+<!--   <li><a href='/site_sicabio/consultas/'>Consultas</a></li>-->
+<!--   <li><a href='/site_sicabio/pacientes/'>Pacientes</a></li>-->
+
+<!--</ul>-->
+
+<!--</div>-->

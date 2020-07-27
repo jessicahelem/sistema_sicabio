@@ -46,7 +46,9 @@ def cadastro(request):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            return redirect('/login')
+            messages.success(request,"Dados inseridos com sucesso!")
+
+            return redirect('/cadastro/')
     return render(request, "cadastro.html", context)
 
 

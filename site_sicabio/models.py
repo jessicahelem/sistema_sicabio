@@ -81,7 +81,7 @@ class Paciente(models.Model):
     # id_paciente = models.IntergerField(primary_key=True),
     foto = models.ImageField(upload_to='pacientes', null=True, default='media/avatar.png',blank=True)
     nome_paciente = models.CharField(max_length=100, null=False)
-    cpf_paciente = models.CharField(max_length=12, null=False)
+    cpf_paciente = models.CharField(max_length=12, null=False,unique=True,default=False)
     dt_nascimento = models.CharField(max_length=15)
     profissional = models.ForeignKey('Profissional',on_delete=models.CASCADE,null=False)
 

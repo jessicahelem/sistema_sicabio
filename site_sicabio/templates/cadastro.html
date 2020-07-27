@@ -41,11 +41,18 @@
     {{form.password.errors}}
 
     <div>
-        {% for i in messages %}
-      <div class="alert alert-danger">
-          <strong>Error! </strong>{{i}}
-      </div>
-        {% endfor %}
+    {% for message in messages %}
+    {% if messages.error %}
+    <div class="alert alert-error">
+     {{message}}
+    </div>
+    {% else %}
+    <div class="alert alert-success">
+      {{message}}
+    </div>
+    {% endif %}
+
+             {% endfor %}
  <button type="submit" class="btn btn-outline-primary">Cadastrar</button>
 <!--        <a href="../login/">-->
 <!--        <button class=" btn btn-lg btn-info " style="position:relative;bottom:75px;left: 260px;" type="button" name="cancelar">Cancelar</button></a>-->
