@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,11 +9,13 @@
     <meta name="generator" content="Jekyll v4.0.1">
 
       {% if consulta %}
-      <title>Alterar Consulta</title>
+      <title>Alterar Agendamento</title>
       {% else %}
-      <title>Marcar Consulta</title>
+      <title>Agendamento</title>
         {% endif %}
           {% include "menu_consulta.html" %}
+                {% include "sidebbar.html" %}
+
 
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
@@ -45,13 +47,13 @@ $(document).ready(function(){
   </head>
 
 
-<div class="form-style-5" style="margin-top:20px;">
+<div class="form-style-5" style="margin-top:20px;height: 400px;">
 <form style="margin-top:10px;" enctype="multipart/form-data" action="submit" method="post">{% csrf_token %}
 <fieldset>
 {% if consulta %}
-      <h1 class="h3  font-weight-normal text-center" style="color:#01c4c4; margin-bottom:30px;">Alterar Consulta</h1>
+      <h1 class="h3  font-weight-normal text-center" style="color:#01c4c4; margin-bottom:30px;">Alterar Agendamento</h1>
         {% else %}
-      <h1 class="h3  font-weight-normal text-center" style="color:#01c4c4; margin-bottom:30px;">Cadastrar Consulta</h1>
+      <h1 class="h3  font-weight-normal text-center" style="color:#01c4c4; margin-bottom:30px;">Agendamento</h1>
     {% endif %}
     <input type="number" class="form-control" name="consulta-id" value="{{consulta.id}}"hidden>
 
@@ -60,6 +62,19 @@ $(document).ready(function(){
 
 
 </fieldset>
+    <style>
+        .btn btn:hover{
+            background-color:#009898 ;
+
+
+        }
+        .btn btn:active{
+            background:#009898 ;
+            color:#009898 ;
+
+
+        }
+    </style>
 <div>
     {% for message in messages %}
     {% if message.level ==  DEFAULT_MESSAGE_LEVELS.WARNING %}
@@ -75,10 +90,13 @@ $(document).ready(function(){
              {% endfor %}
 
         {% if consulta %}
-<button class=" btn btn-lg btn-info btn-block"  type="submit" style="margin-top:130px;position:relative;">Alterar Consulta</button>
+<button style="color:white;top:50px;left:140px;" type="submit" class="btn btn-info">Alterar</button>
+<a href='../../../consultas/'>   <button style="color:white;position:relative;top:50px;left:150px;"  type="button" class="btn btn-info">Voltar</button></a>
   {% else %}
-    <button class=" btn btn-lg btn-info btn-block" type="submit" style="margin-top:130px;position:relative;">Marcar Consulta</button>
+ <button style="color:white;top:50px;position:relative;left:140px;" type="submit" class="btn btn-info ">Agendar</button>
+    <a href='../../../consultas/'>   <button style="color:white;position:relative;top:50px;left:150px;"  type="button" class="btn btn-info">Voltar</button></a>
     {% endif %}
+
     </div>
 </form>
 </div>

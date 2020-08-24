@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +22,8 @@
 
 
      {% include "menu_consulta.html" %}
+   {% include "sidebbar.html" %}
+
 
 </head>
 <body>
@@ -45,7 +47,31 @@
 
 
     }
+.center {
+  text-align: center;
+}
 
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
 .active-cyan-4 input[type=text]:focus:not([readonly]) {
   border-bottom: 1px solid #4dd0e1;
   box-shadow: 0 1px 0 0 #4dd0e1;
@@ -59,8 +85,8 @@
 }
 </style>
 
-   <div class="container mt-4 mb-4">
-        <div class="search-div" style="position:relative;margin-left:200px;align: center; margin-top:20px;">
+   <div class="container mt-4 mb-4"style="position: relative;margin-left: 200px;">
+        <div class="search-div" style="position:relative;margin-left:195px;align: center; margin-top:20px;">
 
         <form  class="form-inline active-cyan-4"  method="GET" id="search-form">
             <input class="form-control form-control-sm mr-3 w-75" type="text" id = 'buscar'name="buscar" placeholder="Pesquisar">
@@ -78,6 +104,10 @@
                    <a class="img" href="../detalhes_consulta/{{c.id}}/"> <img  src="{% static 'images/consulta.png' %}" style="width:100%;height:150px;"> </a>
                     <div  class="container_txt" style="text-align:center">
                         <p style="font-weight:bold;text-transform:uppercase"> {{ c.paciente }}</p>
+                        <p style="font-weight:bold;text-transform:uppercase"> Data: {{ c.data }}</p>
+                        <p style="font-weight:bold;text-transform:uppercase"> Horário: {{ c.horario }}</p>
+
+
                     </div>
 
 
@@ -88,15 +118,38 @@
 
          {% endfor %}
         </div>
+<div class="center">
+<div class="pagination">
+    <span class="step-links">
+        {% if consulta.has_previous %}
+            <a href="?page=1">&laquo; </a>
+             <a ><span class="current"style="position: relative;top:5px;">
+            {{ consulta.number }} de {{ consulta.paginator.num_pages }}
+        </span>
+                 </a>
+            <a href="?page={{ consulta.previous_page_number }}"> &raquo;</a>
+        {% endif %}
 
+
+        {% if consulta.has_next %}
+
+            <a href="?page={{ consulta.next_page_number }}">&laquo;</a>
+            <a><span class="current"style="position: relative;top:5px;">
+            {{ consulta.number }} de {{ consulta.paginator.num_pages }}
+        </span></a>
+
+            <a href="?page={{ paciente.paginator.num_pages }}"> &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+</div>
 
 
     </div>
 
-  {% include "model_footer.html" %}
 
 
-</script>
+
 </body>
 
 </html>

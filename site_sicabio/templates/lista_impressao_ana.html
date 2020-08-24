@@ -1,0 +1,136 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+       <link href="{% static 'bootstrap/css/bootstrap.min.css'%}" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.css'%}" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
+
+     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link href="{% static 'css/list-im.css' %}" rel="stylesheet">
+        <link href="{% static 'bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+
+
+    {% include "menu_analise.html" %}
+               {% include "sidebbar.html" %}
+
+
+</head>
+
+
+<body>
+
+ <div class="modal fade" id="modal_confirm1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Excluir</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body text-rigth">
+          Deseja excluir a impressão digital do paciente <b style="text-transform:capitalize;">{{ paciente.nome_paciente }}?</b>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+          <a href="../delete_impressao/{{impressao.id}}">
+          <button type="button" class="btn btn-danger" >
+              Excluir
+          </button>
+              </a>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+    <div class="container mt-4 mb-4  "style="position: relative;margin-left: 200px;">
+
+        <div class="row" >
+            {% if impressao.cont < 10 %}
+            <div  class="col-sm-3">
+             <div class="polaroid" style="border:2px solid #00cdcf;border-radius:5px;margin-top:20px;width:100%;height:228px; ">
+                   <a class="img" href="../up_impressao"> <img src="{% static 'images/icons/256_add.png' %}" style="position:relative;width:50%;height:120px;left:60px;top:46px;"> </a>
+                </div>
+            </div>
+
+
+            {% for i in impressao %}
+            <div  class=" col-sm-3">
+                <div class="polaroid" style="border:2px solid #00cdcf;border-radius:2px;margin-top:20px;">
+                   <a href="" data-toggle="modal"data-target="#modal_confirm1"> <i  class="material-icons" style="font-size:20px;position:relative;left:210px;bottom:45px;">delete_forever</i></a>
+                   <a class="img"><img  src="{{i.img.url}}" style="width:50%;height:70%;top:25px;position:relative;left:33px;"> </a>
+
+                    <div  class="container_txt" style="text-align:center;">
+                        <p style="font-weight:bold;text-transform:uppercase; "><br> {{ i.mao }}<br> Dedo: {{ i.dedo }}</p>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+            {% endfor %}
+        </div>
+   {% else %}
+     <div class="container mt-4 mb-4  "style="position: relative;margin-left:20px;">
+
+    <div class="row">
+         {% for i in impressao %}
+
+            <div  class="col-sm-3">
+                <div class="polaroid" style="border:3px solid #00cdcf;border-radius:3px;margin-bottom:50px;">
+                   <a href="#" data-toggle="modal"data-target="#modal_confirm1"> <i  class="material-icons" style="font-size:20px;position:relative;left:205px;bottom:30px;">delete_forever</i></a>
+                   <a class="img"><img  src="{{i.img.url}}" style="width:80%;height:100px;position: relative;top:25px;"> </a>
+
+                    <div  class="container_txt mt-2" style="text-align:center;">
+                        <p style="font-weight:bold;text-transform:uppercase; "><br> {{ i.mao }}<br> Dedo: {{ i.dedo }}</p>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+        {% endif %}
+        </div>
+     </div>
+
+
+
+   <script>
+    // Material Select Initialization
+$(document).ready(function() {
+$('.mdb-select').materialSelect();
+});
+function openForm() {
+  document.getElementById("modal_confirm1").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("modal_confirm1").style.display = "none";
+}
+
+    </script>
+
+
+</body>
+</html>

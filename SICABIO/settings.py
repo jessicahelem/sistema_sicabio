@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'site_sicabio',
+    'bootstrap_modal_forms',
+    'widget_tweaks',
+
 
 ]
 CRISPY_TEMPLATE_PACk = 'bootstrap4'

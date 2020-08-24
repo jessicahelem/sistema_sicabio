@@ -1,0 +1,92 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' id='wsl-widget-css'  href='https://mdbootstrap.com/wp-content/plugins/wordpress-social-login/assets/css/style.css?ver=5.5' type='text/css' media='all' />
+<link rel='stylesheet' id='compiled.css-css'  href='https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-4.19.1.min.css?ver=4.19.1' type='text/css' media='all' />
+
+    <link rel="canonical" href="https://mdbootstrap.com/docs/jquery/modals/forms/" />
+    <link href="{% static 'bootstrap/css/bootstrap.min.css'%}" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.css'%}" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
+    <link rel="canonical" href='https://mdbootstrap.com/docs/jquery/forms/select/'>
+     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link href="{% static 'css/list-im.css' %}" rel="stylesheet">
+        <link href="{% static 'bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+    	<link rel="canonical" href="https://mdbootstrap.com/docs/jquery/forms/select/" />
+    <link rel="https://api.w.org/" href="https://mdbootstrap.com/wp-json/" /><link rel="alternate" type="application/json" href="https://mdbootstrap.com/wp-json/wp/v2/pages/10273" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://mdbootstrap.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://mdbootstrap.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 5.5" />
+<meta name="generator" content="WooCommerce 4.4.0" />
+<link rel='shortlink' href='https://mdbootstrap.com/?p=10273' />
+<link rel="alternate" type="application/json+oembed" href="https://mdbootstrap.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmdbootstrap.com%2Fdocs%2Fjquery%2Fforms%2Fselect%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://mdbootstrap.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmdbootstrap.com%2Fdocs%2Fjquery%2Fforms%2Fselect%2F&#038;format=xml" />
+<link rel='stylesheet' id='dashicons-css'  href='https://mdbootstrap.com/wp-includes/css/dashicons.min.css?ver=5.5' type='text/css' media='all' />
+<link rel='stylesheet' id='admin-bar-css'  href='https://mdbootstrap.com/wp-includes/css/admin-bar.min.css?ver=5.5' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://mdbootstrap.com/wp-includes/css/dist/block-library/style.min.css?ver=5.5' type='text/css' media='all' />
+<link rel='stylesheet' id='wc-block-vendors-style-css'  href='https://mdbootstrap.com/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/vendors-style.css?ver=3.1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='wc-block-style-css'  href='https://mdbootstrap.com/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/style.css?ver=3.1.0' type='text/css' media='all' />
+<link rel='stylesheet'  href='https://mdbootstrap.com/docs/jquery/forms/select/'/>
+    {% include "menu_analise.html" %}
+               {% include "sidebbar.html" %}
+
+    <script>
+    // Material Select Initialization
+$(document).ready(function() {
+$('.mdb-select').materialSelect();
+});
+</script>
+
+</head>
+    <div class="md-form mb-3">
+        {% if digital.img %}
+    <a href="/media/{{digital.img}}" target="_blank" style="width:100%;left:10px;position:relative;bottom:10px;">Imagem Atual</a>
+
+
+    <div class="custom-file" style="top:5px;">
+        <input type="file" class="custom-file-input" name="file" id="customFile" accept="image/*"  >
+        <label class="custom-file-label" for="customFile"style="padding-right:120px;">Escolha uma imagem</label>
+    </div>
+    </div>
+{% else %}
+           <div class="md-form mb-3">
+
+    <label style="font-weight:bold; left:5px;position:relative;bottom:15px;">Impressão Digital</label>
+          <div class="custom-file" style="bottom:5px;">
+        <input type="file" class="custom-file-input" id="custoFile"name="file" accept="image/*" style=" background:#01c4c4;background-color:#01c4c4;">
+        <label class="custom-file-label" for="custoFile"style="padding-right:120px;">Escolha uma imagem</label>
+    </div>
+           </div>
+{% endif %}
+
+          </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+<!--          {% for i in digital %}-->
+<!--        <a href='../up_impressao/?id={{i.id}}'>-->
+<!--         {% endfor %}-->
+          <button class="btn btn-default" type="submit" style="color:#ffffff">Alterar</button>
+<!--      </a>-->
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</html>

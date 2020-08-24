@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en" xmlns:background="http://www.w3.org/1999/xhtml" xmlns:background-color="http://www.w3.org/1999/xhtml">
@@ -24,9 +24,11 @@
     <!-- Bootstrap core CSS -->
 
     <title >Detalhes</title>
-    <link href="{% static 'css/detalhes_im.css'%}" rel="stylesheet">
+    <link href="{% static 'css/detalhes_impressao.css'%}" rel="stylesheet">
 
-    {% include "menu_paciente.html" %}
+    {% include "menu_impressao.html" %}
+                   {% include "sidebbar.html" %}
+
     <h2 class="text-center" style="margin-top:20px; color:#00CDCF;">Detalhes</h2>
 
 </head>
@@ -61,7 +63,7 @@
   </div>
 </div>
 
-     <div id="card_imp"class="card border border-info"style="margin-top:50px;">
+     <div id="card_imp"class="card border border-info"style="margin-top:50px;position: relative;margin-left: 150px;left:100px;height: 500px;">
 
 
              <img  src="{{impressao.img.url}}" >
@@ -79,7 +81,7 @@
         <div class="col-sm-4">
               <a href='../../up_impressao/?id={{impressao.id}}'>
 
-                <div id="menu_altdigital" class="card border border-info">
+                <div id="menu_altdigital" class="card border border-info"style="position:relative;left: 590px;bottom:300px;">
                       <div id="img_at"align="center" class="image" style="margin-top:4px;">
                     <img  src="{% static 'images/at_d.png' %}" alt="atualizar">
                     </div>
@@ -99,7 +101,7 @@
 
   <div class="col-sm-4">
       <a href="#">
-      <div id="menu_excluird" class="card border border-info text-center" data-toggle="modal"data-target="#modal_confirm1">
+      <div id="menu_excluird" class="card border border-info text-center" data-toggle="modal"data-target="#modal_confirm1"style="position:relative;left: 420px;bottom:300px;">
 
                       <div id="img_rm"align="center" class="image" style="margin-top:4px;">
                     <img  src="{% static 'images/rm.png' %}" alt="remover">
@@ -121,7 +123,6 @@
 </div>
  </body>
 
-    {% include "model_footer.html" %}
 
 
 

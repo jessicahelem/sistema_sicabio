@@ -2,6 +2,7 @@ from datetime import date
 from django.contrib import messages
 from django.contrib.auth import logout, login
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.decorators.csrf import csrf_protect
 from rest_framework.authentication import authenticate
@@ -18,10 +19,10 @@ def logout_user(request):
 @csrf_protect
 @login_required(login_url='/login/')
 def form_paciente(request):
-    paciente_id = request.GET.get('id')
+    id_paciente = request.GET.get('id')
 
-    if paciente_id:
-        paciente = Paciente.objects.get(id=paciente_id)
+    if id_paciente:
+        paciente = Paciente.objects.get(id=id_paciente)
         if paciente.profissional == request.user:
             return render(request, 'base_paciente.html', {'paciente': paciente})
 
@@ -78,27 +79,48 @@ def submit_login(request):
 
 @login_required(login_url='/login/')
 def list_user(request):
-    paciente = Paciente.objects.filter(profissional=request.user)
+
 
     busca = request.GET.get('buscar')
 
     if busca:
         paciente = Paciente.objects.filter(nome_paciente__icontains=busca, profissional=request.user)
+    else:
+        paciente_list = Paciente.objects.filter(profissional=request.user)
+        paginator = Paginator(paciente_list, 8)
+        page = request.GET.get('page')
+        paciente = paginator.get_page(page)
 
     return render(request, 'lista_pacientes.html', {'paciente': paciente})
+
+@login_required(login_url='/login/')
+def list_p_analise(request):
+    busca = request.GET.get('buscar')
+
+    if busca:
+        paciente = Paciente.objects.filter(nome_paciente__icontains=busca, profissional=request.user)
+    else:
+        paciente_list = Paciente.objects.filter(profissional=request.user)
+        paginator = Paginator(paciente_list, 8)
+        page = request.GET.get('page')
+        paciente = paginator.get_page(page)
+
+    return render(request, 'lista_p_analise.html', {'paciente': paciente})
 
 
 @login_required(login_url='/login/')
 def list_consulta(request):
-    consulta = Consulta.objects.filter(profissional=request.user)
 
     busca = request.GET.get('buscar')
 
     if busca:
-        consulta = Consulta.objects.filter(paciente__nome_paciente__icontains=busca, profissional=request.user)
-
+       consulta = Consulta.objects.filter(paciente__nome_paciente__icontains=busca, profissional=request.user)
+    else:
+        consulta_list = Consulta.objects.filter(profissional=request.user)
+        paginator = Paginator(consulta_list, 8)
+        page = request.GET.get('page')
+        consulta = paginator.get_page(page)
     return render(request, 'lista_consultas.html', {'consulta': consulta})
-
 
 @login_required(login_url='/login/')
 def list_impressao(request, id):
@@ -107,6 +129,12 @@ def list_impressao(request, id):
 
     return render(request, 'lista_impressoes.html', {'impressao': impressao, "paciente": paciente})
 
+@login_required(login_url='/login/')
+def list_im_analise(request,id):
+    paciente = Paciente.objects.get(id=id)
+    impressao = Impressao.objects.filter(paciente=paciente)
+
+    return render(request, 'lista_impressao_ana.html', {'impressao': impressao, "paciente": paciente})
 
 @login_required(login_url='/login/')
 def pacientes_detalhes(request, id):
@@ -139,11 +167,11 @@ def set_paciente(request):
     cpf_paciente = request.POST.get('cpf_paciente')
     dt_nascimento = request.POST.get('dt_nascimento')
     file = request.FILES.get('file')
-    paciente_id = request.POST.get('paciente-id')
+    id_paciente = request.POST.get('paciente-id')
     prof = request.user
 
-    if paciente_id:
-        paciente = Paciente.objects.get(id=paciente_id)
+    if id_paciente:
+        paciente = Paciente.objects.get(id=id_paciente)
         if prof == paciente.profissional:
             paciente.nome_paciente = nome_paciente
             paciente.cpf_paciente = cpf_paciente
@@ -181,15 +209,187 @@ def delete_consulta(request, id):
 
 
 @login_required(login_url='/login/')
-def delete_impressao(request, id, id_impressao):
+def delete_impressao(request,id_impressao):
     impressao = Impressao.objects.get(id=id_impressao)
     impressao.delete()
     return redirect('../../../impressoes/', {'impressao': impressao})
 
 
 @login_required(login_url='/login/')
-def set_consulta(request, id):
+def delete_impressao_a(request,id_impressao):
+    id_impressao = Impressao.objects.get(id=id_impressao)
+    id_impressao.delete()
+    return redirect('../../impressoes_analise/')
+
+
+@login_required(login_url='/login/')
+def set_consulta(request,id):
     paciente = Paciente.objects.get(id=id)
+    data = request.POST.get('data')
+    horario = request.POST.get('horario')
+    consulta_id = request.POST.get('consulta-id')
+    prof = request.user
+
+    if consulta_id:
+        consulta = Consulta.objects.get(id=consulta_id)
+        if prof == consulta.profissional:
+            consulta.paciente = paciente
+            consulta.data = data
+            consulta.horario = horario
+            consulta.save()
+
+    elif Consulta.objects.filter(profissional=prof, horario=horario, data=data):
+        messages.warning(request, 'Existe uma consulta marcada nesse horário e data. Por favor, tente novamente.')
+        return redirect('../cadastrar_consulta/', {'paciente': paciente})
+
+    else:
+
+        Consulta.objects.create(data=data, paciente=paciente, profissional=prof, horario=horario)
+
+    messages.success(request, 'Consulta Marcada!')
+
+    return redirect('../cadastrar_consulta/', {'paciente': paciente})
+
+
+@login_required(login_url='/login/')
+def set_impressao(request, id):
+    paciente = Paciente.objects.get(id=id)
+    mao = request.POST.get('mao')
+    dedo = request.POST.get('dedo')
+    impressao_id = request.POST.get('impressao-id')
+    file = request.FILES.get('file')
+    contador = Impressao.objects.filter(paciente=paciente).count()
+    if impressao_id:
+        impressao = Impressao.objects.get(id=impressao_id)
+        impressao.paciente = paciente
+        impressao.mao = mao
+        impressao.dedo = dedo
+
+        if file:
+            impressao.img = file
+        impressao.save()
+
+    else:
+
+        impressao = Impressao.objects.create(mao=mao, dedo=dedo, paciente=paciente, img=file,cont=contador)
+
+    contador +=1
+
+    messages.success(request, 'Salvo com sucesso!')
+    print('Contador:',contador)
+    return redirect('../up_impressao/', {'paciente': paciente})
+
+@login_required(login_url='/login/')
+def atualizar_impressao(request, id):
+    paciente = Paciente.objects.get(id=id)
+    mao = request.POST.get('mao')
+    dedo = request.POST.get('dedo')
+    impressao_id = request.POST.get('impressao-id')
+    file = request.FILES.get('file')
+    contador = Impressao.objects.filter(paciente=paciente).count()
+    if impressao_id:
+        impressao = Impressao.objects.get(id=impressao_id)
+        impressao.paciente = paciente
+        impressao.mao = mao
+        impressao.dedo = dedo
+
+        if file:
+            impressao.img = file
+        impressao.save()
+
+        # impressao = Impressao.objects.create(mao=mao, dedo=dedo, paciente=paciente, img=file,cont=contador)
+
+
+    messages.success(request, 'Atualizado com sucesso!')
+    print('Contador:',contador)
+    return redirect('../impressoes_analise/', {'paciente': paciente})
+
+@login_required(login_url='/login/')
+def set_impressao_p(request, id):
+    paciente = Paciente.objects.get(id=id)
+    mao = request.POST.get('mao')
+    dedo = request.POST.get('dedo')
+    impressao_id = request.POST.get('impressao-id')
+    file = request.FILES.get('file')
+    contador = Impressao.objects.filter(paciente=paciente).count()
+    if impressao_id:
+        impressao = Impressao.objects.get(id=impressao_id)
+        impressao.paciente = paciente
+        impressao.mao = mao
+        impressao.dedo = dedo
+
+        if file:
+            impressao.img = file
+        impressao.save()
+
+    else:
+
+        impressao = Impressao.objects.create(mao=mao, dedo=dedo, paciente=paciente, img=file,cont=contador)
+
+    contador +=1
+
+    messages.success(request, 'Salvo com sucesso!')
+    print('Contador:',contador)
+    return render(request,'base_imp_m.html', {'paciente': paciente})
+
+@csrf_protect
+@login_required(login_url='/login/')
+def form_consulta(request, id):
+    id_paciente = Paciente.objects.get(id=id)
+    consulta_id = request.GET.get('id')
+    if consulta_id:
+        consulta = Consulta.objects.get(id=consulta_id)
+
+        if consulta.profissional == request.user:
+            return render(request, 'base_consulta.html', {'consulta': consulta})
+
+    return render(request, 'base_consulta.html', {'id_paciente': id_paciente})
+
+
+@csrf_protect
+@login_required(login_url='/login/')
+def form_impressao(request, id):
+    id_paciente = Paciente.objects.get(id=id)
+    impressao_id = request.GET.get('id')
+    if impressao_id:
+        impressao = Impressao.objects.get(id=impressao_id)
+
+        return render(request, 'base_impressao.html', {'impressao': impressao})
+
+    return render(request, 'base_impressao.html', {'id_paciente': id_paciente})
+
+@csrf_protect
+@login_required(login_url='/login/')
+def form_impressao_p(request, id):
+    id_paciente = Paciente.objects.get(id=id)
+    impressao_id = request.GET.get('id')
+    if impressao_id:
+        impressao = Impressao.objects.get(id=impressao_id)
+
+        return render(request, 'base_imp_m.html', {'impressao': impressao})
+
+    return render(request, 'base_imp_m.html', {'id_paciente': id_paciente})
+
+
+
+@csrf_protect
+@login_required(login_url='/login/')
+def form_consulta_m(request):
+    paciente = Paciente.objects.filter(profissional=request.user)
+    id_paciente = request.GET.get("paciente")
+    consulta_id = request.GET.get('id')
+    if consulta_id:
+        consulta = Consulta.objects.get(id=consulta_id)
+
+        if consulta.profissional == request.user:
+            return render(request, 'base_consulta_m.html', {'consulta': consulta})
+
+    return render(request, 'base_consulta_m.html', {'id_paciente': id_paciente,'paciente':paciente})
+
+@login_required(login_url='/login/')
+def set_consulta_m(request):
+    # id_paciente = Paciente.objects.get(id=id_paciente)
+    paciente = request.POST.get("paciente")
     data = request.POST.get('data')
     horario = request.POST.get('horario')
     consulta_id = request.POST.get('consulta-id')
@@ -205,75 +405,19 @@ def set_consulta(request, id):
 
         if Consulta.objects.filter(profissional=prof, horario=horario, data=data):
             messages.warning(request, 'Existe uma consulta marcada nesse horário e data. Por favor, tente novamente.')
-            return redirect('../cadastrar_consulta/', {'paciente': paciente})
+            return redirect('../cadastrar_consulta_m/', {'paciente': paciente})
     elif Consulta.objects.filter(profissional=prof, horario=horario, data=data) :
         messages.warning(request, 'Existe uma consulta marcada nesse horário e data. Por favor, tente novamente.')
-        return redirect('../cadastrar_consulta/', {'paciente': paciente})
+        return redirect('../cadastrar_consulta_m/', {'paciente': paciente})
 
     else:
 
-        Consulta.objects.create(data=data, paciente=paciente, profissional=prof, horario=horario)
+        Consulta.objects.create(data=data,horario=horario, paciente=paciente, profissional=prof )
 
     messages.success(request, 'Consulta Marcada!')
 
-    return redirect('../cadastrar_consulta/', {'paciente': paciente})
+    return redirect('../cadastrar_consulta_m/',{'paciente':paciente})
 
 
-@login_required(login_url='/login/')
-def cadastrar_digital(request, id):
-    paciente = Paciente.objects.get(id=id)
-    return render(request, 'inserir_digital.html', {'paciente': paciente})
 
 
-@login_required(login_url='/login/')
-def set_impressao(request, id):
-    paciente = Paciente.objects.get(id=id)
-    mao = request.POST.get('mao')
-    dedo = request.POST.get('dedo')
-    impressao_id = request.POST.get('impressao-id')
-    file = request.FILES.get('file')
-
-    if impressao_id:
-        impressao = Impressao.objects.get(id=impressao_id)
-        impressao.paciente = paciente
-        impressao.mao = mao
-        impressao.dedo = dedo
-
-        if file:
-            impressao.img = file
-        impressao.save()
-
-    else:
-
-        impressao = Impressao.objects.create(mao=mao, dedo=dedo, paciente=paciente, img=file)
-
-    messages.success(request, 'Salvo com sucesso!')
-
-    return redirect('../up_impressao/', {'paciente': paciente})
-
-
-@csrf_protect
-@login_required(login_url='/login/')
-def form_consulta(request, id):
-    paciente_id = Paciente.objects.get(id=id)
-    consulta_id = request.GET.get('id')
-    if consulta_id:
-        consulta = Consulta.objects.get(id=consulta_id)
-
-        if consulta.profissional == request.user:
-            return render(request, 'base_consulta.html', {'consulta': consulta})
-
-    return render(request, 'base_consulta.html', {'paciente_id': paciente_id})
-
-
-@csrf_protect
-@login_required(login_url='/login/')
-def form_impressao(request, id):
-    paciente_id = Paciente.objects.get(id=id)
-    impressao_id = request.GET.get('id')
-    if impressao_id:
-        impressao = Impressao.objects.get(id=impressao_id)
-
-        return render(request, 'base_impressao.html', {'impressao': impressao})
-
-    return render(request, 'base_impressao.html', {'paciente_id': paciente_id})

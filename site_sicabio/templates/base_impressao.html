@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,12 +9,14 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-      {% if impressao %}
+      {% if digital %}
       <title>Alterar Impressão</title>
       {% else %}
       <title>Cadastrar Impressão</title>
         {% endif %}
-          {% include "menu_paciente.html" %}
+          {% include "menu_impressao.html" %}
+                {% include "sidebbar.html" %}
+
 
 
 
@@ -34,18 +36,18 @@
   <div class="form-style-5" style="margin-top:20px;">
 <form style="margin-top:10px;" enctype="multipart/form-data" action="submit" method="post">{% csrf_token %}
 <fieldset>
-{% if impressao %}
+{% if digital %}
 <h1 class="h3  font-weight-normal text-center" style="color:#01c4c4; margin-bottom:30px;">Alterar Impressão</h1>
         {% else %}
       <h1 class="h3  font-weight-normal text-center" style="color:#01c4c4; margin-bottom:30px;">Cadastrar Impressão </h1>
     {% endif %}
-    <input type="number" class="form-control" name="impressao-id" value="{{impressao.id}}"hidden>
+    <input type="number" class="form-control" name="digital-id" value="{{digital.id}}"hidden>
 
     <select type="text" id="mao" name="mao" style="border-radius:2px;" >
      <option value="MÃO ESQUERDA">Mão Esquerda</option>
       <option value="MÃO DIREITA" >Mão Direita</option>
     </select>
-        <select type="text" id="dedo" required name="dedo"  style="border-radius:2px;" value="{{impressao.dedo}}">
+        <select type="text" id="dedo" required name="dedo"  style="border-radius:2px;" value="{{digital.dedo}}">
         <option>Polegar</option>
       <option>Indicador</option>
       <option>Médio</option>
@@ -53,8 +55,8 @@
       <option>Mínimo</option>
 
     </select>
-    {% if impressao.img %}
-    <a href="/media/{{impressao.img}}" target="_blank" style="width:100%;left:10px;position:relative;bottom:10px;">Imagem Atual</a>
+    {% if digital.img %}
+    <a href="/media/{{digital.img}}" target="_blank" style="width:100%;left:10px;position:relative;bottom:10px;">Imagem Atual</a>
     <div class="custom-file" style="top:5px;">
         <input type="file" class="custom-file-input" name="file" id="customFile" accept="image/*"  >
         <label class="custom-file-label" for="customFile"style="padding-right:120px;">Escolha uma imagem</label>
@@ -74,13 +76,15 @@
         {{message}}
 </div>
              {% endfor %}
-{% if impressao %}
+{% if digital %}
  <button style="color:white;bottom:20px;" type="submit" class="btn btn-outline-primary">Alterar</button>
-{% else %}
+<a href='../impressoes/'>   <button style="color:white;position:relative;bottom:20px;"  type="button" class="btn btn-outline-primary">Voltar</button></a>
+
+        {% else %}
      <button style="color:white;bottom:50px;position:relative;" type="submit" class="btn btn-outline-primary ">Cadastrar</button>
+    <a href='../impressoes/'>   <button style="color:white;position:relative;bottom:50px;"  type="button" class="btn btn-outline-primary">Voltar</button></a>
 
  {% endif %}
-<a href='../impressoes/'>   <button style="color:white;position:relative;bottom:50px;"  type="button" class="btn btn-outline-primary">Voltar</button></a>
 
     </div>
 
@@ -88,7 +92,7 @@
 </div>
 
 
-{% if impressao %}
+{% if digital %}
 <script>
 // Add the following code if you want the name of the file appear on select
 $(".custom-file-input").on("change", function() {

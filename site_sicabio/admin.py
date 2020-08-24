@@ -17,7 +17,7 @@ class PacienteAdmin(admin.ModelAdmin):
 
 admin.site.register(Impressao)
 class ImpAdmin(admin.ModelAdmin):
-    list_display = ['id']
+    list_display = ['id','mao','dedo']
 
 
 

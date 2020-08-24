@@ -1,0 +1,69 @@
+{% load static %}
+<link href='https://fonts.googleapis.com/css?family=Alatsi' rel='stylesheet'>
+
+
+<style>
+
+    .sidenav {
+        margin: 0;
+        padding: 0;
+        width: 200px;
+        background-color: #f1f1f1;
+        position:absolute;
+        height: 150%;
+        overflow: auto;
+    font-family: 'Baloo Paaji 2';font-size: 18px;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+
+}
+
+.sidenav a {
+  display: block;
+ color:#01c4c4;
+
+  padding: 16px;
+  text-decoration: none;
+}
+.logout a:hover{
+   color:#008c8c;
+  background-color:#008c8c ;
+}
+.sidenav a:hover {
+   color:#008c8c;
+}
+/* Active/current link */
+.sidenav a.active {
+  background-color: #4CAF50;
+  color:#008c8c;
+}
+
+/* Links on mouse-over */
+.sidenav a:hover:not(.active) {
+  background-color:#009898;
+  color:#00c9c9;
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+
+}
+     .active a:hover{
+  background-color: #0c5460;
+
+}
+</style>
+
+
+<div class="sidenav">
+  <a class="list-group-item list-group-item-action-info " href='/site_sicabio/cadastrar_paciente/'style="margin-top: 30px;">Cadastrar Paciente</a>
+  <a class="list-group-item list-group-item-action-info" href="/site_sicabio/pacientes/">Listar Pacientes</a>
+  <a  class="list-group-item list-group-item-action-info"href="/site_sicabio/cadastrar_consulta_m/">Agendar</a>
+  <a class="list-group-item list-group-item-action-info"href="/site_sicabio/consultas/">Listar Agendamentos</a>
+  <a class="list-group-item list-group-item-action-info" href="/site_sicabio/pacientes_analise">Análise Dermatoglífica</a>
+  <a class="list-group-item list-group-item-action-info"href="/site_sicabio/pacientes_analise/">Resultados Análise Dermatoglífica</a>
+  <a class="list-group-item list-group-item-action-info"href="/logout/"> Sign Out</a>
+
+</div>

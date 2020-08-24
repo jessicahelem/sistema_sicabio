@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +24,8 @@
         <link href="{% static 'bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
 
      {% include "menu_paciente.html" %}
+                       {% include "sidebbar.html" %}
+
 
 </head>
 <body>
@@ -97,16 +99,34 @@
 #divBusca img{
   float:left;
 }
+.center {
+  text-align: center;
+}
 
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
 </style>
-<!--    <div id="divBusca">-->
-<!--        <div class="img my-2">-->
-<!--        <img  src="{% static 'images/search.png' %}" alt="Buscar..."/>-->
-<!--        </div>-->
-<!--            <input type="text" id="txtBusca"  placeholder="Buscar..."/>-->
-<!--        <button id="btnBusca">Buscar</button>-->
-<!--    </div>-->
-    <div class="container mt-4 mb-4">
+
+    <div class="container mt-4 mb-4"style="position:relative;margin-left:200px;align: center;">
         <div class="search-div" style="position:relative;margin-left:200px;align: center;">
 
         <form  class="form-inline active-cyan-4"  method="GET" id="search-form">
@@ -141,12 +161,36 @@
 
          {% endfor %}
         </div>
+<div class="center">
+<div class="pagination">
+    <span class="step-links">
+        {% if paciente.has_previous %}
+            <a href="?page=1">&laquo; </a>
+             <a ><span class="current"style="position: relative;top:5px;">
+            {{ paciente.number }} de {{ paciente.paginator.num_pages }}
+        </span>
+                 </a>
+            <a href="?page={{ paciente.previous_page_number }}"> &raquo;</a>
+        {% endif %}
 
 
+        {% if paciente.has_next %}
+
+            <a href="?page={{ paciente.next_page_number }}">&laquo;</a>
+            <a><span class="current"style="position: relative;top:5px;">
+            {{ paciente.number }} de {{ paciente.paginator.num_pages }}
+        </span></a>
+
+            <a href="?page={{ paciente.paginator.num_pages }}"> &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+</div>
+</div>
+    </div>
 
     </div>
 
-  {% include "model_footer.html" %}
 
 </body>
 </html>

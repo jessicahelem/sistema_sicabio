@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -16,6 +16,7 @@
       <title>Cadastrar Paciente</title>
         {% endif %}
           {% include "menu_paciente.html" %}
+         {% include "sidebbar.html" %}
 
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
@@ -42,7 +43,7 @@ $(".custom-file-input").on("change", function() {
 
     <link rel="stylesheet" href="{% static 'css/upload.css' %}">
   </head>
-<div class="form-style-5" style="margin-top:20px;">
+<div class="form-style-5 " style="margin-top:20px;margin-left: 500px;">
 <form style="margin-top:10px;" enctype="multipart/form-data" action="submit" method="post">{% csrf_token %}
 <fieldset>
 {% if paciente%}
@@ -86,9 +87,9 @@ $(".custom-file-input").on("change", function() {
              {% endfor %}
 
 {% if paciente %}
- <button style="color:white;" type="submit" class="btn btn-outline-primary btn-block">Alterar</button>
+ <button style="color:white;position:relative;left: 180px;bottom:30px;" type="submit" class="btn btn-primary ">Alterar</button>
 {% else %}
-     <button style="color:white;" type="submit" class="btn btn-outline-primary btn-block">Cadastrar</button>
+     <button style="color:white;position:relative;left: 180px;bottom:30px;" type="submit" class="btn btn-primary ">Cadastrar</button>
 
  {% endif %}
           </div>

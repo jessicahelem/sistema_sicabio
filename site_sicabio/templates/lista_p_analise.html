@@ -1,0 +1,195 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.css'%}" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link href="{% static 'bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+
+     {% include "menu_p_ana.html" %}
+                   {% include "sidebbar.html" %}
+
+</head>
+<body>
+<style>
+
+.active-cyan .fa, .active-cyan-4 .fa {
+  color: #fff;
+}
+    .polaroid{
+    width:250px;
+    box-shadow:0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.2);
+    }
+
+    .container{
+        padding: 15px;
+        border:5px;
+    }
+
+
+    .img{
+            background-color:white;
+    }
+    .img:hover {
+        opacity:0.3 ;
+
+
+    }
+#divBusca{
+  background-color:#E0EEEE;
+  border:solid 2px #5F9EA0;
+  border-radius:10px;
+  width:320px;
+  height:32px;
+  margin-left: 125px;
+  margin-top:10px;
+
+}
+
+#txtBusca{
+  background-color:transparent;
+  padding-left:5px;
+  font-size:18px;
+  border:none;
+  height:20px;
+  width:190px;
+  top:77px;
+  position:absolute;
+  margin-left:12px;
+
+}
+/*.a:txtBusca{*/
+/*    background-color:#E0EEEE;*/
+
+
+/*}*/
+
+#btnBusca{
+  border:none;
+  height:30px;
+  border-radius:0 7px 7px 0;
+  width:88px;
+  font-weight:bold;
+  background:#00CDCF;
+  margin-left:212px;
+  position:absolute;
+  top:72px;
+
+
+}
+.center {
+  text-align: center;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+#divBusca img{
+  float:left;
+}
+
+</style>
+
+    <div class="container mt-4 mb-4"style="position: relative;margin-left: 220px;">
+        <div class="search-div" style="position:relative;margin-left:210px;align: center;">
+
+        <form  class="form-inline active-cyan-4"  method="GET" id="search-form">
+            <input class="form-control form-control-sm mr-3 w-75" type="text" id = 'buscar'name="buscar" placeholder="Pesquisar">
+
+ <span class="input-group-addon">
+      <button class="fa fa-search" style="background: #4dd0e1;border:solid #4dd0e1;right:20px;position:relative;width:47px;height:32px;border-radius:5px;"></button>
+    </span>
+        </form>
+        </div>
+
+
+        <div class="row" style="margin-top:50px;">
+             {% for p in paciente %}
+            <div class="col-sm-3">
+                <div class="polaroid">
+                    {% if p.foto %}
+                   <a class="img" href="../pacientes_analise/{{p.id}}/impressoes_analise"> <img  src="{{p.foto.url}}" style="width:100%;height:150px;"> </a>
+                   {% else %}
+                   <a class="img" href="../pacientes_analise/{{p.id}}/impressoes_analise/"> <img  src="{% static 'images/avatar.png' %}" style="width:100%;height:150px;"> </a>
+                    {% endif %}
+
+                    <div  class="container_txt" style="text-align:center">
+                        <p style="font-weight:bold; text-transform:uppercase;"> {{ p.nome_paciente }}</p>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+         {% endfor %}
+        </div>
+<div class="center">
+<div class="pagination">
+    <span class="step-links">
+        {% if paciente.has_previous %}
+            <a href="?page=1">&laquo; </a>
+             <a ><span class="current"style="position: relative;top:5px;">
+            {{ paciente.number }} de {{ paciente.paginator.num_pages }}
+        </span>
+                 </a>
+            <a href="?page={{ paciente.previous_page_number }}"> &raquo;</a>
+        {% endif %}
+
+
+        {% if paciente.has_next %}
+
+            <a href="?page={{ paciente.next_page_number }}">&laquo;</a>
+            <a><span class="current"style="position: relative;top:5px;">
+            {{ paciente.number }} de {{ paciente.paginator.num_pages }}
+        </span></a>
+
+            <a href="?page={{ paciente.paginator.num_pages }}"> &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+</div>
+
+
+    </div>
+
+
+</body>
+</html>

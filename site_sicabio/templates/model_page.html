@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html >
 <head>
@@ -17,7 +17,7 @@
   }
  a :hover{
 
-    color:#00CDCF;
+    color:#009b9e;
 }
    #sair{
       color:#fff;
@@ -26,11 +26,89 @@
    position:absolute;
 
    }
+
+  a:link{
+    color:#00cdcf;
+    text-decoration:none;
+
+  }
+  a{
+   color:#01c4c4;}
+  a:hover{
+    text-decoration:none;
+    color:#008c8c;
+
+}
+ a{
+   color:#01c4c4;}
+
+   #logout{
+   color:#01c4c4;
+   }
+
+ .button{
+ top: 3px;
+ position: relative;
+ left:760px;
+ height:30px;
+ width:100px;
+ border-radius:5px;
+ background-color:#00CDCF;
+ color: white;
+ border: 2px solid #04e2e2;
+   }
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+#navbar {
+  background-color: #009b9e;
+  top: 0;
+  width: 100%;
+  display: block;
+  transition: top 0.3s;
+  overflow:auto;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  color: #fff;
+}
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
+
+
 </style>
-            <a id="sair" href="/logout/">Sair</a>
+
+<div id='navbar'>
+
+	   <a  href="/logout/"style="float: right">Sair</a>
+
+
+
+
+
+</div>
+
 <section id="banner">
 
-				<h2><strong>Bem Vindo!</strong><br> SICABIO - SISTEMA DE IDENTIFICAÇÃO DAS CAPACIDADES BIOMOTORAS</h2>
+
+				<h2 class="text-center"><strong>Bem Vindo!</strong><br> SICABIO - SISTEMA DE IDENTIFICAÇÃO DAS CAPACIDADES BIOMOTORAS</h2>
 
 
 			</section>
@@ -44,7 +122,7 @@
 					<div class="features" >
 						<div align="center" class="feature">
 							<div  align="center" class="image">
-							<img src="{% static 'images/icons/user3.1.png' %}" alt="IMG">
+							<img src="{% static 'images/128_p.png' %}" alt="IMG">
 
 							<div class="text1">
 							<a class="cadastro_pac" href="site_sicabio/cadastrar_paciente"><h5 style="margin-top:10px;">Cadastro de Pacientes</h5></a>
@@ -54,17 +132,17 @@
 							</div>
 						<div class="feature">
 							<div class="image2">
-							<img src="{% static 'images/icons/consulta.png' %}" alt="IMG">
+							<img src="{% static 'images/128_a.png' %}" alt="IMG">
 								</div>
-							<a class="consulta" href="site_sicabio/consultas/"> <h5 style="margin-top:18px;">Consultas</h5></a>
+							<a class="consulta" href="site_sicabio/consultas/"> <h5 style="margin-top:18px;">Agendamentos</h5></a>
 
 							<p> </p>
 						</div>
 						<div class="feature">
 							<div class="img_3">
-							<img src="{% static 'images/icons/finger1.png' %}" alt="Impressão Digital">
+							<img src="{% static 'images/im_140.png' %}" alt="Impressão Digital">
 							</div>
-								<a class="analise" href="#" ><h5 style="margin-top:10px;">Análise Dermatoglífica</h5> </a>
+								<a class="analise" href="site_sicabio/pacientes_analise/" ><h5 style="margin-top:10px;">Análise Dermatoglífica</h5> </a>
 							<p></p>
 
 						</div>

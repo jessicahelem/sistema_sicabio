@@ -1,0 +1,113 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      {% if impressao %}
+      <title>Alterar Impressão</title>
+      {% else %}
+      <title>Cadastrar Impressão</title>
+        {% endif %}
+          {% include "menu_impressao_a.html" %}
+                {% include "sidebbar.html" %}
+
+
+
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="{% static 'css/upload.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/cad_p.css' %}">
+  </head>
+<style>
+    .alert.success {background-color: #4CAF50;}
+
+</style>
+  <div class="form-style-5" style="margin-top:20px;">
+<form style="margin-top:10px;" enctype="multipart/form-data" action="submit" method="post">{% csrf_token %}
+<fieldset>
+{% if impressao %}
+<h1 class="h3  font-weight-normal text-center" style="color:#01c4c4; margin-bottom:30px;">Alterar Impressão</h1>
+        {% else %}
+      <h1 class="h3  font-weight-normal text-center" style="color:#01c4c4; margin-bottom:30px;">Cadastrar Impressão </h1>
+    {% endif %}
+    <input type="number" class="form-control" name="impressao-id" value="{{impressao.id}}"hidden>
+
+    <select type="text" id="mao" name="mao" style="border-radius:2px;" >
+     <option value="MÃO ESQUERDA">Mão Esquerda</option>
+      <option value="MÃO DIREITA" >Mão Direita</option>
+    </select>
+        <select type="text" id="dedo" required name="dedo"  style="border-radius:2px;" value="{{impressao.dedo}}">
+        <option>Polegar</option>
+      <option>Indicador</option>
+      <option>Médio</option>
+     <option>Anular</option>
+      <option>Mínimo</option>
+
+    </select>
+    {% if impressao.img %}
+    <a href="/media/{{impressao.img}}" target="_blank" style="width:100%;left:10px;position:relative;bottom:10px;">Imagem Atual</a>
+    <div class="custom-file" style="top:5px;">
+        <input type="file" class="custom-file-input" name="file" id="customFile" accept="image/*"  >
+        <label class="custom-file-label" for="customFile"style="padding-right:120px;">Escolha uma imagem</label>
+    </div>
+{% else %}
+    <label style="font-weight:bold; left:5px;position:relative;bottom:15px;">Impressão Digital</label>
+          <div class="custom-file" style="bottom:5px;">
+        <input type="file" class="custom-file-input" id="custoFile"name="file" accept="image/*" style=" background:#01c4c4;background-color:#01c4c4;">
+        <label class="custom-file-label" for="custoFile"style="padding-right:120px;">Escolha uma imagem</label>
+    </div>
+{% endif %}
+
+</fieldset>
+    <div class="text-center">
+       {% for message in messages %}
+  <div class="alert alert-success">
+        {{message}}
+</div>
+             {% endfor %}
+{% if impressao %}
+ <button style="color:white;bottom:20px;" type="submit" class="btn btn-outline-primary">Alterar</button>
+<a href='../'>   <button style="color:white;position:relative;bottom:20px;"  type="button" class="btn btn-outline-primary">Voltar</button></a>
+
+        {% else %}
+     <button style="color:white;bottom:50px;position:relative;" type="submit" class="btn btn-outline-primary ">Cadastrar</button>
+    <a href='../{{paciente.id}}/impressoes_analise'>   <button style="color:white;position:relative;bottom:50px;"  type="button" class="btn btn-outline-primary">Voltar</button></a>
+
+ {% endif %}
+
+    </div>
+
+</form>
+</div>
+
+
+{% if impressao %}
+<script>
+// Add the following code if you want the name of the file appear on select
+$(".custom-file-input").on("change", function() {
+  var fileName = $(this).val().split("\\").pop();
+  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+});
+</script>
+{% else %}
+  <script>
+// Add the following code if you want the name of the file appear on select
+$(".custom-file-input").on("change", function() {
+  var fileName = $(this).val().split("\\").pop();
+  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+});
+</script>
+
+{% endif %}
+</html>

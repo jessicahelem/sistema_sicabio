@@ -72,6 +72,7 @@ class Impressao(models.Model):
     paciente = models.ForeignKey('Paciente', on_delete=models.CASCADE, related_name='im_digital')
    # padrao = models.ForeignKey('Padrao',on_delete=models.CASCADE,null=True,default=True)
     dedo = models.CharField(max_length=200, null=False)
+    cont = models.IntegerField(null=True,default=1)
 
     def __str__(self):
         return str(self.id)
@@ -94,7 +95,7 @@ class Consulta(models.Model):
     horario = models.CharField(max_length=5)
     paciente = models.ForeignKey('Paciente', on_delete=models.CASCADE, related_name='consulta')
     profissional= models.ForeignKey('Profissional', on_delete=models.CASCADE, related_name='consulta')
-
+    consulta_realizada = models.BooleanField(null=True)
     def __str__(self):
         return str(self.id)
 
@@ -106,7 +107,7 @@ class Potencialidade(models.Model):
              ('A', "Agilidade"),
              ('R', "Resistência")
              )
-    tipo = models.CharField(max_length=1, choices=TIPOS)
+    tipo = models.CharField(max_length=2, choices=TIPOS)
 
 
 class Analise(models.Model):

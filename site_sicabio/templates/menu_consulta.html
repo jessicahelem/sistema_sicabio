@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -20,9 +20,7 @@
  a{
    color:#01c4c4;}
 
-   #logout{
-   color:#01c4c4;
-   }
+
 
  .button{
  top: 3px;
@@ -46,7 +44,7 @@
 
 
 #navbar {
-  background-color: #00CDCF;
+  background-color: #00c9c9;
   top: 0;
   width: 100%;
   display: block;
@@ -81,19 +79,9 @@
 
 <div id="navbar">
  <a href='/'>Tela Principal</a>
-  <a href='/site_sicabio/consultas/'>Consultas</a>
+  <a href='/site_sicabio/consultas/'>Agendamentos</a>
  <a href='/site_sicabio/pacientes/'>Pacientes</a>
-<a href='/logout/' style="width:10px;"> <button class="button" id="btn_sair">Sair</button></a>
 
 </div>
 
-<!-- <div id='cssmenu'>-->
-<!--<ul>-->
 
-<!--    <li><a href='/'>Tela Principal</a></li>-->
-<!--   <li><a href='/site_sicabio/consultas/'>Consultas</a></li>-->
-<!--   <li><a href='/site_sicabio/pacientes/'>Pacientes</a></li>-->
-
-<!--</ul>-->
-
-<!--</div>-->

@@ -1,0 +1,94 @@
+{% load static %}
+   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+   <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+<style>
+  a:link{
+    color:#00cdcf;
+    text-decoration:none;
+
+  }
+  a{
+   color:#01c4c4;}
+  a:hover{
+    text-decoration:none;
+    color:#008c8c;
+
+}
+ a{
+   color:#01c4c4;}
+
+   #logout{
+   color:#01c4c4;
+   }
+
+ .button{
+ top: 3px;
+ position: relative;
+ left:760px;
+ height:30px;
+ width:100px;
+ border-radius:5px;
+ background-color:#00CDCF;
+ color: white;
+ border: 2px solid #04e2e2;
+   }
+
+ .button {
+ transition-duration: 0.5s;
+}
+.button:hover {
+  background-color: #00c4c4;
+  color: white;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#navbar {
+  background-color: #00CDCF;
+  top: 0;
+  width: 100%;
+  display: block;
+  transition: top 0.3s;
+  overflow:auto;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  color: #fff;
+}
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
+
+</style>
+
+
+
+<div id='navbar'>
+
+    <a href='/'>Tela Principal</a>
+   <a href='../up_impressao/'>Inserir Impressão</a>
+   <a  href="../impressoes">Listar</a>
+
+
+
+</div>
+
+
